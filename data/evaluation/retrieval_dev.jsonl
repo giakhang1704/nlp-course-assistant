@@ -1,0 +1,22 @@
+{"id":"R01","question":"Môn NLP có bao nhiêu tín chỉ?","expected_status":"retrieved","relevant_documents":["course_info.credits"]}
+{"id":"R02","question":"NLP có mấy chương?","expected_status":"retrieved","relevant_documents":["course_info.chapter_count"]}
+{"id":"R03","question":"Môn NLP thuộc khoa nào?","expected_status":"retrieved","relevant_documents":["course_info.department"]}
+{"id":"R04","question":"Tuần 5 học những gì?","expected_status":"retrieved","relevant_documents":["schedule.week_05"]}
+{"id":"R05","question":"Inflection khác Derivation ở điểm nào vậy?","expected_status":"retrieved","relevant_documents":["slide_ch02_word_formation"]}
+{"id":"R06","question":"Vì sao Chart Parsing tránh tính lại?","expected_status":"retrieved","relevant_documents":["slide_ch03_chart"]}
+{"id":"R07","question":"Viterbi và Forward khác nhau thế nào?","expected_status":"retrieved","relevant_documents":["slide_ch06_viterbi_forward"]}
+{"id":"R08","question":"Binary Features nhận những giá trị nào?","expected_status":"retrieved","relevant_documents":["slide_ch04_binary_defaults"]}
+{"id":"R09","question":"Semantic Grammar có hạn chế gì khi đổi domain?","expected_status":"retrieved","relevant_documents":["slide_ch10_semantic_grammar_tradeoffs"]}
+{"id":"R10","question":"NER là bài toán gì?","expected_status":"retrieved","relevant_documents":["slide_ch01_named_entities"]}
+{"id":"R11","question":"PPMI xử lý PMI âm ra sao?","expected_status":"retrieved","relevant_documents":["slide_ch06_vector_weights"]}
+{"id":"R12","question":"Test và Retrieve trong Procedural Semantics dùng làm gì?","expected_status":"retrieved","relevant_documents":["slide_ch11_procedural_semantics"]}
+{"id":"R13","question":"Thi giữa kỳ bao nhiêu phút?","expected_status":"retrieved","relevant_documents":["course_info.midterm"]}
+{"id":"R14","question":"Agreement Feature AGR biểu diễn person và number thế nào?","expected_status":"retrieved","relevant_documents":["slide_ch04_agreement"]}
+{"id":"R15","question":"Natural Language Understanding có những nhóm ứng dụng nào?","expected_status":"retrieved","relevant_documents":["slide_ch01_applications"]}
+{"id":"R16","question":"Email của giảng viên là gì?","expected_status":"insufficient_information","relevant_documents":[]}
+{"id":"R17","question":"Deadline của bài tập lớn là khi nào?","expected_status":"insufficient_information","relevant_documents":[]}
+{"id":"R18","question":"Thời tiết Đà Lạt ngày mai ra sao?","expected_status":"insufficient_information","relevant_documents":[]}
+{"id":"R19","question":"Chương 12 nói về gì?","expected_status":"insufficient_information","relevant_documents":[]}
+{"id":"R20","question":"Tài liệu của phần này ở đâu?","expected_status":"clarification_needed","relevant_documents":[]}
+{"id":"R21","question":"Giải thích cái phần vừa nói","expected_status":"clarification_needed","relevant_documents":[]}
+{"id":"R22","question":"","expected_status":"empty_input","relevant_documents":[]}

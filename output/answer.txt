@@ -1,0 +1,546 @@
+QUESTION 1: Môn NLP có bao nhiêu tín chỉ?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Môn NLP có 3 tín chỉ [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.credits:000", "document_id": "course_info.credits", "source_file": "course_info.txt", "is_sample": false, "field": "credits"}]
+
+QUESTION 2: CO3085 có mấy tín chỉ?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+CO3085 có 3 tín chỉ [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.credits:000", "document_id": "course_info.credits", "source_file": "course_info.txt", "is_sample": false, "field": "credits"}]
+
+QUESTION 3: Môn học gồm những phần nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Môn học gồm 3 phần chính: Part I - Syntax Processing (Chương 2 đến Chương 5), Part II - Semantic Interpretation (Chương 7 đến Chương 10), và Part III - Context and Knowledge Representation (Chương 11 và Chương 12 - Discourse Context and Reference), bên cạnh Chương 1 (Tổng quan) và Chương 6 (Phương pháp thống kê Khử nhập nhằng). [C3]
+SOURCES: [{"label": "C3", "chunk_id": "faq.q02:000", "document_id": "faq.q02", "source_file": "fag.txt", "is_sample": false}]
+
+QUESTION 4: Tuần 3 học gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Tuần 3 học về xử lý cú pháp (Syntactic Processing) với các chủ đề: ngữ pháp ngữ cảnh toàn phần (context-free grammar), cấu trúc câu và ngữ pháp (grammar and sentence structure), phân tích từ trên xuống (top-down parsing), phân tích biểu đồ (bottom-up chart parsing), phân tích biểu đồ từ trên xuống (top-down chart parsing), ngữ pháp ngữ cảnh xác suất (probabilistic context-free grammar), ngữ pháp phụ thuộc (dependency grammar) và phụ thuộc Stanford (Stanford dependencies). [C1]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_03:000", "document_id": "schedule.week_03", "source_file": "schedule.txt", "is_sample": true, "week": 3, "chapters": [3]}]
+
+QUESTION 5: Chương 4 học vào tuần nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Chương 4 học vào tuần 4 [C1] và tuần 5 [C2].
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_04:000", "document_id": "schedule.week_04", "source_file": "schedule.txt", "is_sample": true, "week": 4, "chapters": [4]}, {"label": "C2", "chunk_id": "schedule.week_05:000", "document_id": "schedule.week_05", "source_file": "schedule.txt", "is_sample": true, "week": 5, "chapters": [4]}]
+
+QUESTION 6: Chương nào nói về CFG?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Chương 3 nói về CFG [C1][C2][C3][C4]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "faq.q04:000", "document_id": "faq.q04", "source_file": "fag.txt", "is_sample": false}, {"label": "C3", "chunk_id": "topics.chapter_03:000", "document_id": "topics.chapter_03", "source_file": "topics.txt", "is_sample": false, "chapter": 3}, {"label": "C4", "chunk_id": "schedule.week_03:000", "document_id": "schedule.week_03", "source_file": "schedule.txt", "is_sample": true, "week": 3, "chapters": [3]}]
+
+QUESTION 7: PCFG được học ở đâu?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+PCFG được học trong Chương 3 và Chương 6 của bài giảng. [C1] [C2] [C3]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_pcfg:000", "document_id": "slide_ch03_pcfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["PCFG", "rule probability", "parse tree"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [29, 31], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "slide_ch06_pcfg_estimation:000", "document_id": "slide_ch06_pcfg_estimation", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["PCFG", "production probability", "rule counts", "parsed corpus"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [52], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}, {"label": "C3", "chunk_id": "slide_ch06_inside_probability:000", "document_id": "slide_ch06_inside_probability", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["inside probability", "PCFG", "sentence probability", "best parse"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [54, 55, 56, 58], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}]
+
+QUESTION 8: Chương nào nói về semantic grammar?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 10 nói về semantic grammar [C1][C2]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch10_semantic_grammar_tradeoffs:000", "document_id": "slide_ch10_semantic_grammar_tradeoffs", "source_file": "Slide bài giảng-20260904/Chapter 10.pptx", "is_sample": false, "chapter": 10, "keywords": ["semantic grammar", "portability", "domain coverage"], "dataset_file": "data/slide_content/chapter_10.jsonl", "source_slides": [18], "legacy_text_blocks": [], "source_checksum": "9533914afb6d468a67284061d30c3c1b027d60974cc4e69f01f6aa23185f35c8"}, {"label": "C2", "chunk_id": "slide_ch10_semantic_grammar:000", "document_id": "slide_ch10_semantic_grammar", "source_file": "Slide bài giảng-20260904/Chapter 10.pptx", "is_sample": false, "chapter": 10, "keywords": ["semantic grammar", "domain", "FLIGHT-DEST", "CITY-NP", "TIME-QUERY"], "dataset_file": "data/slide_content/chapter_10.jsonl", "source_slides": [11, 12, 13, 14, 15, 16, 17], "legacy_text_blocks": [], "source_checksum": "9533914afb6d468a67284061d30c3c1b027d60974cc4e69f01f6aa23185f35c8"}]
+
+QUESTION 9: L.O.2.5 là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+L.O.2.5 là kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu [C2]
+SOURCES: [{"label": "C2", "chunk_id": "course_info.detailed_learning_outcomes:000", "document_id": "course_info.detailed_learning_outcomes", "source_file": "course_info.txt", "is_sample": false, "field": "detailed_learning_outcomes"}]
+
+QUESTION 10: L.O.4.2 liên quan đến nội dung nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+L.O.4.2 liên quan đến nội dung 'Ngữ cảnh diễn ngôn cục bộ và sự tham chiếu' [C2]
+SOURCES: [{"label": "C2", "chunk_id": "course_info.detailed_learning_outcomes:000", "document_id": "course_info.detailed_learning_outcomes", "source_file": "course_info.txt", "is_sample": false, "field": "detailed_learning_outcomes"}]
+
+QUESTION 11: Bài tập lớn yêu cầu xây dựng những gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Bài tập lớn yêu cầu xây dựng hệ thống xử lý câu hỏi tự nhiên trong miền thông tin của một môn học, bao gồm pipeline NLP từ parsing đến semantic interpretation và question answering [C1].
+SOURCES: [{"label": "C1", "chunk_id": "assignments.overview:000", "document_id": "assignments.overview", "source_file": "assignments.txt", "is_sample": true, "assignment_id": "BTL01"}]
+
+QUESTION 12: Phần I của bài tập lớn là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Phần I của bài tập lớn là Phần I - Grammar and Parser [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+QUESTION 13: Bài tập lớn có phần hỏi đáp không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Có, vì phần Bài tập lớn (BTL01) trong PART II - Semantic Interpretation and QA yêu cầu xử lý câu hỏi ngoài miền và trường hợp không tìm thấy thông tin, đồng thời có các mục như xử lý câu hỏi ngoài miền và xử lý trường hợp không tìm thấy thông tin trong minimum_requirements. [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_2:000", "document_id": "assignments.part_2", "source_file": "assignments.txt", "is_sample": true, "part": 2, "assignment_id": "BTL01"}]
+
+QUESTION 14: Có được dùng LLM/RAG không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Có, LLM/RAG có thể được dùng để mở rộng bài tập, nhưng chỉ đóng vai trò mở rộng và không bắt buộc. [C1] [C2]
+SOURCES: [{"label": "C1", "chunk_id": "regulations.llm_rag:000", "document_id": "regulations.llm_rag", "source_file": "regulations.txt", "is_sample": true, "field": "llm_rag"}, {"label": "C2", "chunk_id": "assignments.part_5:000", "document_id": "assignments.part_5", "source_file": "assignments.txt", "is_sample": true, "part": null, "assignment_id": "BTL01"}]
+
+QUESTION 15: Quy định về sử dụng AI là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Quy định về sử dụng AI là sinh viên phải khai báo việc sử dụng AI trong báo cáo, nghiên cứu và quá trình thực hiện theo quy định của môn học [C1].
+SOURCES: [{"label": "C1", "chunk_id": "regulations.ai_usage:000", "document_id": "regulations.ai_usage", "source_file": "regulations.txt", "is_sample": true, "field": "ai_usage"}]
+
+QUESTION 16: Midterm bao nhiêu phút?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Midterm là 60 phút [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.midterm:000", "document_id": "course_info.midterm", "source_file": "course_info.txt", "is_sample": false, "field": "midterm"}]
+
+QUESTION 17: Final bao nhiêu phút?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+90 phút [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.final:000", "document_id": "course_info.final", "source_file": "course_info.txt", "is_sample": false, "field": "final"}]
+
+QUESTION 18: Tài liệu tham khảo về statistical NLP là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Tài liệu tham khảo về statistical NLP là cuốn sách \"Foundation of Statistical Natural Language Processing\" của Christopher D. Manning và Hinrich Schütze, xuất bản bởi The MIT Press năm 2001 [C2].
+SOURCES: [{"label": "C2", "chunk_id": "resources.reference_1:000", "document_id": "resources.reference_1", "source_file": "resources.txt", "is_sample": false, "keywords": ["Christopher D. Manning; Hinrich Schütze"]}]
+
+QUESTION 19: Tài liệu nào liên quan đến Python NLP?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Tài liệu liên quan đến Python NLP là cuốn sách \"Natural Language Processing with Python\" của Steven Bird, Ewan Klein và Edward Loper (2009) [C2]
+SOURCES: [{"label": "C2", "chunk_id": "resources.reference_2:000", "document_id": "resources.reference_2", "source_file": "resources.txt", "is_sample": false, "keywords": ["Steven Bird; Ewan Klein; Edward Loper"]}]
+
+QUESTION 20: Chương 12 nói về gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Chương 12 nói về ngữ cảnh hội thoại và tham chiếu, với các chủ đề chính bao gồm định nghĩa ngữ cảnh hội thoại cục bộ và thực thể hội thoại, mô hình đơn giản của anaphora dựa trên danh sách lịch sử, danh từ và centering, các mô tả định nghĩa, tham chiếu định nghĩa và tập hợp, ellipsis, và anaphora bề mặt [C1][C2]
+SOURCES: [{"label": "C1", "chunk_id": "topics.chapter_12:000", "document_id": "topics.chapter_12", "source_file": "topics.txt", "is_sample": false, "chapter": 12}, {"label": "C2", "chunk_id": "schedule.week_14:000", "document_id": "schedule.week_14", "source_file": "schedule.txt", "is_sample": true, "week": 14, "chapters": [12]}]
+
+QUESTION 21: Chương nào học về reference?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 12 (DISCOURSE CONTEXT AND REFERENCE) [C3]
+SOURCES: [{"label": "C3", "chunk_id": "topics.chapter_12:000", "document_id": "topics.chapter_12", "source_file": "topics.txt", "is_sample": false, "chapter": 12}]
+
+QUESTION 22: Chương nào học về question answering?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 1 học về question answering [C3] [C4]
+SOURCES: [{"label": "C3", "chunk_id": "topics.chapter_01:000", "document_id": "topics.chapter_01", "source_file": "topics.txt", "is_sample": false, "chapter": 1}, {"label": "C4", "chunk_id": "slide_ch01_applications:000", "document_id": "slide_ch01_applications", "source_file": "Slide bài giảng-20260904/CHAPTER 1.pptx", "is_sample": false, "chapter": 1, "keywords": ["NLU applications", "text-based", "dialogue-based", "NLP applications"], "dataset_file": "data/slide_content/chapter_01.jsonl", "source_slides": [4, 49], "legacy_text_blocks": [], "source_checksum": "b7771793778f46203adc1db9091ea2ae022bb2cda648f2123e39fe518166db4b"}]
+
+QUESTION 23: Chương nào học về selectional restriction?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 9 học về selectional restriction [C1] [C2]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch09_selectional_restrictions:000", "document_id": "slide_ch09_selectional_restrictions", "source_file": "Slide bài giảng-20260904/Chapter 9.pptx", "is_sample": false, "chapter": 9, "keywords": ["selectional restriction", "READS", "AGENT", "THEME"], "dataset_file": "data/slide_content/chapter_09.jsonl", "source_slides": [5, 6, 8, 9, 10, 11], "legacy_text_blocks": [], "source_checksum": "6d3976348afdab28970ef1993b29e61c1a37f089e6d143acfad7f93c3546a143"}, {"label": "C2", "chunk_id": "faq.q12:000", "document_id": "faq.q12", "source_file": "fag.txt", "is_sample": false}]
+
+QUESTION 24: Chương 10 có những phương pháp gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Chương 10 có các phương pháp sau: [C1] Grammatical Relations và Dependency Triplets (10.1), [C2] Semantic Grammars (10.2), [C1] Template Matching (10.3), [C1] Semantically-Driven Parsing Techniques (10.4).
+SOURCES: [{"label": "C1", "chunk_id": "topics.chapter_10:000", "document_id": "topics.chapter_10", "source_file": "topics.txt", "is_sample": false, "chapter": 10}, {"label": "C2", "chunk_id": "schedule.week_12:000", "document_id": "schedule.week_12", "source_file": "schedule.txt", "is_sample": true, "week": 12, "chapters": [10]}]
+
+QUESTION 25: Chương 11 có liên quan đến hỏi đáp không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Có, Chương 11 liên quan đến hỏi đáp (question answering) như được nêu trong phần topics của Tuần 13 [C1] và trong mô tả chi tiết của Chương 11 [C2] [C3].
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_13:000", "document_id": "schedule.week_13", "source_file": "schedule.txt", "is_sample": true, "week": 13, "chapters": [11]}, {"label": "C2", "chunk_id": "topics.chapter_11:000", "document_id": "topics.chapter_11", "source_file": "topics.txt", "is_sample": false, "chapter": 11}, {"label": "C3", "chunk_id": "slide_ch11_procedural_semantics:000", "document_id": "slide_ch11_procedural_semantics", "source_file": "Slide bài giảng-20260904/Chapter 11.pptx", "is_sample": false, "chapter": 11, "keywords": ["procedural semantics", "Test", "Retrieve", "database query", "F2"], "dataset_file": "data/slide_content/chapter_11.jsonl", "source_slides": [31, 32, 33, 34], "legacy_text_blocks": [], "source_checksum": "3d2e4593401891f0985faf1e1d15bcd2015c0bcade5101af4881fbc186350c49"}]
+
+QUESTION 26: Hôm nay ở TP.HCM có mưa không?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 27: Ai là tổng thống của Pháp?
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Không có thông tin về tổng thống Pháp trong dữ liệu cung cấp
+SOURCES: []
+
+QUESTION 28: Hãy giải bài tập xác suất này giúp tôi.
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Không có thông tin về bài tập xác suất trong dữ liệu cung cấp
+SOURCES: []
+
+QUESTION 29: Chương 4 nói về gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 4 nói về hệ thống đặc trưng (feature systems) và ngữ pháp mở rộng (augmented grammar), bao gồm các chủ đề như quy tắc số đồng thuận (number agreement), phân loại động từ (verb subcategorization), và tích hợp hệ thống đặc trưng vào phương pháp phân tích ngữ pháp (chart parsing) để đảm bảo các ràng buộc ngữ pháp như đồng thuận chủ ngữ - động từ [C2].
+SOURCES: [{"label": "C2", "chunk_id": "topics.chapter_04:000", "document_id": "topics.chapter_04", "source_file": "topics.txt", "is_sample": false, "chapter": 4}]
+
+QUESTION 30: Nó có liên quan đến parsing không?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “nó”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+
+QUESTION 31: Chương 11 có hỏi đáp không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Có, Chương 11 có hỏi đáp (question answering) như được đề cập trong phần 'question answering' của Tuần 13 / Week 13 [C1] và trong nội dung chương 11 về 'Procedural Semantics và Question Answering' [C3].
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_13:000", "document_id": "schedule.week_13", "source_file": "schedule.txt", "is_sample": true, "week": 13, "chapters": [11]}, {"label": "C3", "chunk_id": "slide_ch11_procedural_semantics:000", "document_id": "slide_ch11_procedural_semantics", "source_file": "Slide bài giảng-20260904/Chapter 11.pptx", "is_sample": false, "chapter": 11, "keywords": ["procedural semantics", "Test", "Retrieve", "database query", "F2"], "dataset_file": "data/slide_content/chapter_11.jsonl", "source_slides": [31, 32, 33, 34], "legacy_text_blocks": [], "source_checksum": "3d2e4593401891f0985faf1e1d15bcd2015c0bcade5101af4881fbc186350c49"}]
+
+QUESTION 32: Còn chương sau?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “đối tượng được nhắc tới”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+
+QUESTION 33: Bài tập lớn có phần parser không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Có, vì phần Bài tập lớn có yêu cầu xây dựng parser [C1].
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+QUESTION 34: Phần này cần xuất file gì?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “phần này”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+
+QUESTION 35: Cho tôi biết CO3085 có tổng cộng mấy giờ học?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+CO3085 có tổng cộng 150 giờ học [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.total_course_hours:000", "document_id": "course_info.total_course_hours", "source_file": "course_info.txt", "is_sample": false, "field": "total_course_hours"}]
+
+QUESTION 36: Điểm thi giữa kỳ chiếm bao nhiêu phần trăm?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Điểm thi giữa kỳ chiếm 30 phần trăm [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.midterm_exam:000", "document_id": "course_info.midterm_exam", "source_file": "course_info.txt", "is_sample": false, "field": "midterm_exam"}]
+
+QUESTION 37: Tuần 9 học những gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Tuần 9 học về ngữ nghĩa và dạng logic (semantic interpretation), bao gồm các chủ đề: ngữ nghĩa và dạng logic, nghĩa từ và tính mơ hồ, ngôn ngữ dạng logic cơ bản, biểu diễn tính mơ hồ trong dạng logic, động từ và trạng thái, vai trò chủ đề, và hành động ngôn ngữ cùng với câu con lồng nhau [C1]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_09:000", "document_id": "schedule.week_09", "source_file": "schedule.txt", "is_sample": true, "week": 9, "chapters": [7]}]
+
+QUESTION 38: Chương 8 có những nội dung gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Chương 8 có nội dung về liên kết ngữ pháp và nghĩa (Compositionality and the SEM Feature), ngữ pháp và từ vựng với giải thích nghĩa (Simple Grammar and Lexicon with Semantic Interpretation), lambda calculus và quy tắc giảm (Lambda Calculus and Lambda Reduction), cụm từ vị từ và cụm động từ (Prepositional Phrases and Verb Phrase Modifiers), giải thích nghĩa bằng feature unification (Semantic Interpretation Using Feature Unification), xử lý câu hỏi đơn giản và ngữ nghĩa lỗ hổng (Handling Simple Questions and Gap Semantics), cũng như sinh câu từ dạng logic (Generating Sentences from Logical Form) [C1].
+SOURCES: [{"label": "C1", "chunk_id": "topics.chapter_08:000", "document_id": "topics.chapter_08", "source_file": "topics.txt", "is_sample": false, "chapter": 8}]
+
+QUESTION 39: Vui lòng cho biết Phần I cần xuất file gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Phần I cần xuất file là output/grammar.txt, output/samples.txt và output/parse-results.txt [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+QUESTION 40: Quy định LLM/RAG như thế nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Quy định LLM/RAG là: LLM/RAG nếu được sử dụng chỉ nên đóng vai trò mở rộng [C1]. Sinh viên phải mô tả rõ mô hình, dữ liệu, retrieval và cách đánh giá [C1]. Phần mở rộng này chỉ là mở rộng của NLP, không bắt buộc [C2].
+SOURCES: [{"label": "C1", "chunk_id": "regulations.llm_rag:000", "document_id": "regulations.llm_rag", "source_file": "regulations.txt", "is_sample": true, "field": "llm_rag"}, {"label": "C2", "chunk_id": "assignments.part_5:000", "document_id": "assignments.part_5", "source_file": "assignments.txt", "is_sample": true, "part": null, "assignment_id": "BTL01"}]
+
+QUESTION 41: Tìm tài liệu về CFG.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Tài liệu về CFG bao gồm: Context-Free Grammar (CFG) được đề cập trong slide CHAPTER 3 của bài giảng, với các nội dung chính như quy tắc ngữ pháp, phương pháp phân tích câu, và các thuật toán như Chart Parsing [C1], [C5]. Ngoài ra, tài liệu tham khảo chính bao gồm cuốn sách kinh điển "Speech and Language Processing" của Daniel Jurafsky & James H. Martin và các tài liệu trực tuyến về Dependency Grammar [C2].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "faq.q20:000", "document_id": "faq.q20", "source_file": "fag.txt", "is_sample": false}, {"label": "C5", "chunk_id": "topics.chapter_03:000", "document_id": "topics.chapter_03", "source_file": "topics.txt", "is_sample": false, "chapter": 3}]
+
+QUESTION 42: LO3.4 liên quan đến nội dung nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+LO3.4 liên quan đến nội dung 'Diễn dịch ngữ nghĩa bằng quan hệ văn phạm và văn phạm ngữ nghĩa' [C2]
+SOURCES: [{"label": "C2", "chunk_id": "course_info.detailed_learning_outcomes:000", "document_id": "course_info.detailed_learning_outcomes", "source_file": "course_info.txt", "is_sample": false, "field": "detailed_learning_outcomes"}]
+
+QUESTION 43: Viterbi hoạt động như thế nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Viterbi là thuật toán tìm chuỗi category có score lớn nhất cho input, với cơ chế hoạt động như sau: Với mỗi vị trí, thuật toán lưu path tốt nhất tới state đó và backpointer để khôi phục chuỗi tags sau khi xử lý xong. Khởi tạo SEQSCORE(i,1) = P(w1|Li)P(Li|∅). Ở bước t, SEQSCORE(i,t) = max_j[SEQSCORE(j,t−1)P(Li|Lj)]P(wt|Li). Sau khi xử lý xong, thuật toán ngược backpointer để khôi phục chuỗi tags. [C1]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch06_viterbi_forward:000", "document_id": "slide_ch06_viterbi_forward", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["Viterbi", "Forward", "SEQSCORE", "BACKPTR", "best path"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [26, 28, 29, 36, 38], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}]
+
+QUESTION 44: So sánh CFG và PCFG.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+CFG (Context-Free Grammar) là một hệ thống ngữ pháp có dạng A → α, trong đó A là nonterminal và α là chuỗi các nonterminal hoặc terminal. Nó sử dụng các production để tạo ra các strings từ start symbol, và parsing tìm cách áp dụng các productions để tạo cấu trúc của một câu đầu vào. [C1]. PCFG (Probabilistic Context-Free Grammar) là phiên bản mở rộng của CFG, bổ sung probabilities cho các productions. Probability của một parse tree bằng tích probabilities của các productions dùng để tạo tree đó, và probability của một string bằng tổng probabilities của các parse trees hợp lệ tương ứng. [C2]. PCFG sử dụng corpus có cấu trúc phân tích để ước lượng probabilities của các productions, với cách tính P(Rj|C) bằng số lần Rj được dùng chia cho tổng số lần tất cả rules có left-hand side C được dùng. [C3].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "slide_ch03_pcfg:000", "document_id": "slide_ch03_pcfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["PCFG", "rule probability", "parse tree"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [29, 31], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C3", "chunk_id": "slide_ch06_pcfg_estimation:000", "document_id": "slide_ch06_pcfg_estimation", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["PCFG", "production probability", "rule counts", "parsed corpus"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [52], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}]
+
+QUESTION 45: Giải thích GAP.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+GAP là vị trí còn khuyết trong structure (cấu trúc ngữ pháp) được biểu diễn bằng một biến thể để truyền thông tin qua các mức của grammar. [C1] [C2] [C5]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch05_gap_wh:000", "document_id": "slide_ch05_gap_wh", "source_file": "Slide bài giảng-20260904/Chapter 5.pptx", "is_sample": false, "chapter": 5, "keywords": ["GAP propagation", "lexical head", "non-lexical head", "wh-question", "empty rule"], "dataset_file": "data/slide_content/chapter_05.jsonl", "source_slides": [18, 19, 20, 21, 22, 23], "legacy_text_blocks": [], "source_checksum": "5539cf6f8ad45daa04dffcdc896a345614ea56b8d35f2e9a219e79dc6db19965"}, {"label": "C2", "chunk_id": "slide_ch05_filler_gap:000", "document_id": "slide_ch05_filler_gap", "source_file": "Slide bài giảng-20260904/Chapter 5.pptx", "is_sample": false, "chapter": 5, "keywords": ["filler", "gap", "movement", "topicalization"], "dataset_file": "data/slide_content/chapter_05.jsonl", "source_slides": [14, 16, 17], "legacy_text_blocks": [], "source_checksum": "5539cf6f8ad45daa04dffcdc896a345614ea56b8d35f2e9a219e79dc6db19965"}, {"label": "C5", "chunk_id": "slide_ch05_gap_parsing:000", "document_id": "slide_ch05_gap_parsing", "source_file": "Slide bài giảng-20260904/Chapter 5.pptx", "is_sample": false, "chapter": 5, "keywords": ["Parsing with GAPs", "empty constituent", "EMPTY", "arc extension"], "dataset_file": "data/slide_content/chapter_05.jsonl", "source_slides": [27, 28], "legacy_text_blocks": [], "source_checksum": "5539cf6f8ad45daa04dffcdc896a345614ea56b8d35f2e9a219e79dc6db19965"}]
+
+QUESTION 46: PMI có công thức là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+PMI có công thức là log2[P(w,c)/(P(w)P(c))] [C1] và được áp dụng để đo mức độ tương quan giữa hai từ trong cửa sổ ngữ cảnh [C3].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch06_ppmi_example:000", "document_id": "slide_ch06_ppmi_example", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["PMI", "PPMI", "pointwise mutual information", "co-occurrence", "information data"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [81, 82, 83, 84], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}, {"label": "C3", "chunk_id": "faq.q08:000", "document_id": "faq.q08", "source_file": "fag.txt", "is_sample": false}]
+
+QUESTION 47: Liệt kê tài liệu tham khảo.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Tài liệu tham khảo chính được giới thiệu trong slide gồm cuốn sách kinh điển "Speech and Language Processing" của Daniel Jurafsky & James H. Martin, cùng các slide bài giảng và tài liệu trực tuyến về Dependency Grammar [C1]
+SOURCES: [{"label": "C1", "chunk_id": "faq.q20:000", "document_id": "faq.q20", "source_file": "fag.txt", "is_sample": false}]
+
+QUESTION 48: Hạn nộp của BTL01 là khi nào?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 49: Bài tập lớn chiếm bao nhiêu phần trăm?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Bài tập lớn chiếm 15 phần trăm [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.major_assignment:000", "document_id": "course_info.major_assignment", "source_file": "course_info.txt", "is_sample": false, "field": "major_assignment"}]
+
+QUESTION 50: Trọng số của bài tập lớn là bao nhiêu?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Trọng số của bài tập lớn là 15 percent [C1]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.major_assignment:000", "document_id": "course_info.major_assignment", "source_file": "course_info.txt", "is_sample": false, "field": "major_assignment"}]
+
+QUESTION 51: CFG là gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+CFG là ngữ pháp phi ngữ cảnh (Context-Free Grammar), bao gồm start symbol, productions, nonterminals và terminals. Mỗi production có dạng A → α, trong đó A là một nonterminal. [C1] [C2]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "topics.chapter_03:000", "document_id": "topics.chapter_03", "source_file": "topics.txt", "is_sample": false, "chapter": 3}]
+
+QUESTION 52: Giải thích CFG.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+CFG (Context-Free Grammar) là một hệ thống cú pháp được định nghĩa bởi một start symbol, các productions (quy tắc sản xuất), nonterminals và terminals. Mỗi production có dạng A → α, trong đó A là một nonterminal. Bắt đầu từ start symbol, việc áp dụng các productions tạo ra các strings thuộc grammar. Parsing tìm cách các productions tạo nên structure của một input sentence [C1].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}]
+
+QUESTION 53: Context-Free Grammar được định nghĩa như thế nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Context-Free Grammar (CFG) được định nghĩa là một hệ thống gồm start symbol, productions, nonterminals và terminals. Mỗi production có dạng A → α, trong đó A là một nonterminal. Bắt đầu từ start symbol, việc áp dụng các productions tạo ra các strings thuộc grammar. [C1] [C3]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C3", "chunk_id": "topics.chapter_03:000", "document_id": "topics.chapter_03", "source_file": "topics.txt", "is_sample": false, "chapter": 3}]
+
+QUESTION 54: Tuần 5 học những gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Tuần 5 học về xử lý cú pháp (Syntactic Processing) với các chủ đề chính: mạng chuyển tiếp mở rộng (augmented transition networks), hệ thống đặc trưng tổng quát (generalized feature systems) và ngữ pháp hợp nhất (unification grammar), cùng với bài tập về phân tích dựa trên đặc trưng (feature-based parsing exercises) [C1]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_05:000", "document_id": "schedule.week_05", "source_file": "schedule.txt", "is_sample": true, "week": 5, "chapters": [4]}]
+
+QUESTION 55: Nội dung của tuần 5.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Tuần 5 tập trung vào xử lý cú pháp (Syntactic Processing) với các chủ đề chính: mạng chuyển tiếp mở rộng (augmented transition networks), hệ thống đặc trưng tổng quát (generalized feature systems) và ngữ pháp hợp nhất (unification grammar). Hoạt động thực hành bao gồm bài tập phân tích cú pháp dựa trên đặc trưng (feature-based parsing exercises). [C1]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_05:000", "document_id": "schedule.week_05", "source_file": "schedule.txt", "is_sample": true, "week": 5, "chapters": [4]}]
+
+QUESTION 56: Tuần thứ năm của môn có những chủ đề nào?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 57: Nêu quy định về việc dùng AI.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Sinh viên phải khai báo việc sử dụng AI trong báo cáo, nghiên cứu và quá trình thực hiện theo quy định của môn học [C1]
+SOURCES: [{"label": "C1", "chunk_id": "regulations.ai_usage:000", "document_id": "regulations.ai_usage", "source_file": "regulations.txt", "is_sample": true, "field": "ai_usage"}]
+
+QUESTION 58: Sinh viên dùng AI thì phải làm gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Sinh viên phải khai báo việc sử dụng AI trong báo cáo, nghiên cứu và quá trình thực hiện theo quy định của môn học [C1]
+SOURCES: [{"label": "C1", "chunk_id": "regulations.ai_usage:000", "document_id": "regulations.ai_usage", "source_file": "regulations.txt", "is_sample": true, "field": "ai_usage"}]
+
+QUESTION 59: Phần II của bài tập lớn yêu cầu gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Phần II của bài tập lớn yêu cầu thực hiện các yêu cầu tối thiểu sau: biểu diễn ngữ nghĩa, xác định ý định, trích xuất thực thể, chuyển đổi câu hỏi thành cơ sở dữ liệu tri thức, sinh ra câu trả lời và xử lý các trường hợp như câu hỏi ngoài miền hoặc không tìm thấy thông tin. Các ý định được đề xuất bao gồm GET_COURSE_INFO, GET_SCHEDULE, GET_TOPIC, GET_ASSIGNMENT, GET_DEADLINE, GET_RESOURCE, GET_RULE, GET_INSTRUCTOR và UNKNOWN. [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_2:000", "document_id": "assignments.part_2", "source_file": "assignments.txt", "is_sample": true, "part": 2, "assignment_id": "BTL01"}]
+
+QUESTION 60: Liệt kê yêu cầu của phần hỏi đáp.
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Theo dữ liệu mẫu của project: Yêu cầu của phần hỏi đáp bao gồm: semantic representation, intent identification, entity extraction, query to knowledge base, answer generation, xử lý câu hỏi ngoài miền, xử lý trường hợp không tìm thấy thông tin [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_2:000", "document_id": "assignments.part_2", "source_file": "assignments.txt", "is_sample": true, "part": 2, "assignment_id": "BTL01"}]
+
+QUESTION 61: Trong hybrid QA, khi đã có đáp án ứng viên từ IR thì hệ thống tận dụng thêm nguồn nào và để làm gì?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Trong hybrid QA, khi đã có đáp án ứng viên từ IR thì hệ thống tận dụng thêm nguồn ontologies hoặc semi-structured data và để bổ sung candidate answers trước khi chấm điểm bằng các knowledge sources phong phú hơn [C1].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch01_question_answering:000", "document_id": "slide_ch01_question_answering", "source_file": "Slide bài giảng-20260904/CHAPTER 1.pptx", "is_sample": false, "chapter": 1, "keywords": ["question answering", "QA", "IR-based", "knowledge-based", "hybrid"], "dataset_file": "data/slide_content/chapter_01.jsonl", "source_slides": [53, 56, 57, 58], "legacy_text_blocks": [], "source_checksum": "b7771793778f46203adc1db9091ea2ae022bb2cda648f2123e39fe518166db4b"}]
+
+QUESTION 62: Trong độ phức tạp của chart-based CFG parser được trình bày, n và K đại diện cho gì, và thời gian phụ thuộc n theo bậc nào?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Trong độ phức tạp của chart-based CFG parser được trình bày, n đại diện cho độ dài câu và K đại diện cho hệ số phụ thuộc thuật toán. Thời gian phụ thuộc n theo bậc ba [C1].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_chart:000", "document_id": "slide_ch03_chart", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["chart parsing", "bottom-up", "top-down", "agenda", "active arc"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [16, 17, 22, 23, 24], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}]
+
+QUESTION 63: Nếu một câu có chuỗi auxiliary, thành phần nào phải hòa hợp với subject?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Trong câu có chuỗi auxiliary, thành phần phải hòa hợp với subject là finite auxiliary đầu tiên [C2].
+SOURCES: [{"label": "C2", "chunk_id": "slide_ch05_auxiliaries:000", "document_id": "slide_ch05_auxiliaries", "source_file": "Slide bài giảng-20260904/Chapter 5.pptx", "is_sample": false, "chapter": 5, "keywords": ["auxiliary", "have", "be", "modal"], "dataset_file": "data/slide_content/chapter_05.jsonl", "source_slides": [1, 2, 3, 4], "legacy_text_blocks": [], "source_checksum": "5539cf6f8ad45daa04dffcdc896a345614ea56b8d35f2e9a219e79dc6db19965"}]
+
+QUESTION 64: Nếu chưa chốt được một cách đọc duy nhất, Quasi-Logical Form có thể giữ lại hai loại phương án nào?
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Không có thông tin trong dữ liệu về hai loại phương án mà Quasi-Logical Form có thể giữ lại nếu chưa chốt được một cách đọc duy nhất
+SOURCES: []
+
+QUESTION 65: Giữa kỳ và cuối kỳ có giống nhau về hình thức làm bài và việc dùng tài liệu không?
+STATUS: answered
+MODEL: qwen3:4b
+ANSWER:
+Giữa kỳ và cuối kỳ đều là thi viết (written) và dùng tài liệu (open-book), nhưng thời gian làm bài khác nhau: giữa kỳ 60 phút và cuối kỳ 90 phút [C1][C2]
+SOURCES: [{"label": "C1", "chunk_id": "course_info.final:000", "document_id": "course_info.final", "source_file": "course_info.txt", "is_sample": false, "field": "final"}, {"label": "C2", "chunk_id": "course_info.midterm:000", "document_id": "course_info.midterm", "source_file": "course_info.txt", "is_sample": false, "field": "midterm"}]
+
+QUESTION 66: Trong thí nghiệm lọc PP attachment làm chart nhỏ đi, thời gian chạy thực tế giảm bao nhiêu mili giây?
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Không có thông tin về thời gian chạy thực tế giảm bao nhiêu mili giây trong thí nghiệm lọc PP attachment làm chart nhỏ đi.
+SOURCES: []
+
+QUESTION 67: Mã ISBN của đúng ấn bản Xử lý ngôn ngữ tự nhiên năm 2012 trong danh mục là gì?
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Dữ liệu không cung cấp thông tin về mã ISBN của ấn bản Xử lý ngôn ngữ tự nhiên năm 2012.
+SOURCES: []
+
+QUESTION 68: Bài final CO3085 gồm chính xác bao nhiêu câu tự luận?
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Dữ liệu không cung cấp thông tin về số lượng câu tự luận trong bài final CO3085
+SOURCES: []
+
+QUESTION 69: Triển khai Viterbi trong bài giảng dùng bộ nhớ đỉnh bao nhiêu MB?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 70: Email của giảng viên là gì?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 71: Giúp mình chọn cỡ khung xe đạp cho người cao 1m65 được không?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 72: Trong cờ vua, muốn nhập thành cánh hậu thì cần những điều kiện gì?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 73: Thời tiết Đà Lạt ngày mai ra sao?
+STATUS: insufficient_information
+MODEL: -
+ANSWER:
+Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: []
+
+QUESTION 74: Viết giúp tôi một bài thơ về mùa thu.
+STATUS: insufficient_information
+MODEL: qwen3:4b
+ANSWER:
+Không có thông tin trong dữ liệu để viết bài thơ về mùa thu. Dữ liệu chỉ cung cấp thông tin về bài tập thực hành theo chương trong môn học, không liên quan đến thơ ca hoặc mùa thu.
+SOURCES: []
+
+QUESTION 75: Thuật toán này là gì?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Câu hỏi có nhiều cách hiểu; vui lòng nêu rõ yêu cầu.
+SOURCES: []
+
+QUESTION 76: Tài liệu của phần này ở đâu?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “phần này”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+
+QUESTION 77: Chương đó học vào tuần nào?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “chương đó”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+
+QUESTION 78: Hai phương pháp vừa kể có điểm chung gì?
+STATUS: clarification_needed
+MODEL: -
+ANSWER:
+Chưa đủ ngữ cảnh để xác định “phương pháp vừa kể”. Bạn nêu rõ đối tượng hoặc gửi lại ví dụ nhé?
+SOURCES: []
+

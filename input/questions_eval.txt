@@ -1,0 +1,78 @@
+Môn NLP có bao nhiêu tín chỉ?
+CO3085 có mấy tín chỉ?
+Môn học gồm những phần nào?
+Tuần 3 học gì?
+Chương 4 học vào tuần nào?
+Chương nào nói về CFG?
+PCFG được học ở đâu?
+Chương nào nói về semantic grammar?
+L.O.2.5 là gì?
+L.O.4.2 liên quan đến nội dung nào?
+Bài tập lớn yêu cầu xây dựng những gì?
+Phần I của bài tập lớn là gì?
+Bài tập lớn có phần hỏi đáp không?
+Có được dùng LLM/RAG không?
+Quy định về sử dụng AI là gì?
+Midterm bao nhiêu phút?
+Final bao nhiêu phút?
+Tài liệu tham khảo về statistical NLP là gì?
+Tài liệu nào liên quan đến Python NLP?
+Chương 12 nói về gì?
+Chương nào học về reference?
+Chương nào học về question answering?
+Chương nào học về selectional restriction?
+Chương 10 có những phương pháp gì?
+Chương 11 có liên quan đến hỏi đáp không?
+Hôm nay ở TP.HCM có mưa không?
+Ai là tổng thống của Pháp?
+Hãy giải bài tập xác suất này giúp tôi.
+Chương 4 nói về gì?
+Nó có liên quan đến parsing không?
+Chương 11 có hỏi đáp không?
+Còn chương sau?
+Bài tập lớn có phần parser không?
+Phần này cần xuất file gì?
+Cho tôi biết CO3085 có tổng cộng mấy giờ học?
+Điểm thi giữa kỳ chiếm bao nhiêu phần trăm?
+Tuần 9 học những gì?
+Chương 8 có những nội dung gì?
+Vui lòng cho biết Phần I cần xuất file gì?
+Quy định LLM/RAG như thế nào?
+Tìm tài liệu về CFG.
+LO3.4 liên quan đến nội dung nào?
+Viterbi hoạt động như thế nào?
+So sánh CFG và PCFG.
+Giải thích GAP.
+PMI có công thức là gì?
+Liệt kê tài liệu tham khảo.
+Hạn nộp của BTL01 là khi nào?
+Bài tập lớn chiếm bao nhiêu phần trăm?
+Trọng số của bài tập lớn là bao nhiêu?
+CFG là gì?
+Giải thích CFG.
+Context-Free Grammar được định nghĩa như thế nào?
+Tuần 5 học những gì?
+Nội dung của tuần 5.
+Tuần thứ năm của môn có những chủ đề nào?
+Nêu quy định về việc dùng AI.
+Sinh viên dùng AI thì phải làm gì?
+Phần II của bài tập lớn yêu cầu gì?
+Liệt kê yêu cầu của phần hỏi đáp.
+Trong hybrid QA, khi đã có đáp án ứng viên từ IR thì hệ thống tận dụng thêm nguồn nào và để làm gì?
+Trong độ phức tạp của chart-based CFG parser được trình bày, n và K đại diện cho gì, và thời gian phụ thuộc n theo bậc nào?
+Nếu một câu có chuỗi auxiliary, thành phần nào phải hòa hợp với subject?
+Nếu chưa chốt được một cách đọc duy nhất, Quasi-Logical Form có thể giữ lại hai loại phương án nào?
+Giữa kỳ và cuối kỳ có giống nhau về hình thức làm bài và việc dùng tài liệu không?
+Trong thí nghiệm lọc PP attachment làm chart nhỏ đi, thời gian chạy thực tế giảm bao nhiêu mili giây?
+Mã ISBN của đúng ấn bản Xử lý ngôn ngữ tự nhiên năm 2012 trong danh mục là gì?
+Bài final CO3085 gồm chính xác bao nhiêu câu tự luận?
+Triển khai Viterbi trong bài giảng dùng bộ nhớ đỉnh bao nhiêu MB?
+Email của giảng viên là gì?
+Giúp mình chọn cỡ khung xe đạp cho người cao 1m65 được không?
+Trong cờ vua, muốn nhập thành cánh hậu thì cần những điều kiện gì?
+Thời tiết Đà Lạt ngày mai ra sao?
+Viết giúp tôi một bài thơ về mùa thu.
+Thuật toán này là gì?
+Tài liệu của phần này ở đâu?
+Chương đó học vào tuần nào?
+Hai phương pháp vừa kể có điểm chung gì?

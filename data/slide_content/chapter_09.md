@@ -1,0 +1,38 @@
+# Chapter 9
+
+## Semantic Types and Type Hierarchy
+
+Các object classes có thể disjoint, overlap hoặc có subtype relation. Type hierarchy cho phép đặt restrictions ở một supertype rồi áp dụng cho những subtypes phù hợp. Một type có thể có nhiều supertypes, tạo multiple inheritance. Semantic type information hỗ trợ loại những meaning combinations không tương thích.
+
+## Selectional Restrictions
+
+Một verb sense có thể ràng buộc types của các semantic roles mà nó nhận. Với read mang nghĩa đọc văn bản, AGENT phải thuộc PERSON và THEME phải thuộc TEXT object. Các senses khác của read có thể yêu cầu THEME type khác. Kết hợp những selectional restrictions này với candidate senses của dishwasher hoặc article giúp loại các interpretations không tương thích.
+
+## Constraint Propagation and Semantic Filtering
+
+Constraint Propagation loại candidate senses không thỏa restrictions giữa các objects và relations. Trong The dishwasher read the article, dishwasher có thể là machine hoặc person; article có thể là text hoặc một loại word. AGENT của READS yêu cầu PERSON nên loại machine sense. THEME của READS1 yêu cầu TEXTOBJ nên giữ text sense của article và loại READS2 yêu cầu MENTAL-STATE. Các relations được kiểm tra lại sau mỗi thay đổi; dừng khi không còn alternatives bị loại. Semantic Filtering cũng áp dụng các restrictions khi chọn attachment để loại những cấu trúc syntactically possible nhưng không tương thích semantic roles.
+
+## Semantic Filtering of PP Attachments
+
+Selectional Restrictions có thể được dùng theo sequential model hoặc incremental model trong parsing. Câu He booked a flight to the city for me có nhiều PP attachment possibilities: to the city có thể gắn vào booked hoặc flight; for me có thể gắn vào city hoặc booked ở mức syntax. Reading phù hợp giữ to the city với flight và for me với booked. Nếu destination được gán trực tiếp cho BOOKS1, cấu trúc vi phạm restrictions của DESTINATION và bị loại. Trong ví dụ grammar của bài giảng, filtering giảm năm interpretations xuống một và giảm số constituents tạo trong chart từ 52 xuống 33.
+
+## Semantic Networks and Inheritance
+
+Semantic Network dùng nodes và links để biểu diễn concepts cùng các relations giữa chúng. Subtype links tổ chức các types thành hierarchy. Features hoặc roles khai báo ở supertype có thể được inherited bởi subtype. TRANSFER-ACTION có thể kế thừa các roles chung từ ACTION và OBJ/ACTION rồi bổ sung role riêng.
+
+## Part–Whole Relations in Semantic Networks
+
+Semantic Network có thể biểu diễn quan hệ giữa object và subparts của nó, ngoài subtype inheritance. The desk drawer biểu thị drawer là một phần của desk; the man’s head biểu thị head thuộc man; the handle of the drawer biểu thị handle là một phần của drawer. Part–whole mô tả quan hệ bộ phận, còn subtype mô tả quan hệ giữa các classes. Hai loại relations cung cấp những cấu trúc knowledge khác nhau và không được dùng thay thế cho nhau.
+
+## Word Sense Disambiguation (WSD)
+
+Chọn most frequent sense là một baseline đơn giản cho Word Sense Disambiguation nhưng có thể sai trong context cụ thể. Bridge có sense phổ biến chỉ công trình và sense ít gặp hơn trong dentistry. Context words trong word window và collocations có thể giúp nhận ra sense ít phổ biến. Sense frequency cần được kết hợp với contextual evidence để chọn interpretation phù hợp.
+
+## Statistical Word Sense Disambiguation: Context Scoring
+
+Statistical WSD kết hợp frequency của sense với words trong context window. Sau Bayes Rule và giả định context words độc lập có điều kiện theo sense, chọn sense s làm lớn nhất P(w/s) × ∏i P(wi|w/s). P(w/s) đóng vai trò prior của sense; các factors còn lại mô tả context words gần word mang sense đó. Bridge thường chỉ một structure, nhưng trong The dentist put a bridge on my teeth, dentist và teeth làm dental-device sense được ưu tiên. Vì vậy most-frequent-sense baseline không đủ cho mọi context.
+
+## Collocations and Mutual Information
+
+Collocation đo mức độ words có xu hướng cùng xuất hiện trong một context window. Một association ratio so sánh probability cùng xuất hiện với product của probabilities riêng khi coi hai events độc lập. Mutual Information trong phép đo này là log của association ratio, viết In(w1,w2) = log Cn(w1,w2). Giá trị gần 0 tương ứng co-occurrence gần mức ngẫu nhiên; dương biểu thị association cao hơn mức đó, còn âm biểu thị cùng xuất hiện ít hơn kỳ vọng. Phép đo có thể dùng word senses, chẳng hạn phân biệt bridge trong context dentistry với bridge trong context structures.
+

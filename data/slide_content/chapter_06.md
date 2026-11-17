@@ -1,0 +1,82 @@
+# Chapter 6
+
+## Probability, Conditional Probability and Independence
+
+Probability function gán cho mỗi giá trị của random variable một số từ 0 đến 1; tổng probabilities của toàn bộ các giá trị phân biệt bằng 1. Conditional probability được tính bằng P(A|B) = P(A ∩ B)/P(B), khi P(B) > 0. Hai events độc lập thỏa P(A ∩ B) = P(A)P(B); khi conditional probability xác định, P(A|B) = P(A). Conditional probability cho phép xét một event trong điều kiện đã biết event khác, thay vì chỉ dùng probability riêng lẻ của nó.
+
+## Bayes Rule
+
+Bayes Rule liên hệ hai hướng conditional probability: P(A|B) = P(B|A)P(A)/P(B), với P(B) > 0. Trong bài toán chọn lexical categories, ta có thể biến việc so sánh P(category|word) thành việc so sánh những biểu thức chứa xác suất của word theo category và xác suất của category. Nếu các ứng viên dùng chung denominator thì denominator đó không làm thay đổi lựa chọn lớn nhất. Đây là cách đưa dữ liệu tần suất và các giả định mô hình vào quyết định về ambiguity.
+
+## Maximum Likelihood Estimate (MLE)
+
+Maximum Likelihood Estimate dùng observed frequencies để ước lượng probabilities. Nếu flies xuất hiện 1.000 lần và 600 lần được dùng như verb, MLE cho cách dùng verb là 0,6. Estimate phụ thuộc vào dữ liệu đã quan sát và cách xác định những trường hợp cần đếm.
+
+## Sparse Data and Expected Likelihood Estimate (ELE)
+
+Với sparse data, một event có thể không xuất hiện trong training data dù vẫn có khả năng xảy ra. Nếu event được gán probability 0, tích probabilities của cả sequence có thể trở thành 0. Expected Likelihood Estimate cộng 0,5 vào mỗi count rồi normalize lại. Smoothing dành một phần probability cho những khả năng chưa được quan sát.
+
+## Training Set, Test Set and Cross-validation
+
+Test set được giữ riêng để evaluation mô hình học từ training set. Một cách chia dữ liệu được sử dụng là dành khoảng 10–20% cho test set. Cross-validation thay đổi phần dữ liệu được giữ lại qua các lượt, train trên phần còn lại và evaluate trên phần được giữ riêng. Training data và evaluation data cần được phân biệt khi đánh giá khả năng xử lý dữ liệu mới.
+
+## Part-of-Speech Tagging
+
+Part-of-Speech Tagging tìm sequence of word categories phù hợp nhất cho sentence. Context giúp phân biệt các cách dùng của từ thay vì luôn chọn category phổ biến nhất của riêng từ đó. Bigram model xét category trước đó; trigram model xét hai categories trước đó. Sequence probability kết hợp transition probabilities giữa categories và emission probabilities của words theo categories.
+
+## Markov Assumptions and HMM Part-of-Speech Tagging
+
+POS Tagging tìm sequence of categories C1…CT phù hợp nhất với word sequence W1…WT. Dưới bigram assumption, category hiện tại phụ thuộc category ngay trước; lexical generation probability P(Wi|Ci) mô tả word theo category. Kết hợp hai phần cho score của sequence dạng tích P(Ci|Ci−1)P(Wi|Ci) qua các vị trí. Category đầu dùng một pseudocategory ở vị trí 0. Transition probabilities có thể ước lượng từ counts của các cặp categories; lexical probabilities lấy từ counts word/category. Markov chain mô tả đường đi qua các categories, còn HMM kết hợp đường đi đó với việc sinh observations là words.
+
+## Viterbi and Forward Algorithms
+
+Viterbi tìm category sequence có score lớn nhất cho input. Với mỗi ending category ở một vị trí, thuật toán chỉ giữ path tốt nhất tới state đó và một backpointer. Khởi tạo SEQSCORE(i,1) = P(w1|Li)P(Li|∅). Ở bước t, SEQSCORE(i,t) = max_j[SEQSCORE(j,t−1)P(Li|Lj)]P(wt|Li). BACKPTR ghi predecessor đạt maximum; sau word cuối, lần ngược backpointers để khôi phục chuỗi tags. Forward khác ở chỗ cộng contributions của các paths thay vì lấy maximum. Vì vậy Viterbi trả lời về best path, còn Forward tổng hợp probability của nhiều paths tới một state.
+
+## Backward Probabilities and Forward–Backward Estimates
+
+Backward probability β_i(t) mô tả phần word sequence còn lại khi bắt đầu từ một category state tại vị trí đang xét. Forward tổng hợp thông tin từ prefix, còn Backward đưa thêm thông tin của phần tiếp theo. Estimate category tại một vị trí có thể kết hợp α_i(t)β_i(t), rồi normalize bằng tổng các products đó qua categories. Cách kết hợp này dùng context ở cả hai phía, thay vì chỉ chọn category dựa trên probability riêng của word hoặc prefix.
+
+## Forward Probabilities
+
+Forward probability α_i(t) tổng hợp probability của những paths sinh prefix w1…wt và kết thúc ở lexical category Li tại vị trí t. Thuật toán dùng tổng các contributions, thay vì chọn maximum như Viterbi. Tổng α_j(t) qua tất cả ending categories cho probability của prefix observations. Chia α_i(t) cho tổng đó cho estimate category probability dựa trên prefix đã quan sát. Trong ví dụ The flies like flowers, có thể cộng các paths phù hợp để đánh giá flies là noun hay verb.
+
+## Language Models
+
+Language Model gán probability cho word sequence hoặc cho next word dựa trên preceding context. Chain rule phân rã P(w1…wn) thành P(w1) × P(w2|w1) × … × P(wn|w1…wn−1). Bigram approximation chỉ giữ word ngay trước làm context cho next word, theo Markov assumption. Language probabilities hỗ trợ chọn candidates trong Machine Translation, Spelling Correction và Speech Recognition; chẳng hạn P(I saw a van) và P(eyes awe of an) giúp phân biệt các outputs. Một sequence chưa thấy trong training data có thể chứa n-grams có count 0, tạo khó khăn cho estimates dựa trực tiếp trên counts.
+
+## Non-word Spelling Error Detection and Correction
+
+Non-word Spelling Error Detection dùng dictionary để tìm word forms không có trong từ điển. Correction gồm tạo các candidates là những từ có hình thức gần với lỗi, rồi chọn candidate bằng tiêu chí như weighted edit distance hoặc noisy-channel probability. Language Model đưa context vào bước chọn: trong versatile acress whose, các bigram quanh actress và across giúp so sánh hai candidates, thay vì chỉ dựa trên độ giống chữ. Phân biệt detection với correction: phát hiện một form lạ chưa xác định được replacement phù hợp.
+
+## Estimating PCFG Production Probabilities
+
+PCFG production probabilities có thể được ước lượng từ corpus đã có parse trees. Với các rules R1…Rm cùng left-hand side C, estimate P(Rj|C) bằng số lần Rj được dùng chia cho tổng số lần tất cả rules có left-hand side C được dùng. Các rules cạnh tranh được normalize trong cùng nhóm C, không chia cho tổng số lần mọi rule của grammar xuất hiện. Corpus có cấu trúc phân tích cung cấp counts để phân biệt những derivations khác nhau.
+
+## Inside Probability and Most Likely Parse
+
+Inside probability P(wi…wj|C) là probability để constituent category C sinh word sequence nằm bên trong nó. Với lexical category, nó liên hệ lexical generation probability. Với non-lexical category, kết hợp probability của production và các subconstituents, rồi cộng contributions của các derivations phù hợp. Probability của sentence có thể tổng hợp từ nhiều parse trees, còn mục tiêu tìm most likely parse là chọn tree có probability lớn nhất. Do đó tổng probability của input và probability của một best parse là hai đại lượng khác nhau.
+
+## Noisy-channel Statistical Machine Translation
+
+Statistical Machine Translation chọn target string e cho source string f bằng cách tìm e có P(e|f) lớn nhất. Áp dụng Bayes Rule cho fixed input f, có thể chọn bằng argmax_e P(f|e)P(e). Translation model P(f|e) mô tả quan hệ dịch giữa source và target; Language Model P(e) đánh giá probability của target-language string. Phân rã này tách việc mô hình hóa quan hệ dịch với việc mô hình hóa ngôn ngữ đích.
+
+## Semantic Similarity and Semantic Relatedness
+
+Semantic Similarity khác với Semantic Relatedness nói chung: car và bicycle có nét nghĩa tương tự, còn car và gasoline có liên quan nhưng không gần synonymy. Một hướng đo sử dụng thesaurus hoặc hierarchy; hướng khác sử dụng distributional contexts. Term-document matrix lưu word counts theo documents; term-context matrix sử dụng contexts nhỏ hơn như word windows. Các rows tạo vector representations để so sánh words.
+
+## Path-based Semantic Similarity
+
+Path-based Similarity đo độ gần của hai senses trong thesaurus hierarchy bằng đường đi giữa chúng. Trong quy ước được dùng, pathlen bằng 1 cộng số edges của shortest path; similarity bằng 1/pathlen. Một sense có similarity 1 với chính nó; ví dụ nickel và coin có pathlen 2 nên similarity 0,5. Khi word có nhiều senses, có thể xét cặp senses cho similarity lớn nhất. Hướng này phụ thuộc coverage của thesaurus: words, phrases hoặc sense connections bị thiếu làm giảm khả năng tìm quan hệ phù hợp.
+
+## TF-IDF, PMI, PPMI and Cosine Similarity
+
+TF-IDF được dùng cho term-document representations; PPMI được dùng cho term-context representations. PMI phản ánh mức co-occurrence so với điều được kỳ vọng nếu hai events độc lập; PPMI thay các PMI values âm bằng 0. Cosine Similarity so sánh hướng của hai vectors: 1 khi cùng hướng, 0 khi orthogonal và −1 khi ngược hướng. Với raw frequency hoặc PPMI vectors không âm, cosine nằm trong khoảng 0 đến 1.
+
+## PMI and PPMI: Co-occurrence Example
+
+PMI so sánh joint probability của word và context với product của marginal probabilities: PMI(w,c) = log2[P(w,c)/(P(w)P(c))]. Nếu co-occurrence cao hơn mức kỳ vọng khi độc lập, PMI dương; PPMI thay các PMI âm bằng 0. Trong ví dụ information và data, các probabilities làm tròn là P(w,c)=0,32, P(w)=0,58 và P(c)=0,37; PMI xấp xỉ log2[0,32/(0,58×0,37)] ≈ 0,58. Vì kết quả dương nên PPMI giữ giá trị này. Các probabilities được lấy từ counts trong term-context matrix.
+
+## Intrinsic and Extrinsic Evaluation of Similarity
+
+Intrinsic Evaluation của word similarity so sánh điểm do thuật toán tạo với word-similarity ratings của con người, chẳng hạn xét correlation. Extrinsic Evaluation kiểm tra tác dụng của similarity trong một task cụ thể như Spelling Error Detection, Word Sense Disambiguation hoặc essay grading. Một cách kiểm tra khác là câu hỏi vocabulary nhiều lựa chọn, trong đó hệ thống chọn từ gần nghĩa. Hai hướng đánh giá trả lời các câu hỏi khác nhau: điểm có phù hợp đánh giá trực tiếp của con người hay có ích cho kết quả task cuối.
+

@@ -1,0 +1,6 @@
+{"session_id":"chapter-followup","turns":["Chương 3 nói về gì?","Giải thích chương đó kỹ hơn.","Chương tiếp theo thì sao?","Tài liệu của chương đó ở đâu?"]}
+{"session_id":"topic-followup","turns":["CFG là gì?","Giải thích kỹ hơn.","So sánh nó với PCFG.","Hai cái đó khác nhau thế nào?"]}
+{"session_id":"week-resources","turns":["Tuần 5 học những gì?","Tài liệu của phần này ở đâu?"]}
+{"session_id":"assignment-deadline","turns":["Bài tập lớn có những yêu cầu gì?","Còn deadline?"]}
+{"session_id":"clarification-loop","turns":["Giải thích chương đó kỹ hơn.","Chương 3"]}
+{"session_id":"boundary-and-reset","turns":["Chương 11 nói về gì?","Chương tiếp theo thì sao?","/reset","Giải thích chương đó kỹ hơn."]}

@@ -1,0 +1,1141 @@
+# Course Assistant CFG; start symbol: S
+# Each line is one production. Quoted items are terminals.
+# Empty RHS is epsilon. Includes all expanded lexical productions.
+S -> OPENER UTTERANCE CLOSER
+OPENER ->
+OPENER -> "cho" "biết"
+OPENER -> "cho" "tôi" "biết"
+OPENER -> "cho" "mình" "biết"
+OPENER -> "xin" "cho" "biết"
+OPENER -> "vui" "lòng" "cho" "biết"
+OPENER -> "hãy" "cho" "biết"
+OPENER -> "cho" "hỏi"
+OPENER -> "cho" "tôi" "hỏi"
+OPENER -> "cho" "mình" "hỏi"
+OPENER -> "xin" "hỏi"
+OPENER -> "tôi" "muốn" "biết"
+CLOSER ->
+CLOSER -> "?"
+CLOSER -> "."
+CLOSER -> PARTICLE PUNCT
+PARTICLE -> "vậy"
+PARTICLE -> "ạ"
+PARTICLE -> "vậy" "ạ"
+PARTICLE -> "nhỉ"
+PARTICLE -> "thế"
+PARTICLE -> "thế" "ạ"
+PUNCT ->
+PUNCT -> "?"
+PUNCT -> "."
+UTTERANCE -> QUERY_COURSE_INFO
+UTTERANCE -> QUERY_COURSE_QUANTITY
+UTTERANCE -> QUERY_GET_SCHEDULE
+UTTERANCE -> QUERY_GET_TOPIC
+UTTERANCE -> QUERY_DEFINITION
+UTTERANCE -> QUERY_PROCESS
+UTTERANCE -> QUERY_COMPARISON
+UTTERANCE -> QUERY_TOPIC_EXPLANATION
+UTTERANCE -> QUERY_TOPIC_LIST
+UTTERANCE -> QUERY_TOPIC_FORMULA
+UTTERANCE -> QUERY_TOPIC_SLIDE
+UTTERANCE -> QUERY_GET_ASSIGNMENT
+UTTERANCE -> QUERY_CHAPTER_EXERCISE
+UTTERANCE -> QUERY_GET_DEADLINE
+UTTERANCE -> QUERY_GET_RESOURCE
+UTTERANCE -> QUERY_GET_RULE
+UTTERANCE -> QUERY_GET_INSTRUCTOR
+UTTERANCE -> QUERY_GET_LO
+UTTERANCE -> QUERY_CONTEXT
+NP_COURSE -> COURSE_CLASS E_COURSE
+NP_COURSE -> "môn" "học"
+NP_COURSE -> "môn" "này"
+COURSE_CLASS ->
+COURSE_CLASS -> "môn"
+COURSE_CLASS -> "khóa" "học"
+COURSE_CLASS -> "học" "phần"
+COURSE_CLASS -> "môn" "học"
+OF_COURSE -> NP_COURSE
+OF_COURSE -> "của" NP_COURSE
+OF_COURSE_OPT ->
+OF_COURSE_OPT -> "của" NP_COURSE
+COURSE_MOD_OPT ->
+COURSE_MOD_OPT -> OF_COURSE
+NP_WEEK -> E_WEEK
+NP_CHAPTER -> E_CHAPTER
+NP_ASSIGNMENT -> E_ASSIGNMENT
+NP_ASSIGNMENT -> E_CHAPTER_ASSIGNMENT
+NP_PROJECT -> E_ASSIGNMENT
+NP_PART -> E_PART
+NP_EXAM -> E_EXAM
+NP_LO -> E_LO
+NP_REFERENCE -> E_REFERENCE
+ASSIGN_TARGET -> NP_ASSIGNMENT
+ASSIGN_TARGET -> NP_PART
+ASSIGN_TARGET -> NP_PART "của" NP_PROJECT
+ASSIGN_TARGET -> NP_REFERENCE
+OF_ASSIGN_TARGET -> ASSIGN_TARGET
+OF_ASSIGN_TARGET -> "của" ASSIGN_TARGET
+NP_CONCEPT -> E_CONCEPT
+NP_CONCEPT -> CONCEPT_CLASS E_CONCEPT
+NP_CONCEPT -> E_CONCEPT "(" E_CONCEPT ")"
+CONCEPT_CLASS -> "thuật" "toán"
+CONCEPT_CLASS -> "giải" "thuật"
+CONCEPT_CLASS -> "phương" "pháp"
+CONCEPT_CLASS -> "mô" "hình"
+CONCEPT_CLASS -> "mô" "hình" "chuỗi"
+CONCEPT_CLASS -> "khái" "niệm"
+CONCEPT_CLASS -> "kỹ" "thuật"
+CONCEPT_CLASS -> "hiện" "tượng"
+CONCEPT_CLASS -> "chỉ" "số"
+CONCEPT_CLASS -> "ma" "trận"
+CONCEPT_CLASS -> "lý" "thuyết"
+CONCEPT_CLASS -> "bài" "toán"
+CONCEPT_CLASS -> "bảng" "nhãn"
+CONJ -> "và"
+CONJ -> "&"
+CONCEPT_PAIR -> NP_CONCEPT CONJ NP_CONCEPT
+CONCEPT_MULTI -> CONCEPT_PAIR
+CONCEPT_MULTI -> NP_CONCEPT "," NP_CONCEPT CONJ NP_CONCEPT
+CONCEPT_MULTI -> NP_CONCEPT "," NP_CONCEPT "," NP_CONCEPT
+CONCEPT_MULTI -> NP_CONCEPT "," NP_CONCEPT "," NP_CONCEPT CONJ NP_CONCEPT
+CONCEPT_MULTI -> NP_CONCEPT "," NP_CONCEPT "," NP_CONCEPT "," NP_CONCEPT
+CONCEPT_LIST -> NP_CONCEPT
+CONCEPT_LIST -> CONCEPT_MULTI
+QUANT -> "các"
+QUANT -> "những"
+QUANT -> "một" "số"
+QUANT -> "hai"
+QUANT -> "ba"
+QUANT -> "bốn"
+QUANT_OPT ->
+QUANT_OPT -> QUANT
+IMPORTANCE ->
+IMPORTANCE -> "chính"
+IMPORTANCE -> "quan" "trọng"
+IMPORTANCE -> "cơ" "bản"
+SET_NOUN -> "tiêu" "chí"
+SET_NOUN -> "dạng" "tri" "thức"
+SET_NOUN -> "mốc" "thời" "gian"
+SET_NOUN -> "nhóm" "ứng" "dụng"
+SET_NOUN -> "toán" "tử"
+SET_NOUN -> "độ" "chính" "xác"
+SET_NOUN -> "loại"
+SET_NOUN -> "thành" "phần"
+CONTEXT_CLASS ->
+CONTEXT_CLASS -> "hệ" "thống"
+CONTEXT_CLASS -> "mô" "hình"
+CONTEXT_CLASS -> "phương" "pháp"
+CONTEXT_CLASS -> "đánh" "giá"
+CONTEXT_CLASS -> "lý" "thuyết" "của"
+CONTEXT_NOUN -> "câu" "hỏi" "tiếng" "anh"
+CONTEXT_NOUN -> "các" "mức" "biểu" "diễn" "ngôn" "ngữ"
+CONTEXT_NOUN -> "hệ" "thống" "tri" "thức"
+CONTEXT_NOUN -> "cửa" "sổ" "văn" "bản"
+CONTEXT_NOUN -> "domain" "truy" "vấn" "chuyến" "bay"
+CONTEXT_NOUN -> "slide"
+CONTEXT_SIMPLE -> "trong" CONTEXT_CLASS CONCEPT_LIST
+CONTEXT_SIMPLE -> "trong" CONTEXT_NOUN
+CONTEXT -> CONTEXT_SIMPLE
+CONTEXT -> "giữa" "hai" "từ" CONTEXT_SIMPLE
+CONTEXT_OPT ->
+CONTEXT_OPT -> CONTEXT
+TOPIC_HEAD -> QUANT_OPT CONCEPT_LIST
+TOPIC_HEAD -> QUANT_OPT SET_NOUN IMPORTANCE
+TOPIC_HEAD -> QUANT_OPT SET_NOUN IMPORTANCE CONCEPT_LIST
+TOPIC_CORE -> TOPIC_HEAD
+TOPIC_CORE -> TOPIC_HEAD "của" NP_CONCEPT
+TOPIC_CORE -> TOPIC_HEAD CONTEXT_SIMPLE "(" CONCEPT_LIST ")"
+TOPIC_CORE -> TOPIC_HEAD "như" CONCEPT_LIST
+TOPIC_CORE -> QUANT_OPT NP_CONCEPT CONCEPT_MULTI
+TOPIC_NP -> TOPIC_CORE
+TOPIC_NP -> NP_REFERENCE
+TOPIC_PREFIX ->
+TOPIC_PREFIX -> "phần"
+TOPIC_PREFIX -> "chủ" "đề"
+TOPIC_AREA -> TOPIC_PREFIX NP_CONCEPT
+TOPIC_AREA -> TOPIC_PREFIX CONCEPT_PAIR
+OF_CHAPTER -> NP_CHAPTER
+OF_CHAPTER -> "của" NP_CHAPTER
+OF_EXAM -> NP_EXAM
+OF_EXAM -> "của" NP_EXAM
+OPTIONAL_IS ->
+OPTIONAL_IS -> "là"
+WHAT -> "gì"
+WHAT -> "những" "gì"
+WHAT -> "nội" "dung" "gì"
+WHAT -> "những" "nội" "dung" "gì"
+WHAT -> "những" "chủ" "đề" "gì"
+WHAT -> "những" "phương" "pháp" "gì"
+WHEN -> "khi" "nào"
+WHEN -> "ngày" "nào"
+WHEN -> "bao" "giờ"
+WHEN -> "lúc" "nào"
+QUANTITY_QUERY -> "bao" "nhiêu"
+QUANTITY_QUERY -> "mấy"
+PROCESS_END -> "như" "thế" "nào"
+PROCESS_END -> "ra" "sao"
+YESNO_END -> "không"
+YESNO_END -> "hay" "không"
+ABOUT -> "về"
+ABOUT -> "nói" "về"
+ABOUT -> "liên" "quan" "đến"
+ABOUT -> "trình" "bày"
+ABOUT -> "trình" "bày" "về"
+ABOUT_OPT ->
+ABOUT_OPT -> "về"
+USE_VERB -> "dùng"
+USE_VERB -> "sử" "dụng"
+PERMIT -> "có" "được"
+PERMIT -> "được"
+FACT_END -> "là" "gì"
+DEFINITION_END -> "là" "gì"
+DEFINITION_END -> "có" "nghĩa" "là" "gì"
+DEFINITION_END -> "có" "ý" "nghĩa" "gì"
+DEFINITION_PRED -> DEFINITION_END
+DEFINITION_PRED -> "được" "định" "nghĩa" PROCESS_END
+EXPLANATION_PRED -> "có" "đặc" "điểm" "gì"
+EXPLANATION_PRED -> "đóng" "vai" "trò" "gì"
+EXPLANATION_PRED -> "có" "vai" "trò" "gì"
+EXPLANATION_PRED -> "đại" "diện" "cho" "điều" "gì"
+EXPLANATION_PRED -> "có" "ưu" "điểm" "gì"
+EXPLANATION_PRED -> "có" "hạn" "chế" "gì"
+EXPLANATION_PRED -> "dùng" "để" "làm" "gì"
+EXPLANATION_PRED -> "được" "dùng" "để" "làm" "gì"
+EXPLANATION_PRED -> "dùng" "vào" "việc" "gì"
+EXPLANATION_PRED -> "có" "tác" "dụng" "gì"
+TASK -> NP_CONCEPT
+TASK -> "câu" "hỏi" NP_CONCEPT
+TASK -> "khử" "nhập" "nhằng" "từ" "vựng"
+PROCESS_PRED -> "hoạt" "động" PROCESS_END
+PROCESS_PRED -> "được" "thực" "hiện" PROCESS_END
+PROCESS_PRED -> "được" "áp" "dụng" "cho" TASK PROCESS_END
+PROCESS_PRED -> "xử" "lý" TASK PROCESS_END
+PROCESS_PRED -> "giúp" TASK PROCESS_END
+FORMULA_PRED -> "được" "tính" PROCESS_END
+FORMULA_PRED -> "được" "tính" "toán" PROCESS_END
+FORMULA_PRED -> "được" "tính" "toán" "dựa" "trên" "công" "thức" "nào"
+FORMULA_PRED -> "được" "tính" "bằng" "công" "thức" "nào"
+FORMULA_PRED -> "có" "công" "thức" "là" "gì"
+COMPARE_END -> "khác" "nhau" "thế" "nào"
+COMPARE_END -> "khác" "nhau" "như" "thế" "nào"
+COMPARE_END -> "khác" "nhau" "ra" "sao"
+COMPARE_END -> "khác" "nhau" "ở" "điểm" "nào"
+COMPARE_END -> "khác" "gì" "nhau"
+DIFF_END -> "thế" "nào"
+DIFF_END -> "như" "thế" "nào"
+DIFF_END -> "ra" "sao"
+DIFF_END -> "ở" "điểm" "nào"
+DIFF_END -> "chỗ" "nào"
+DIFF_NP -> "sự" "khác" "biệt"
+DIFF_NP -> "sự" "khác" "nhau"
+DIFF_NP -> "điểm" "khác" "biệt"
+DIFF_NP -> "điểm" "khác" "nhau"
+COMPARE_TAIL ->
+COMPARE_TAIL -> "xem" "phương" "pháp" "nào" "tối" "ưu" "hơn"
+COMPARE_TAIL -> "xem" "phương" "pháp" "nào" "tốt" "hơn"
+MEMBER_NOUN -> "nhãn"
+MEMBER_NOUN -> "thành" "phần"
+MEMBER_NOUN -> "bước"
+MEMBER_NOUN -> "loại"
+SOURCE_OPT ->
+SOURCE_OPT -> "được" "giới" "thiệu" "trong" "slide"
+LIST_PRED -> "gồm" "những" "gì"
+LIST_PRED -> "bao" "gồm" "những" "gì"
+LIST_PRED -> "gồm" "những" MEMBER_NOUN IMPORTANCE "nào" SOURCE_OPT
+LIST_PRED -> "có" "những" MEMBER_NOUN IMPORTANCE "nào" SOURCE_OPT
+MODAL_OPT ->
+MODAL_OPT -> "hãy"
+MODAL_OPT -> "bạn" "có" "thể"
+MODAL_OPT -> "thầy" "có" "thể"
+REQUEST_VERB_OPT ->
+REQUEST_VERB_OPT -> REQUEST_VERB
+REQUEST_VERB -> MODAL_OPT REQUEST_VERB_CORE
+REQUEST_VERB_CORE -> "cho" "tôi" "xem"
+REQUEST_VERB_CORE -> "cho" "mình" "xem"
+REQUEST_VERB_CORE -> "xem"
+REQUEST_VERB_CORE -> "tra" "cứu"
+REQUEST_VERB_CORE -> "tìm"
+REQUEST_VERB_CORE -> "tìm" "hiểu"
+REQUEST_VERB_CORE -> "nêu"
+REQUEST_VERB_CORE -> "liệt" "kê"
+REQUEST_VERB_CORE -> "trình" "bày"
+REQUEST_VERB_CORE -> "mô" "tả"
+REQUEST_VERB_CORE -> "tóm" "tắt"
+REQUEST_EXPLAIN -> MODAL_OPT "giải" "thích"
+REQUEST_COMPARE -> MODAL_OPT "so" "sánh"
+ATTR_COURSE_ID -> "mã" "môn" "học"
+ATTR_COURSE_ID -> "mã" "môn"
+ATTR_COURSE_ID -> "mã" "học" "phần"
+ATTR_COURSE_NAME -> "tên" "môn" "học"
+ATTR_COURSE_NAME -> "tên" "môn"
+ATTR_COURSE_NAME -> "tên" "học" "phần"
+ATTR_DEPARTMENT -> "thuộc" "khoa" "nào"
+ATTR_ASSESSMENT -> "được" "đánh" "giá" "như" "thế" "nào"
+ATTR_ASSESSMENT -> "được" "đánh" "giá" "ra" "sao"
+ATTR_ASSESSMENT_NP -> "cách" "đánh" "giá"
+ATTR_ASSESSMENT_NP -> "hình" "thức" "đánh" "giá"
+ATTR_WEIGHT -> "phần" "trăm"
+ATTR_MINUTES -> "phút"
+SCORE_OPT ->
+SCORE_OPT -> "điểm"
+DURATION_VERB ->
+DURATION_VERB -> "kéo" "dài"
+DURATION_VERB -> "thi" "trong"
+COURSE_INFO_WH_QUESTION -> NP_COURSE ATTR_DEPARTMENT
+COURSE_INFO_WH_QUESTION -> NP_COURSE ATTR_ASSESSMENT
+COURSE_INFO_WH_QUESTION -> NP_COURSE "gồm" "những" "phần" "nào"
+COURSE_INFO_WH_QUESTION -> NP_COURSE "có" "những" "phần" "nào"
+COURSE_INFO_WH_QUESTION -> SCORE_OPT NP_EXAM "chiếm" QUANTITY_QUERY ATTR_WEIGHT
+COURSE_INFO_WH_QUESTION -> NP_EXAM DURATION_VERB QUANTITY_QUERY ATTR_MINUTES
+COURSE_INFO_YES_NO_QUESTION -> NP_EXAM PERMIT USE_VERB "tài" "liệu" YESNO_END
+ATTR_CREDITS -> "tín" "chỉ"
+ATTR_CHAPTERS -> "chương"
+ATTR_HOURS -> "giờ" "học"
+ATTR_WEEKS -> "tuần"
+COURSE_UNIT -> ATTR_CREDITS
+COURSE_UNIT -> ATTR_CHAPTERS
+COURSE_UNIT -> ATTR_HOURS
+COUNT_VERB -> "có"
+COUNT_VERB -> "có" "tổng" "cộng"
+COUNT_VERB -> "gồm"
+COUNT_VERB -> "được"
+COUNT_VERB_OPT ->
+COUNT_VERB_OPT -> COUNT_VERB
+COURSE_QUANTITY_WH_QUESTION -> NP_COURSE COUNT_VERB_OPT QUANTITY_QUERY COURSE_UNIT
+COURSE_QUANTITY_WH_QUESTION -> NP_COURSE "học" "trong" QUANTITY_QUERY ATTR_WEEKS
+ATTR_WEIGHT_NP -> "trọng" "số"
+ATTR_WEIGHT_NP -> "tỉ" "lệ" "điểm"
+ATTR_DURATION_NP -> "thời" "gian" "làm" "bài"
+ATTR_DURATION_NP -> "thời" "lượng"
+INFO_COURSE -> ATTR_COURSE_ID OF_COURSE_OPT
+INFO_COURSE -> ATTR_COURSE_NAME OF_COURSE_OPT
+INFO_COURSE -> ATTR_ASSESSMENT_NP OF_COURSE_OPT
+INFO_COURSE -> NP_COURSE
+INFO_COURSE -> "thông" "tin" ABOUT_OPT NP_COURSE
+INFO_COURSE -> "các" "phần" "của" NP_COURSE
+INFO_COURSE -> ATTR_WEIGHT_NP OF_EXAM
+INFO_COURSE -> ATTR_DURATION_NP OF_EXAM
+COURSE_INFO_WH_QUESTION -> INFO_COURSE FACT_END
+COURSE_INFO_REQUEST -> REQUEST_VERB_OPT INFO_COURSE
+INFO_QUANTITY -> "số" COURSE_UNIT OF_COURSE
+INFO_QUANTITY -> "tổng" "số" COURSE_UNIT OF_COURSE
+COURSE_QUANTITY_WH_QUESTION -> INFO_QUANTITY OPTIONAL_IS QUANTITY_QUERY
+COURSE_QUANTITY_REQUEST -> REQUEST_VERB_OPT INFO_QUANTITY
+QUERY_COURSE_INFO -> COURSE_INFO_WH_QUESTION
+QUERY_COURSE_INFO -> COURSE_INFO_YES_NO_QUESTION
+QUERY_COURSE_INFO -> COURSE_INFO_REQUEST
+QUERY_COURSE_QUANTITY -> COURSE_QUANTITY_WH_QUESTION
+QUERY_COURSE_QUANTITY -> COURSE_QUANTITY_REQUEST
+CONTENT_VERB -> "học"
+CONTENT_VERB -> "có"
+CONTENT_VERB -> "nói" "về"
+STUDY_WHEN_VERB -> "học" "vào"
+STUDY_WHEN_VERB -> "học" "ở"
+STUDY_WHEN_VERB -> "được" "học" "vào"
+STUDY_WHEN_VERB -> "được" "học" "ở"
+STUDY_WHEN_VERB -> "được" "dạy" "vào"
+STUDY_WHEN_VERB -> "nằm" "ở"
+STUDY_WHEN_VERB -> "thuộc"
+SCHEDULE_SUBJECT -> NP_CHAPTER
+SCHEDULE_SUBJECT -> TOPIC_AREA
+LEARN_OPT ->
+LEARN_OPT -> "học"
+OF_WEEK -> NP_WEEK
+OF_WEEK -> "của" NP_WEEK
+ATTR_WEEKDAY -> "học" "vào" "thứ" "mấy"
+ATTR_ROOM -> "học" "ở" "phòng" "nào"
+START_PHRASE -> "bắt" "đầu" "học"
+SCHEDULE_WH_QUESTION -> NP_WEEK CONTENT_VERB WHAT
+SCHEDULE_WH_QUESTION -> NP_WEEK "học" "về" TOPIC_AREA
+SCHEDULE_WH_QUESTION -> "nội" "dung" LEARN_OPT OF_WEEK "gồm" "những" "gì"
+SCHEDULE_WH_QUESTION -> SCHEDULE_SUBJECT STUDY_WHEN_VERB "tuần" "nào"
+SCHEDULE_WH_QUESTION -> WHEN "học" TOPIC_AREA
+SCHEDULE_WH_QUESTION -> "tuần" "nào" "học" TOPIC_AREA
+SCHEDULE_WH_QUESTION -> NP_COURSE ATTR_WEEKDAY
+SCHEDULE_WH_QUESTION -> NP_COURSE ATTR_ROOM
+SCHEDULE_WH_QUESTION -> NP_COURSE START_PHRASE WHEN
+INFO_SCHEDULE -> "nội" "dung" LEARN_OPT OF_WEEK
+INFO_SCHEDULE -> "lịch" "học" COURSE_MOD_OPT
+INFO_SCHEDULE -> "lịch" "học" OF_WEEK
+INFO_SCHEDULE -> NP_WEEK
+SCHEDULE_WH_QUESTION -> INFO_SCHEDULE FACT_END
+SCHEDULE_REQUEST -> REQUEST_VERB_OPT INFO_SCHEDULE
+QUERY_GET_SCHEDULE -> SCHEDULE_WH_QUESTION
+QUERY_GET_SCHEDULE -> SCHEDULE_REQUEST
+TOPIC_VERB -> "nói" "về"
+TOPIC_VERB -> "học" "về"
+TOPIC_VERB -> "trình" "bày"
+TOPIC_VERB -> "đề" "cập" "đến"
+RELATE_SUBJECT -> NP_CHAPTER
+RELATE_SUBJECT -> NP_REFERENCE
+TOPIC_WH_QUESTION -> NP_CHAPTER CONTENT_VERB WHAT
+TOPIC_WH_QUESTION -> "chương" "nào" TOPIC_VERB TOPIC_AREA
+TOPIC_WH_QUESTION -> TOPIC_AREA "được" "học" "ở" "đâu"
+TOPIC_WH_QUESTION -> TOPIC_AREA "thuộc" "chương" "nào"
+TOPIC_WH_QUESTION -> TOPIC_AREA "nằm" "ở" "chương" "nào"
+TOPIC_WH_QUESTION -> NP_REFERENCE "nằm" "ở" "chương" "nào"
+TOPIC_YES_NO_QUESTION -> RELATE_SUBJECT "có" "liên" "quan" "đến" TOPIC_AREA YESNO_END
+TOPIC_YES_NO_QUESTION -> NP_CHAPTER "có" TOPIC_AREA YESNO_END
+INFO_TOPIC -> "nội" "dung" OF_CHAPTER
+INFO_TOPIC -> "các" "chủ" "đề" OF_CHAPTER
+INFO_TOPIC -> NP_CHAPTER
+TOPIC_WH_QUESTION -> INFO_TOPIC FACT_END
+TOPIC_REQUEST -> REQUEST_VERB_OPT INFO_TOPIC
+QUERY_GET_TOPIC -> TOPIC_WH_QUESTION
+QUERY_GET_TOPIC -> TOPIC_YES_NO_QUESTION
+QUERY_GET_TOPIC -> TOPIC_REQUEST
+ASPECT_DEFINITION -> "ý" "nghĩa"
+ASPECT_DEFINITION -> "định" "nghĩa"
+DETAIL_OPT ->
+DETAIL_OPT -> "chi" "tiết"
+DETAIL_OPT -> "chi" "tiết" "hơn"
+DETAIL_OPT -> "kỹ" "hơn"
+HELP_END ->
+HELP_END -> YESNO_END
+HELP_END -> "được" "không"
+DEFINITION_WH_QUESTION -> TOPIC_NP CONTEXT_OPT DEFINITION_PRED
+DEFINITION_REQUEST -> REQUEST_EXPLAIN DETAIL_OPT ABOUT_OPT TOPIC_NP HELP_END
+ASPECT_PROCESS -> "các" "bước"
+ASPECT_PROCESS -> "cách" "xây" "dựng"
+ASPECT_PROCESS -> "quy" "trình"
+ASPECT_PROCESS -> "cách" "hoạt" "động"
+PROCESS_WH_QUESTION -> TOPIC_NP CONTEXT_OPT PROCESS_PRED
+COMPARISON_WH_QUESTION -> CONCEPT_PAIR CONTEXT_OPT COMPARE_END
+COMPARISON_WH_QUESTION -> CONCEPT_PAIR COMPARE_END CONTEXT
+COMPARISON_WH_QUESTION -> NP_CONCEPT "khác" NP_CONCEPT DIFF_END
+COMPARISON_REQUEST -> REQUEST_COMPARE CONCEPT_PAIR
+COMPARISON_REQUEST -> REQUEST_COMPARE TOPIC_NP "với" QUANT_OPT NP_CONCEPT COMPARE_TAIL
+COMPARISON_WH_QUESTION -> "ưu" "điểm" "của" TOPIC_NP "so" "với" QUANT_OPT NP_CONCEPT FACT_END
+ASPECT_EXPLANATION -> "ưu" "điểm"
+ASPECT_EXPLANATION -> "nhược" "điểm"
+ASPECT_EXPLANATION -> "hạn" "chế"
+ASPECT_EXPLANATION -> "ưu" "điểm" "và" "hạn" "chế"
+ASPECT_EXPLANATION -> "ưu" "điểm" "và" "nhược" "điểm"
+ASPECT_EXPLANATION -> "phạm" "vi" "ứng" "dụng"
+ASPECT_EXPLANATION -> "phạm" "vi" "ứng" "dụng" "và" "hạn" "chế"
+ASPECT_EXPLANATION -> "vai" "trò"
+ASPECT_EXPLANATION -> "đặc" "điểm"
+ASPECT_EXPLANATION -> "mục" "đích"
+EXPLANATION_WH_QUESTION -> TOPIC_NP CONTEXT_OPT EXPLANATION_PRED
+EXPLANATION_WH_QUESTION -> TOPIC_NP EXPLANATION_PRED CONTEXT
+ASPECT_LIST -> "ứng" "dụng"
+ASPECT_LIST -> "các" "ứng" "dụng"
+ASPECT_LIST -> "các" "thành" "phần"
+LIST_WH_QUESTION -> TOPIC_NP CONTEXT_OPT LIST_PRED
+LIST_END -> FACT_END
+LIST_END -> "gồm" "những" "gì"
+LIST_END -> "bao" "gồm" "những" "gì"
+FORMULA_WH_QUESTION -> TOPIC_NP CONTEXT_OPT FORMULA_PRED
+SLIDE_END -> "nằm" "ở" "slide" "nào"
+SLIDE_END -> "nằm" "ở" "slide" "mấy"
+SLIDE_END -> "ở" "slide" "nào"
+SLIDE_END -> "ở" "slide" "mấy"
+SLIDE_WH_QUESTION -> TOPIC_NP SLIDE_END
+SLIDE_WH_QUESTION -> "ví" "dụ" "về" TOPIC_NP SLIDE_END
+INFO_DEFINITION -> ASPECT_DEFINITION "của" TOPIC_NP CONTEXT_OPT
+INFO_DEFINITION -> "định" "nghĩa" TOPIC_NP
+DEFINITION_WH_QUESTION -> INFO_DEFINITION FACT_END
+DEFINITION_REQUEST -> REQUEST_VERB_OPT INFO_DEFINITION
+DEFINITION_REQUEST -> REQUEST_VERB_OPT TOPIC_CORE CONTEXT_OPT
+DEFINITION_REQUEST -> REQUEST_VERB NP_REFERENCE
+DEFINITION_REQUEST -> REQUEST_VERB "về" TOPIC_NP
+INFO_PROCESS -> ASPECT_PROCESS "của" TOPIC_NP CONTEXT_OPT
+INFO_PROCESS -> ASPECT_PROCESS TOPIC_NP CONTEXT_OPT
+PROCESS_WH_QUESTION -> INFO_PROCESS FACT_END
+PROCESS_REQUEST -> REQUEST_VERB_OPT INFO_PROCESS
+INFO_COMPARISON -> DIFF_NP "giữa" CONCEPT_PAIR CONTEXT_OPT
+COMPARISON_WH_QUESTION -> INFO_COMPARISON FACT_END
+COMPARISON_REQUEST -> REQUEST_VERB_OPT INFO_COMPARISON
+INFO_EXPLANATION -> ASPECT_EXPLANATION "của" TOPIC_NP CONTEXT_OPT
+EXPLANATION_WH_QUESTION -> INFO_EXPLANATION FACT_END
+EXPLANATION_REQUEST -> REQUEST_VERB_OPT INFO_EXPLANATION
+INFO_LIST -> ASPECT_LIST "của" TOPIC_NP
+LIST_WH_QUESTION -> INFO_LIST LIST_END
+LIST_REQUEST -> REQUEST_VERB_OPT INFO_LIST
+INFO_FORMULA -> "công" "thức" "của" TOPIC_NP CONTEXT_OPT
+INFO_FORMULA -> "công" "thức" "tính" TOPIC_NP
+FORMULA_WH_QUESTION -> INFO_FORMULA FACT_END
+FORMULA_REQUEST -> REQUEST_VERB_OPT INFO_FORMULA
+QUERY_DEFINITION -> DEFINITION_WH_QUESTION
+QUERY_DEFINITION -> DEFINITION_REQUEST
+QUERY_PROCESS -> PROCESS_WH_QUESTION
+QUERY_PROCESS -> PROCESS_REQUEST
+QUERY_COMPARISON -> COMPARISON_WH_QUESTION
+QUERY_COMPARISON -> COMPARISON_REQUEST
+QUERY_TOPIC_EXPLANATION -> EXPLANATION_WH_QUESTION
+QUERY_TOPIC_EXPLANATION -> EXPLANATION_REQUEST
+QUERY_TOPIC_LIST -> LIST_WH_QUESTION
+QUERY_TOPIC_LIST -> LIST_REQUEST
+QUERY_TOPIC_FORMULA -> FORMULA_WH_QUESTION
+QUERY_TOPIC_FORMULA -> FORMULA_REQUEST
+QUERY_TOPIC_SLIDE -> SLIDE_WH_QUESTION
+BUILD_VERB ->
+BUILD_VERB -> "xây" "dựng"
+BUILD_VERB -> "làm"
+BUILD_VERB -> "thực" "hiện"
+NEED_OPT ->
+NEED_OPT -> "cần"
+NEED_OPT -> "phải"
+ATTR_OUTPUT_FILES -> "xuất" "file" "gì"
+ATTR_OUTPUT_FILES -> "xuất" "những" "file" "gì"
+ATTR_SUBMISSION_FILES -> "nộp" "file" "gì"
+ATTR_SUBMISSION_FILES -> "nộp" "những" "file" "gì"
+ATTR_SUBMISSION_FILES -> "nộp" "những" "gì"
+ATTR_TEAM -> "người"
+GROUP_PHRASE -> "làm" "nhóm"
+GROUP_PHRASE -> "làm" "theo" "nhóm"
+GROUP_PHRASE -> "mỗi" "nhóm"
+SUBJECT_OPT ->
+SUBJECT_OPT -> "tôi"
+SUBJECT_OPT -> "sinh" "viên"
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET "có" "những" "yêu" "cầu" "gì"
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET "có" "yêu" "cầu" "gì"
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET "yêu" "cầu" BUILD_VERB WHAT
+ASSIGNMENT_WH_QUESTION -> "yêu" "cầu" OF_ASSIGN_TARGET FACT_END
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET FACT_END
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET NEED_OPT ATTR_OUTPUT_FILES
+ASSIGNMENT_WH_QUESTION -> ASSIGN_TARGET NEED_OPT ATTR_SUBMISSION_FILES
+ASSIGNMENT_WH_QUESTION -> "cần" "nộp" "những" "gì" "cho" ASSIGN_TARGET
+ASSIGNMENT_WH_QUESTION -> NP_ASSIGNMENT GROUP_PHRASE QUANTITY_QUERY ATTR_TEAM
+ASSIGNMENT_YES_NO_QUESTION -> NP_PROJECT "có" NP_PART YESNO_END
+ASSIGNMENT_WH_QUESTION -> SUBJECT_OPT NEED_OPT "hoàn" "thành" "những" "bài" "tập" "nào"
+ASSIGNMENT_WH_QUESTION -> NP_COURSE "có" "những" "bài" "tập" "nào"
+EXERCISE_NP -> E_CHAPTER_ASSIGNMENT
+EXERCISE_NP -> "bài" "tập" NP_CHAPTER
+EXERCISE_NP -> "bài" "tập" "của" NP_CHAPTER
+EXERCISE_NP -> "bài" "tập" "của" NP_REFERENCE
+EXERCISE_END -> "yêu" "cầu" "gì"
+EXERCISE_END -> "yêu" "cầu" "những" "gì"
+EXERCISE_END -> "yêu" "cầu" "sinh" "viên" "làm" "những" "câu" "nào"
+EXERCISE_END -> "cần" "làm" "những" "câu" "nào"
+EXERCISE_END -> "gồm" "những" "câu" "nào"
+EX_VERB ->
+EX_VERB -> "sử" "dụng" "công" "cụ"
+EX_VERB -> "thực" "hiện" "phép"
+EX_VERB -> "vẽ"
+EX_TARGET_NOUN -> "thành" "phần" "cú" "pháp"
+EX_TARGET_NOUN -> "biểu" "thức"
+EX_TARGET_NOUN -> "câu"
+EX_WH -> "nào"
+EX_WH -> "nào" "để" "phân" "tích" "câu"
+EX_WH -> "tập" "trung" "vào" EX_TARGET_NOUN "nào"
+EX_WH -> "cho" EX_TARGET_NOUN "nào"
+EX_SCOPE ->
+EX_SCOPE -> "cho" "câu" "truy" "vấn"
+EXERCISE_WH_QUESTION -> EXERCISE_NP EXERCISE_END
+EXERCISE_WH_QUESTION -> EXERCISE_NP "yêu" "cầu" EX_VERB NP_CONCEPT EX_WH
+EXERCISE_WH_QUESTION -> "yêu" "cầu" EXERCISE_NP "về" EX_VERB NP_CONCEPT EX_SCOPE PROCESS_END
+INFO_ASSIGN -> "yêu" "cầu" OF_ASSIGN_TARGET
+INFO_ASSIGN -> NP_PROJECT
+INFO_ASSIGN -> NP_PART
+INFO_ASSIGN -> NP_PART "của" NP_PROJECT
+INFO_ASSIGN -> "các" "bài" "tập" TASK_NEED_OPT COURSE_MOD_OPT
+INFO_ASSIGN -> "danh" "sách" "bài" "tập" COURSE_MOD_OPT
+TASK_NEED_OPT ->
+TASK_NEED_OPT -> "cần" "làm"
+TASK_NEED_OPT -> "cần" "hoàn" "thành"
+ASSIGNMENT_REQUEST -> REQUEST_VERB_OPT INFO_ASSIGN
+INFO_EXERCISE -> EXERCISE_NP
+INFO_EXERCISE -> "yêu" "cầu" EXERCISE_NP
+EXERCISE_REQUEST -> REQUEST_VERB_OPT INFO_EXERCISE
+QUERY_GET_ASSIGNMENT -> ASSIGNMENT_WH_QUESTION
+QUERY_GET_ASSIGNMENT -> ASSIGNMENT_YES_NO_QUESTION
+QUERY_GET_ASSIGNMENT -> ASSIGNMENT_REQUEST
+QUERY_CHAPTER_EXERCISE -> EXERCISE_WH_QUESTION
+QUERY_CHAPTER_EXERCISE -> EXERCISE_REQUEST
+DEADLINE -> "deadline"
+DEADLINE -> "hạn" "nộp"
+DEADLINE -> "thời" "hạn"
+DEADLINE -> "thời" "hạn" "nộp"
+DEADLINE -> "hạn" "chót"
+DEADLINE -> "hạn" "cuối"
+SUBMIT_VERB -> "nộp"
+SUBMIT_VERB -> "phải" "nộp"
+SUBMIT_VERB -> "cần" "nộp"
+SUBMIT_VERB -> "nộp" "vào"
+SUBMIT_VERB -> "có" "hạn" "nộp"
+DEADLINE_TARGET -> NP_ASSIGNMENT
+DEADLINE_TARGET -> NP_PART "của" NP_PROJECT
+OF_DEADLINE_TARGET -> DEADLINE_TARGET
+OF_DEADLINE_TARGET -> "của" DEADLINE_TARGET
+DEADLINE_WH_QUESTION -> DEADLINE_TARGET SUBMIT_VERB WHEN
+DEADLINE_WH_QUESTION -> DEADLINE_TARGET DEADLINE OPTIONAL_IS WHEN
+DEADLINE_WH_QUESTION -> WHEN SUBMIT_VERB DEADLINE_TARGET
+INFO_DEADLINE -> DEADLINE OF_DEADLINE_TARGET
+DEADLINE_WH_QUESTION -> INFO_DEADLINE OPTIONAL_IS WHEN
+DEADLINE_REQUEST -> REQUEST_VERB_OPT INFO_DEADLINE
+QUERY_GET_DEADLINE -> DEADLINE_WH_QUESTION
+QUERY_GET_DEADLINE -> DEADLINE_REQUEST
+RESOURCE_NOUN -> "tài" "liệu"
+RESOURCE_NOUN -> "tài" "liệu" "tham" "khảo"
+RESOURCE_NOUN -> "giáo" "trình"
+RESOURCE_NOUN -> "sách"
+RESOURCE_TOPIC -> TOPIC_AREA
+RESOURCE_TOPIC -> E_RESOURCE_TOPIC
+RESOURCE_TARGET -> NP_CHAPTER
+RESOURCE_TARGET -> NP_REFERENCE
+RESOURCE_TARGET -> TOPIC_AREA
+RESOURCE_TARGET -> NP_COURSE
+RESOURCE_END -> "ở" "đâu"
+RESOURCE_END -> "là" "gì"
+PROVIDE_VERB -> "cung" "cấp"
+PROVIDE_VERB -> "có"
+FOR_ABOUT -> "cho"
+FOR_ABOUT -> ABOUT
+RESOURCE_WH_QUESTION -> RESOURCE_NOUN "nào" ABOUT RESOURCE_TOPIC
+RESOURCE_YES_NO_QUESTION -> "có" RESOURCE_NOUN "nào" ABOUT RESOURCE_TOPIC YESNO_END
+RESOURCE_WH_QUESTION -> NP_COURSE USE_VERB RESOURCE_NOUN "nào"
+RESOURCE_WH_QUESTION -> NP_COURSE PROVIDE_VERB QUANT_OPT RESOURCE_NOUN "nào" FOR_ABOUT RESOURCE_TOPIC
+INFO_RESOURCE -> RESOURCE_NOUN ABOUT RESOURCE_TOPIC
+INFO_RESOURCE -> RESOURCE_NOUN "của" RESOURCE_TARGET
+INFO_RESOURCE -> "danh" "sách" RESOURCE_NOUN COURSE_MOD_OPT
+RESOURCE_WH_QUESTION -> INFO_RESOURCE RESOURCE_END
+RESOURCE_REQUEST -> REQUEST_VERB_OPT INFO_RESOURCE
+QUERY_GET_RESOURCE -> RESOURCE_WH_QUESTION
+QUERY_GET_RESOURCE -> RESOURCE_YES_NO_QUESTION
+QUERY_GET_RESOURCE -> RESOURCE_REQUEST
+RULE_SUBJECT ->
+RULE_SUBJECT -> NP_ASSIGNMENT
+RULE_END -> FACT_END
+RULE_END -> PROCESS_END
+RULE_SOURCE -> NP_COURSE
+RULE_SOURCE -> "slide" "môn" "học"
+RULE_SOURCE -> "đề" "cương" "môn" "học"
+RULE_AREA -> E_RULE_TOPIC
+RULE_AREA -> NP_ASSIGNMENT
+RULE_AREA -> "cách" "thức" "làm" "bài" "tập" "thực" "hành" EX_PER_CHAPTER
+EX_PER_CHAPTER ->
+EX_PER_CHAPTER -> "theo" "từng" "chương"
+RULE_YES_NO_QUESTION -> RULE_SUBJECT PERMIT USE_VERB E_TOOL_RULE YESNO_END
+RULE_YES_NO_QUESTION -> E_RULE_TOPIC RULE_SUBJECT "có" "bị" "trừ" "điểm" YESNO_END
+RULE_YES_NO_QUESTION -> E_RULE_TOPIC "có" "bắt" "buộc" YESNO_END
+RULE_YES_NO_QUESTION -> RULE_SOURCE "có" "quy" "định" "gì" "về" RULE_AREA YESNO_END
+INFO_RULE -> "quy" "định" ABOUT_OPT E_RULE_TOPIC
+INFO_RULE -> "quy" "định" OF_COURSE
+INFO_RULE -> "các" "quy" "định" COURSE_MOD_OPT
+RULE_WH_QUESTION -> INFO_RULE RULE_END
+RULE_REQUEST -> REQUEST_VERB_OPT INFO_RULE
+QUERY_GET_RULE -> RULE_WH_QUESTION
+QUERY_GET_RULE -> RULE_YES_NO_QUESTION
+QUERY_GET_RULE -> RULE_REQUEST
+INSTRUCTOR_NP -> "giảng" "viên"
+INSTRUCTOR_NP -> "giảng" "viên" "phụ" "trách"
+INSTRUCTOR_NP -> "người" "dạy"
+ATTR_EMAIL -> "email"
+INSTRUCTOR_WH_QUESTION -> "ai" "dạy" NP_COURSE
+INSTRUCTOR_WH_QUESTION -> INSTRUCTOR_NP COURSE_MOD_OPT "là" "ai"
+INSTRUCTOR_WH_QUESTION -> "ai" "là" INSTRUCTOR_NP COURSE_MOD_OPT
+INSTRUCTOR_WH_QUESTION -> "liên" "hệ" INSTRUCTOR_NP "bằng" "cách" "nào"
+ATTR_OBJECTIVE -> "mục" "tiêu" IMPORTANCE
+LO_WH_QUESTION -> NP_LO "học" "về" "gì"
+LO_WH_QUESTION -> NP_LO "liên" "quan" "đến" "nội" "dung" "nào"
+INFO_INSTRUCTOR -> INSTRUCTOR_NP COURSE_MOD_OPT
+INFO_INSTRUCTOR -> ATTR_EMAIL "của" INSTRUCTOR_NP COURSE_MOD_OPT
+INFO_INSTRUCTOR -> "thông" "tin" "liên" "hệ" "của" INSTRUCTOR_NP COURSE_MOD_OPT
+INSTRUCTOR_WH_QUESTION -> ATTR_EMAIL "của" INSTRUCTOR_NP COURSE_MOD_OPT FACT_END
+INSTRUCTOR_REQUEST -> REQUEST_VERB_OPT INFO_INSTRUCTOR
+INFO_LO -> NP_LO
+INFO_LO -> "chuẩn" "đầu" "ra" NP_LO
+INFO_LO -> "chuẩn" "đầu" "ra" COURSE_MOD_OPT
+INFO_LO -> ATTR_OBJECTIVE OF_COURSE
+LO_WH_QUESTION -> INFO_LO FACT_END
+LO_REQUEST -> REQUEST_VERB_OPT INFO_LO
+QUERY_GET_INSTRUCTOR -> INSTRUCTOR_WH_QUESTION
+QUERY_GET_INSTRUCTOR -> INSTRUCTOR_REQUEST
+QUERY_GET_LO -> LO_WH_QUESTION
+QUERY_GET_LO -> LO_REQUEST
+FOLLOW_TAIL ->
+FOLLOW_TAIL -> "thì" "sao"
+FOCUS -> "chương" "sau"
+FOCUS -> "chương" "tiếp" "theo"
+FOCUS -> "yêu" "cầu" "của" NP_REFERENCE
+FOCUS -> NP_REFERENCE
+CONTEXT_FOLLOW_UP -> "còn" FOCUS FOLLOW_TAIL
+QUERY_CONTEXT -> CONTEXT_FOLLOW_UP
+E_COURSE -> "nlp"
+E_COURSE -> "co3085"
+E_COURSE -> "xử" "lý" "ngôn" "ngữ" "tự" "nhiên"
+E_COURSE -> "natural" "language" "processing"
+E_WEEK -> "tuần" "1"
+E_WEEK -> "tuần" "01"
+E_WEEK -> "week" "1"
+E_WEEK -> "tuần" "thứ" "1"
+E_WEEK -> "tuần" "2"
+E_WEEK -> "tuần" "02"
+E_WEEK -> "week" "2"
+E_WEEK -> "tuần" "thứ" "2"
+E_WEEK -> "tuần" "3"
+E_WEEK -> "tuần" "03"
+E_WEEK -> "week" "3"
+E_WEEK -> "tuần" "thứ" "3"
+E_WEEK -> "tuần" "4"
+E_WEEK -> "tuần" "04"
+E_WEEK -> "week" "4"
+E_WEEK -> "tuần" "thứ" "4"
+E_WEEK -> "tuần" "5"
+E_WEEK -> "tuần" "05"
+E_WEEK -> "week" "5"
+E_WEEK -> "tuần" "thứ" "5"
+E_WEEK -> "tuần" "6"
+E_WEEK -> "tuần" "06"
+E_WEEK -> "week" "6"
+E_WEEK -> "tuần" "thứ" "6"
+E_WEEK -> "tuần" "7"
+E_WEEK -> "tuần" "07"
+E_WEEK -> "week" "7"
+E_WEEK -> "tuần" "thứ" "7"
+E_WEEK -> "tuần" "8"
+E_WEEK -> "tuần" "08"
+E_WEEK -> "week" "8"
+E_WEEK -> "tuần" "thứ" "8"
+E_WEEK -> "tuần" "9"
+E_WEEK -> "tuần" "09"
+E_WEEK -> "week" "9"
+E_WEEK -> "tuần" "thứ" "9"
+E_WEEK -> "tuần" "10"
+E_WEEK -> "week" "10"
+E_WEEK -> "tuần" "thứ" "10"
+E_WEEK -> "tuần" "11"
+E_WEEK -> "week" "11"
+E_WEEK -> "tuần" "thứ" "11"
+E_WEEK -> "tuần" "12"
+E_WEEK -> "week" "12"
+E_WEEK -> "tuần" "thứ" "12"
+E_WEEK -> "tuần" "13"
+E_WEEK -> "week" "13"
+E_WEEK -> "tuần" "thứ" "13"
+E_WEEK -> "tuần" "14"
+E_WEEK -> "week" "14"
+E_WEEK -> "tuần" "thứ" "14"
+E_WEEK -> "tuần" "15"
+E_WEEK -> "week" "15"
+E_WEEK -> "tuần" "thứ" "15"
+E_CHAPTER -> "chương" "1"
+E_CHAPTER -> "chương" "01"
+E_CHAPTER -> "chapter" "1"
+E_CHAPTER -> "ch01"
+E_CHAPTER -> "chương" "2"
+E_CHAPTER -> "chương" "02"
+E_CHAPTER -> "chapter" "2"
+E_CHAPTER -> "ch02"
+E_CHAPTER -> "chương" "3"
+E_CHAPTER -> "chương" "03"
+E_CHAPTER -> "chapter" "3"
+E_CHAPTER -> "ch03"
+E_CHAPTER -> "chương" "4"
+E_CHAPTER -> "chương" "04"
+E_CHAPTER -> "chapter" "4"
+E_CHAPTER -> "ch04"
+E_CHAPTER -> "chương" "5"
+E_CHAPTER -> "chương" "05"
+E_CHAPTER -> "chapter" "5"
+E_CHAPTER -> "ch05"
+E_CHAPTER -> "chương" "6"
+E_CHAPTER -> "chương" "06"
+E_CHAPTER -> "chapter" "6"
+E_CHAPTER -> "ch06"
+E_CHAPTER -> "chương" "7"
+E_CHAPTER -> "chương" "07"
+E_CHAPTER -> "chapter" "7"
+E_CHAPTER -> "ch07"
+E_CHAPTER -> "chương" "8"
+E_CHAPTER -> "chương" "08"
+E_CHAPTER -> "chapter" "8"
+E_CHAPTER -> "ch08"
+E_CHAPTER -> "chương" "9"
+E_CHAPTER -> "chương" "09"
+E_CHAPTER -> "chapter" "9"
+E_CHAPTER -> "ch09"
+E_CHAPTER -> "chương" "10"
+E_CHAPTER -> "chapter" "10"
+E_CHAPTER -> "ch10"
+E_CHAPTER -> "chương" "11"
+E_CHAPTER -> "chapter" "11"
+E_CHAPTER -> "ch11"
+E_CHAPTER -> "chương" "12"
+E_CHAPTER -> "chapter" "12"
+E_CHAPTER -> "ch12"
+E_ASSIGNMENT -> "bài" "tập" "lớn"
+E_ASSIGNMENT -> "btl"
+E_ASSIGNMENT -> "btl01"
+E_ASSIGNMENT -> "đồ" "án" "môn" "học"
+E_ASSIGNMENT -> "course" "assistant"
+E_ASSIGNMENT -> "intelligent" "course" "assistant"
+E_PART -> "phần" "i"
+E_PART -> "part" "i"
+E_PART -> "phần" "1"
+E_PART -> "phần" "parser"
+E_PART -> "phần" "phân" "tích" "cú" "pháp"
+E_PART -> "phần" "ii"
+E_PART -> "part" "ii"
+E_PART -> "phần" "2"
+E_PART -> "phần" "hỏi" "đáp"
+E_PART -> "phần" "ngữ" "nghĩa"
+E_PART -> "phần" "iii"
+E_PART -> "part" "iii"
+E_PART -> "phần" "3"
+E_PART -> "phần" "iv"
+E_PART -> "part" "iv"
+E_PART -> "phần" "4"
+E_EXAM -> "midterm"
+E_EXAM -> "thi" "giữa" "kỳ"
+E_EXAM -> "bài" "thi" "giữa" "kỳ"
+E_EXAM -> "final"
+E_EXAM -> "thi" "cuối" "kỳ"
+E_EXAM -> "bài" "thi" "cuối" "kỳ"
+E_LO -> "lo1"
+E_LO -> "l.o.1"
+E_LO -> "lo2"
+E_LO -> "l.o.2"
+E_LO -> "lo3"
+E_LO -> "l.o.3"
+E_LO -> "lo4"
+E_LO -> "l.o.4"
+E_LO -> "lo1.1"
+E_LO -> "l.o.1.1"
+E_LO -> "lo2.1"
+E_LO -> "l.o.2.1"
+E_LO -> "lo2.2"
+E_LO -> "l.o.2.2"
+E_LO -> "lo2.3"
+E_LO -> "l.o.2.3"
+E_LO -> "lo2.4"
+E_LO -> "l.o.2.4"
+E_LO -> "lo2.5"
+E_LO -> "l.o.2.5"
+E_LO -> "lo3.1"
+E_LO -> "l.o.3.1"
+E_LO -> "lo3.2"
+E_LO -> "l.o.3.2"
+E_LO -> "lo3.3"
+E_LO -> "l.o.3.3"
+E_LO -> "lo3.4"
+E_LO -> "l.o.3.4"
+E_LO -> "lo4.1"
+E_LO -> "l.o.4.1"
+E_LO -> "lo4.2"
+E_LO -> "l.o.4.2"
+E_CONCEPT -> "cfg"
+E_CONCEPT -> "context-free" "grammar"
+E_CONCEPT -> "context" "free" "grammar"
+E_CONCEPT -> "văn" "phạm" "phi" "ngữ" "cảnh"
+E_CONCEPT -> "context-free" "grammar" "(" "cfg" ")"
+E_CONCEPT -> "ngữ" "pháp" "phi" "ngữ" "cảnh" "(" "cfg" ")"
+E_CONCEPT -> "văn" "phạm" "phi" "ngữ" "cảnh" "(" "cfg" ")"
+E_CONCEPT -> "pcfg"
+E_CONCEPT -> "probabilistic" "context-free" "grammar"
+E_CONCEPT -> "văn" "phạm" "phi" "ngữ" "cảnh" "xác" "suất"
+E_CONCEPT -> "parsing"
+E_CONCEPT -> "phân" "tích" "cú" "pháp"
+E_CONCEPT -> "parser"
+E_CONCEPT -> "bộ" "phân" "tích" "cú" "pháp"
+E_CONCEPT -> "top-down" "parser"
+E_CONCEPT -> "top" "down" "parser"
+E_CONCEPT -> "phân" "tích" "cú" "pháp" "từ" "trên" "xuống"
+E_CONCEPT -> "top-down"
+E_CONCEPT -> "top" "down"
+E_CONCEPT -> "top-down" "parsing"
+E_CONCEPT -> "top" "down" "parsing"
+E_CONCEPT -> "bottom-up" "chart" "parser"
+E_CONCEPT -> "bottom" "up" "chart" "parser"
+E_CONCEPT -> "phân" "tích" "cú" "pháp" "từ" "dưới" "lên"
+E_CONCEPT -> "top-down" "chart" "parser"
+E_CONCEPT -> "top" "down" "chart" "parser"
+E_CONCEPT -> "earley"
+E_CONCEPT -> "earley" "parser"
+E_CONCEPT -> "cyk"
+E_CONCEPT -> "cyk" "parser"
+E_CONCEPT -> "dependency" "grammar"
+E_CONCEPT -> "văn" "phạm" "phụ" "thuộc"
+E_CONCEPT -> "dependency" "parsing"
+E_CONCEPT -> "ngữ" "pháp" "phụ" "thuộc" "(" "dependency" "grammar" ")"
+E_CONCEPT -> "phân" "tích" "cú" "pháp" "phụ" "thuộc"
+E_CONCEPT -> "stanford" "dependencies"
+E_CONCEPT -> "features"
+E_CONCEPT -> "feature"
+E_CONCEPT -> "nét"
+E_CONCEPT -> "augmented" "grammar"
+E_CONCEPT -> "văn" "phạm" "gia" "tố"
+E_CONCEPT -> "lexicon"
+E_CONCEPT -> "từ" "vựng"
+E_CONCEPT -> "unification"
+E_CONCEPT -> "hợp" "nhất"
+E_CONCEPT -> "augmented" "transition" "networks"
+E_CONCEPT -> "atn"
+E_CONCEPT -> "pos" "tagging"
+E_CONCEPT -> "part-of-speech" "tagging"
+E_CONCEPT -> "gán" "nhãn" "từ" "loại"
+E_CONCEPT -> "gán" "nhãn" "từ" "loại" "(" "pos" "tagging" ")"
+E_CONCEPT -> "probability"
+E_CONCEPT -> "lý" "thuyết" "xác" "suất"
+E_CONCEPT -> "best-first" "parsing"
+E_CONCEPT -> "best" "first" "parsing"
+E_CONCEPT -> "logical" "form"
+E_CONCEPT -> "dạng" "luận" "lý"
+E_CONCEPT -> "dạng" "logic" "(" "logical" "form" ")"
+E_CONCEPT -> "dạng" "logic"
+E_CONCEPT -> "thematic" "roles"
+E_CONCEPT -> "thematic" "role"
+E_CONCEPT -> "vai" "trò" "chủ" "đề"
+E_CONCEPT -> "các" "vai" "trò" "ngữ" "nghĩa" "(" "thematic" "roles" ")"
+E_CONCEPT -> "vai" "trò" "ngữ" "nghĩa" "(" "thematic" "roles" ")"
+E_CONCEPT -> "semantics"
+E_CONCEPT -> "ngữ" "nghĩa"
+E_CONCEPT -> "speech" "act"
+E_CONCEPT -> "hành" "vi" "ngôn" "ngữ"
+E_CONCEPT -> "các" "toán" "tử" "hành" "vi" "ngôn" "từ" "(" "speech" "acts" ")"
+E_CONCEPT -> "toán" "tử" "hành" "vi" "ngôn" "từ"
+E_CONCEPT -> "speech" "acts"
+E_CONCEPT -> "compositionality"
+E_CONCEPT -> "tính" "hợp" "thành"
+E_CONCEPT -> "semantic" "interpretation"
+E_CONCEPT -> "diễn" "dịch" "ngữ" "nghĩa"
+E_CONCEPT -> "semantic" "role"
+E_CONCEPT -> "vai" "trò" "ngữ" "nghĩa"
+E_CONCEPT -> "selectional" "restriction"
+E_CONCEPT -> "giới" "hạn" "lựa" "chọn"
+E_CONCEPT -> "ràng" "buộc" "chọn" "lựa" "(" "selectional" "restrictions" ")"
+E_CONCEPT -> "selectional" "restrictions"
+E_CONCEPT -> "ràng" "buộc" "chọn" "lựa"
+E_CONCEPT -> "semantic" "network"
+E_CONCEPT -> "mạng" "ngữ" "nghĩa"
+E_CONCEPT -> "wsd"
+E_CONCEPT -> "word" "sense" "disambiguation"
+E_CONCEPT -> "khử" "nhập" "nhằng" "nghĩa" "từ"
+E_CONCEPT -> "semantic" "grammar"
+E_CONCEPT -> "văn" "phạm" "ngữ" "nghĩa"
+E_CONCEPT -> "ngữ" "pháp" "ngữ" "nghĩa" "(" "semantic" "grammars" ")"
+E_CONCEPT -> "semantic" "grammars"
+E_CONCEPT -> "ngữ" "pháp" "ngữ" "nghĩa"
+E_CONCEPT -> "grammatical" "relations"
+E_CONCEPT -> "quan" "hệ" "văn" "phạm"
+E_CONCEPT -> "template" "matching"
+E_CONCEPT -> "đối" "sánh" "mẫu"
+E_CONCEPT -> "knowledge" "representation"
+E_CONCEPT -> "biểu" "diễn" "tri" "thức"
+E_CONCEPT -> "reasoning"
+E_CONCEPT -> "suy" "diễn"
+E_CONCEPT -> "frame"
+E_CONCEPT -> "frames"
+E_CONCEPT -> "khung"
+E_CONCEPT -> "procedural" "semantics"
+E_CONCEPT -> "ngữ" "nghĩa" "thủ" "tục"
+E_CONCEPT -> "question" "answering"
+E_CONCEPT -> "hỏi" "đáp"
+E_CONCEPT -> "qa"
+E_CONCEPT -> "local" "discourse" "context"
+E_CONCEPT -> "ngữ" "cảnh" "diễn" "ngôn" "cục" "bộ"
+E_CONCEPT -> "reference"
+E_CONCEPT -> "tham" "chiếu"
+E_CONCEPT -> "anaphora"
+E_CONCEPT -> "đồng" "tham" "chiếu"
+E_CONCEPT -> "quan" "hệ" "quy" "chiếu"
+E_CONCEPT -> "pronoun"
+E_CONCEPT -> "đại" "từ"
+E_CONCEPT -> "centering"
+E_CONCEPT -> "xác" "định" "tâm"
+E_CONCEPT -> "definite" "descriptions"
+E_CONCEPT -> "mô" "tả" "xác" "định"
+E_CONCEPT -> "ellipsis"
+E_CONCEPT -> "tỉnh" "lược"
+E_CONCEPT -> "surface" "anaphora"
+E_CONCEPT -> "syntax"
+E_CONCEPT -> "cú" "pháp"
+E_CONCEPT -> "cấu" "trúc" "cú" "pháp" "(" "syntax" ")"
+E_CONCEPT -> "noun" "phrase"
+E_CONCEPT -> "cụm" "danh" "từ"
+E_CONCEPT -> "verb" "phrase"
+E_CONCEPT -> "cụm" "động" "từ"
+E_CONCEPT -> "auxiliary" "verbs"
+E_CONCEPT -> "trợ" "động" "từ"
+E_CONCEPT -> "relative" "clause"
+E_CONCEPT -> "mệnh" "đề" "quan" "hệ"
+E_CONCEPT -> "nlu"
+E_CONCEPT -> "natural" "language" "understanding"
+E_CONCEPT -> "hiểu" "ngôn" "ngữ" "tự" "nhiên" "(" "nlu" ")"
+E_CONCEPT -> "rag"
+E_CONCEPT -> "retrieval-augmented" "generation"
+E_CONCEPT -> "llm"
+E_CONCEPT -> "large" "language" "model"
+E_CONCEPT -> "mô" "hình" "ngôn" "ngữ" "lớn"
+E_CONCEPT -> "dependency" "parser"
+E_CONCEPT -> "bộ" "phân" "tích" "cú" "pháp" "phụ" "thuộc"
+E_CONCEPT -> "viterbi"
+E_CONCEPT -> "thuật" "toán" "viterbi"
+E_CONCEPT -> "hmm"
+E_CONCEPT -> "hidden" "markov" "model"
+E_CONCEPT -> "hidden" "markov" "models"
+E_CONCEPT -> "mô" "hình" "markov" "ẩn"
+E_CONCEPT -> "crf"
+E_CONCEPT -> "crfs"
+E_CONCEPT -> "conditional" "random" "field"
+E_CONCEPT -> "conditional" "random" "fields"
+E_CONCEPT -> "conditional" "random" "fields" "(" "crfs" ")"
+E_CONCEPT -> "trường" "ngẫu" "nhiên" "điều" "kiện"
+E_CONCEPT -> "mle"
+E_CONCEPT -> "maximum" "likelihood" "estimation"
+E_CONCEPT -> "ước" "lượng" "xác" "suất" "cực" "đại"
+E_CONCEPT -> "ước" "lượng" "xác" "suất" "cực" "đại" "(" "mle" ")"
+E_CONCEPT -> "ele"
+E_CONCEPT -> "expected" "likelihood" "estimate"
+E_CONCEPT -> "ước" "lượng" "xác" "suất" "kỳ" "vọng"
+E_CONCEPT -> "pmi"
+E_CONCEPT -> "mutual" "information"
+E_CONCEPT -> "mutual" "information" "(" "pmi" ")"
+E_CONCEPT -> "pointwise" "mutual" "information"
+E_CONCEPT -> "thông" "tin" "tương" "hỗ" "điểm"
+E_CONCEPT -> "ppmi"
+E_CONCEPT -> "positive" "pointwise" "mutual" "information"
+E_CONCEPT -> "thông" "tin" "tương" "hỗ" "điểm" "dương"
+E_CONCEPT -> "uas"
+E_CONCEPT -> "unlabeled" "attachment" "score"
+E_CONCEPT -> "las"
+E_CONCEPT -> "labeled" "attachment" "score"
+E_CONCEPT -> "ner"
+E_CONCEPT -> "named" "entity" "recognition"
+E_CONCEPT -> "nhận" "dạng" "thực" "thể" "tên"
+E_CONCEPT -> "ie"
+E_CONCEPT -> "information" "extraction"
+E_CONCEPT -> "trích" "xuất" "thông" "tin"
+E_CONCEPT -> "ir"
+E_CONCEPT -> "information" "retrieval"
+E_CONCEPT -> "truy" "xuất" "thông" "tin"
+E_CONCEPT -> "truy" "vấn" "thông" "tin"
+E_CONCEPT -> "mt"
+E_CONCEPT -> "machine" "translation"
+E_CONCEPT -> "dịch" "máy"
+E_CONCEPT -> "fopc"
+E_CONCEPT -> "first" "order" "predicate" "calculus"
+E_CONCEPT -> "phép" "tính" "vị" "từ" "bậc" "nhất"
+E_CONCEPT -> "gap"
+E_CONCEPT -> "thuộc" "tính" "gap"
+E_CONCEPT -> "khoảng" "khuyết"
+E_CONCEPT -> "margin" "error"
+E_CONCEPT -> "sai" "số" "ước" "lượng"
+E_CONCEPT -> "black" "box"
+E_CONCEPT -> "black-box"
+E_CONCEPT -> "đánh" "giá" "black" "box"
+E_CONCEPT -> "glass" "box"
+E_CONCEPT -> "glass-box"
+E_CONCEPT -> "đánh" "giá" "glass" "box"
+E_CONCEPT -> "generality"
+E_CONCEPT -> "tính" "tổng" "quát"
+E_CONCEPT -> "selectivity"
+E_CONCEPT -> "tính" "chọn" "lọc"
+E_CONCEPT -> "understandability"
+E_CONCEPT -> "tính" "dễ" "hiểu"
+E_CONCEPT -> "subject-aux" "inversion"
+E_CONCEPT -> "đảo" "trợ" "động" "từ" "và" "chủ" "ngữ"
+E_CONCEPT -> "unbounded" "movement"
+E_CONCEPT -> "di" "chuyển" "không" "giới" "hạn"
+E_CONCEPT -> "wh-question"
+E_CONCEPT -> "wh-questions"
+E_CONCEPT -> "câu" "hỏi" "wh"
+E_CONCEPT -> "câu" "hỏi" "wh-question"
+E_CONCEPT -> "general" "knowledge"
+E_CONCEPT -> "kiến" "thức" "chung"
+E_CONCEPT -> "tri" "thức" "chung"
+E_CONCEPT -> "specific" "knowledge"
+E_CONCEPT -> "kiến" "thức" "cụ" "thể"
+E_CONCEPT -> "tri" "thức" "cụ" "thể"
+E_CONCEPT -> "suy" "luận" "diễn" "dịch" "(" "deductive" ")"
+E_CONCEPT -> "suy" "luận" "diễn" "dịch"
+E_CONCEPT -> "deductive"
+E_CONCEPT -> "suy" "luận" "không" "diễn" "dịch" "(" "non-deductive" ")"
+E_CONCEPT -> "suy" "luận" "không" "diễn" "dịch"
+E_CONCEPT -> "non-deductive"
+E_CONCEPT -> "reichenbach"
+E_CONCEPT -> "lý" "thuyết" "reichenbach"
+E_CONCEPT -> "s" "(" "speech" ")"
+E_CONCEPT -> "speech" "time"
+E_CONCEPT -> "thời" "gian" "phát" "ngôn"
+E_CONCEPT -> "e" "(" "event" ")"
+E_CONCEPT -> "event" "time"
+E_CONCEPT -> "thời" "gian" "sự" "kiện"
+E_CONCEPT -> "r" "(" "reference" ")"
+E_CONCEPT -> "reference" "time"
+E_CONCEPT -> "thời" "gian" "tham" "chiếu"
+E_CONCEPT -> "truy" "vấn" "cơ" "sở" "dữ" "liệu"
+E_CONCEPT -> "truy" "vấn" "dữ" "liệu"
+E_CONCEPT -> "agent"
+E_CONCEPT -> "vai" "trò" "agent"
+E_CONCEPT -> "theme"
+E_CONCEPT -> "vai" "trò" "theme"
+E_CONCEPT -> "to-loc"
+E_CONCEPT -> "vai" "trò" "to-loc"
+E_CONCEPT -> "at-time"
+E_CONCEPT -> "vai" "trò" "at-time"
+E_CONCEPT -> "assert"
+E_CONCEPT -> "y" "/" "n-query"
+E_CONCEPT -> "command"
+E_CONCEPT -> "wh-query"
+E_CONCEPT -> "local" "chaining"
+E_CONCEPT -> "mô" "hình" "local" "chaining"
+E_CONCEPT -> "term-document"
+E_CONCEPT -> "ma" "trận" "term-document"
+E_CONCEPT -> "term-context"
+E_CONCEPT -> "ma" "trận" "term-context"
+E_CONCEPT -> "không" "gian" "vectơ" "(" "vector-space" "models" ")"
+E_CONCEPT -> "vector-space" "models"
+E_CONCEPT -> "không" "gian" "vectơ"
+E_CONCEPT -> "mô" "hình" "không" "gian" "vectơ"
+E_CONCEPT -> "penn" "treebank" "pos" "tagset"
+E_CONCEPT -> "penn" "treebank"
+E_CONCEPT -> "bảng" "nhãn" "penn" "treebank"
+E_CONCEPT -> "thu" "gọn" "lambda"
+E_CONCEPT -> "phép" "thu" "gọn" "lambda"
+E_CONCEPT -> "lambda" "reduction"
+E_CONCEPT -> "thu" "gọn" "lambda" "(" "lambda" "reduction" ")"
+E_CONCEPT -> "cây" "phân" "tích" "cú" "pháp" "ngữ" "nghĩa"
+E_CONCEPT -> "cây" "cú" "pháp" "ngữ" "nghĩa"
+E_CONCEPT -> "biểu" "diễn" "ngữ" "nghĩa" "dạng" "logic"
+E_CONCEPT -> "biểu" "diễn" "dạng" "logic"
+E_CONCEPT -> "tf-idf"
+E_CONCEPT -> "tfidf"
+E_RESOURCE_TOPIC -> "statistical" "nlp"
+E_RESOURCE_TOPIC -> "nlp" "thống" "kê"
+E_RESOURCE_TOPIC -> "python" "nlp"
+E_RESOURCE_TOPIC -> "xử" "lý" "ngôn" "ngữ" "tự" "nhiên" "với" "python"
+E_RULE_TOPIC -> "sử" "dụng" "ai"
+E_RULE_TOPIC -> "ai"
+E_RULE_TOPIC -> "công" "cụ" "ai"
+E_RULE_TOPIC -> "sử" "dụng" "công" "cụ" "ai"
+E_RULE_TOPIC -> "chatgpt"
+E_RULE_TOPIC -> "llm" "/" "rag"
+E_RULE_TOPIC -> "llm"
+E_RULE_TOPIC -> "rag"
+E_RULE_TOPIC -> "đạo" "văn"
+E_RULE_TOPIC -> "sao" "chép" "bài"
+E_RULE_TOPIC -> "chuyên" "cần"
+E_RULE_TOPIC -> "điểm" "danh"
+E_RULE_TOPIC -> "đi" "học"
+E_RULE_TOPIC -> "nộp" "trễ"
+E_RULE_TOPIC -> "nộp" "bài" "trễ"
+E_RULE_TOPIC -> "làm" "việc" "nhóm"
+E_RULE_TOPIC -> "số" "lượng" "thành" "viên"
+E_REFERENCE -> "phần" "này"
+E_REFERENCE -> "nội" "dung" "này"
+E_REFERENCE -> "nó"
+E_REFERENCE -> "chủ" "đề" "đó"
+E_REFERENCE -> "thuật" "toán" "này"
+E_REFERENCE -> "mô" "hình" "đó"
+E_REFERENCE -> "phương" "pháp" "này"
+E_REFERENCE -> "chương" "này"
+E_REFERENCE -> "chương" "đó"
+E_REFERENCE -> "bài" "tập" "này"
+E_REFERENCE -> "bài" "tập" "đó"
+E_REFERENCE -> "phần" "đó"
+E_TOOL_RULE -> "ai"
+E_TOOL_RULE -> "công" "cụ" "ai"
+E_TOOL_RULE -> "chatgpt"
+E_TOOL_RULE -> "gemini"
+E_TOOL_RULE -> "copilot"
+E_TOOL_RULE -> "llm" "/" "rag"
+E_TOOL_RULE -> "llm"
+E_TOOL_RULE -> "rag"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "3"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "03"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "8"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "08"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "10"
+E_CHAPTER_ASSIGNMENT -> "bài" "tập" "chương" "11"

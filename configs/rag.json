@@ -1,0 +1,23 @@
+{
+  "documents": "data/kb/documents.jsonl",
+  "chunks": "data/chunks/chunks.jsonl",
+  "manifest": "data/kb/manifest.json",
+  "index": "models/retrieval/tfidf.json",
+  "top_k": 5,
+  "context_chars": 6000,
+  "chunk_chars": 1800,
+  "min_score": 0.08,
+  "min_query_coverage": 0.3,
+  "min_body_coverage": 0.5,
+  "preferred_source_boost": 0.08,
+  "llm": {
+    "provider": "ollama",
+    "model": "qwen3:4b",
+    "base_url": "http://localhost:11434",
+    "num_ctx": 8192,
+    "think": false,
+    "timeout_seconds": 600,
+    "max_output_tokens": 800,
+    "max_attempts": 2
+  }
+}

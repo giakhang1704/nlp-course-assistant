@@ -1,0 +1,109 @@
+{
+  "version": 3,
+  "notes": "Mỗi nhãn QUERY_* trong models/grammar/rules/*.cfg là một cấu trúc câu hỏi, ánh xạ sang intent, question_type và operation. Thuộc tính được lấy từ ký hiệu ATTR_* xuất hiện trong cây (attribute_symbols), không dò chuỗi trong câu. DEFINITION_QUERY/PROCESS_QUERY/COMPARISON_QUERY là intent cũ của parser, được tầng ngữ nghĩa chuẩn hóa về GET_TOPIC. Khi câu còn tham chiếu chưa giải, tầng ngữ nghĩa đặt intent CONTEXT_DEPENDENT và giữ intent của cấu trúc trong domain_intent.",
+  "queries": {
+    "QUERY_COURSE_INFO": {
+      "intent": "GET_COURSE_INFO",
+      "question_type": "factual",
+      "operation": "get_course_attribute"
+    },
+    "QUERY_COURSE_QUANTITY": {
+      "intent": "GET_COURSE_INFO",
+      "question_type": "factual",
+      "operation": "get_course_attribute"
+    },
+    "QUERY_GET_SCHEDULE": {
+      "intent": "GET_SCHEDULE"
+    },
+    "QUERY_GET_TOPIC": {
+      "intent": "GET_TOPIC"
+    },
+    "QUERY_DEFINITION": {
+      "intent": "DEFINITION_QUERY",
+      "question_type": "definition",
+      "operation": "get_topic"
+    },
+    "QUERY_PROCESS": {
+      "intent": "PROCESS_QUERY",
+      "question_type": "process",
+      "operation": "get_topic"
+    },
+    "QUERY_COMPARISON": {
+      "intent": "COMPARISON_QUERY",
+      "question_type": "comparison",
+      "operation": "get_topic"
+    },
+    "QUERY_TOPIC_EXPLANATION": {
+      "intent": "GET_TOPIC",
+      "question_type": "explanation",
+      "operation": "get_topic"
+    },
+    "QUERY_TOPIC_LIST": {
+      "intent": "GET_TOPIC",
+      "question_type": "list",
+      "operation": "get_topic"
+    },
+    "QUERY_TOPIC_FORMULA": {
+      "intent": "GET_TOPIC",
+      "question_type": "formula",
+      "attribute": "formula",
+      "operation": "get_topic"
+    },
+    "QUERY_TOPIC_SLIDE": {
+      "intent": "GET_TOPIC",
+      "question_type": "location",
+      "operation": "locate_slide"
+    },
+    "QUERY_GET_ASSIGNMENT": {
+      "intent": "GET_ASSIGNMENT"
+    },
+    "QUERY_CHAPTER_EXERCISE": {
+      "intent": "GET_ASSIGNMENT",
+      "question_type": "requirements",
+      "operation": "get_chapter_exercises"
+    },
+    "QUERY_GET_DEADLINE": {
+      "intent": "GET_DEADLINE",
+      "attribute": "deadline"
+    },
+    "QUERY_GET_RESOURCE": {
+      "intent": "GET_RESOURCE"
+    },
+    "QUERY_GET_RULE": {
+      "intent": "GET_RULE"
+    },
+    "QUERY_GET_INSTRUCTOR": {
+      "intent": "GET_INSTRUCTOR"
+    },
+    "QUERY_GET_LO": {
+      "intent": "GET_LO"
+    },
+    "QUERY_CONTEXT": {
+      "intent": "CONTEXT_DEPENDENT",
+      "needs_context": true
+    }
+  },
+  "attribute_symbols": {
+    "ATTR_CREDITS": "credits",
+    "ATTR_CHAPTERS": "chapter_count",
+    "ATTR_HOURS": "total_course_hours",
+    "ATTR_WEEKS": "duration_weeks",
+    "ATTR_MINUTES": "duration_minutes",
+    "ATTR_WEIGHT": "assessment_weight",
+    "ATTR_WEIGHT_NP": "assessment_weight",
+    "ATTR_DURATION_NP": "duration_minutes",
+    "ATTR_TEAM": "team_size",
+    "ATTR_COURSE_ID": "course_id",
+    "ATTR_COURSE_NAME": "course_name",
+    "ATTR_DEPARTMENT": "department",
+    "ATTR_ASSESSMENT": "assessment",
+    "ATTR_ASSESSMENT_NP": "assessment",
+    "ATTR_OBJECTIVE": "objective",
+    "ATTR_EMAIL": "instructor_email",
+    "ATTR_ROOM": "room",
+    "ATTR_WEEKDAY": "weekday",
+    "ATTR_OUTPUT_FILES": "output_files",
+    "ATTR_SUBMISSION_FILES": "submission_files"
+  },
+  "context_exempt_references": ["LAST_COURSE"]
+}

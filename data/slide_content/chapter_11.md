@@ -1,0 +1,46 @@
+# Chapter 11
+
+## General Knowledge, Specific Knowledge and Knowledge Bases
+
+General knowledge mô tả các object types và relations thường dùng; specific knowledge mô tả những facts hoặc situations cụ thể. Knowledge Base lưu các statements được biểu diễn bằng Knowledge Representation Language (KRL). Inference techniques sử dụng các statements này để rút ra thông tin tiếp theo. Knowledge representation và inference cùng tham gia vào việc khai thác KB.
+
+## Entailment and Conversational Implicature
+
+Entailment là điều bắt buộc đúng nếu statement ban đầu đúng. Jack owns two cars entails Jack owns a car theo nghĩa tồn tại ít nhất một chiếc. Statement cũng có thể tạo conversational implicature, như việc nói có hai chiếc xe gợi rằng không có ba. Implicature có thể được hủy bỏ bằng thông tin bổ sung mà không gây mâu thuẫn logic như khi phủ định entailment.
+
+## Deduction, Induction, Abduction and Default Reasoning
+
+Deduction rút logical consequences từ facts; Induction khái quát từ examples; Abduction xem một cause là khả năng giải thích effect. Với A kéo theo B, Deduction kết luận B khi có A, còn Abduction xét A như lời giải thích khi quan sát B. Default Reasoning dùng rules có thể có exceptions. Ví dụ biết Sampson là cat và mặc định cats purr, hệ thống có thể kết luận Purrs(Sampson) nếu chưa có thông tin phủ định. Khi thêm fact no tabby cats purr và Sampson là tabby cat, default conclusion đó phải được xét lại. Đây là Nonmonotonic Reasoning: knowledge mới có thể khiến kết luận trước bị rút lại.
+
+## Declarative and Procedural Approaches
+
+Declarative approach phát biểu knowledge và relations bằng logical representations rồi áp dụng deduction. Procedural approach thực hiện computation cụ thể, như graph traversal trên type hierarchy để thu thập inherited roles. Hai cách có thể cho cùng kết quả nhưng khác cách tổ chức và thực hiện inference. Sự phân biệt này liên hệ Knowledge Representation với các thủ tục xử lý trên máy tính.
+
+## FOPC-based Knowledge Representation
+
+KRL dựa trên FOPC dùng constants, functions và variables làm terms, chẳng hạn John1, father(John1), x và y. Logical Form (NAME j1 "John") còn cần context để xác định actual person; KB có thể dùng constant John1 cho đối tượng đã xác định đó. Restricted existential quantification ∃x:Man(x) Happy(x) tương ứng ∃x.(Man(x) ∧ Happy(x)); restricted universal quantification ∀x:Man(x) Happy(x) tương ứng ∀x.(Man(x) → Happy(x)). Equality a=b nói hai terms có cùng denotation, cho phép thay a bằng b trong các propositions tương ứng của biểu diễn này.
+
+## Sets, Cardinality and Collective Readings
+
+Set được biểu diễn như một object để nói về group; thứ tự members không làm thay đổi set, nên {John1, Mary1} = {Mary1, John1}. Some men bought a suit có collective reading khi một group cùng mua một suit, và distributive reading khi các members mua suit riêng. Khác biệt là predicate áp dụng lên set như một đơn vị hay quantify qua từng member. Cardinality |M| là số elements: Three men entered the room ràng buộc |M|=3, còn At least three men entered the room dùng |M|≥3. Nhờ sets và cardinality, KRL thể hiện được những khác biệt không rõ chỉ từ plural surface form.
+
+## Time Points, Intervals and Temporal Relations
+
+Temporal Knowledge Representation phân biệt time points, intervals và durations. Relation t1 < t2 biểu thị t1 xảy ra trước t2; quan hệ meets biểu thị hai intervals tiếp giáp hoặc một point xác định biên interval; containment biểu thị point hoặc interval nằm trong một interval khác. Constant NOW biểu thị thời điểm hiện tại để diễn giải tense: past đặt event trước NOW, future đặt sau NOW. Một số predicates chỉ đúng trong intervals, một số đúng tại points, và một số có thể dùng với cả hai, nên loại temporal object ảnh hưởng cách biểu diễn proposition.
+
+## Time, Tense and Reichenbach's Model
+
+Biểu diễn time phân biệt time points, intervals và durations. Reichenbach's model dùng S cho speech time, E cho event time và R cho reference time. Trong các trường hợp đơn giản, simple present có S = R = E, simple past có E = R < S và simple future có S < R = E. Những relations này diễn giải tense bằng quan hệ giữa event time, reference time và speech time.
+
+## Aspectual Classes: Stative, Activity and Telic
+
+Các propositions có thể được phân biệt theo Aspectual Classes. Stative proposition mô tả một state, như Jack is happy hoặc I believe the world is flat. Activity proposition mô tả hoạt động đang diễn ra, như Jack is running hoặc The door was swinging to and fro. Telic proposition mô tả event có tính hoàn thành, như Jack fell asleep hoặc They climbed the mountain in two days. Phân biệt các classes này hỗ trợ chọn cách biểu diễn event/state và time, thay vì xử lý mọi verb propositions theo cùng một kiểu.
+
+## Procedural Semantics and Question Answering
+
+Procedural Semantics diễn giải Logical Form như query expressions gắn với database operations. Test trả true nếu tồn tại variable binding làm mọi literals thỏa điều kiện trong database. Retrieve tương tự nhưng trả về mọi giá trị của variable tạo thành solution. Với facts (FLIGHT F2) và (ATIME F2 CHI 1000HR), query (Retrieve ?x (FLIGHT ?x) (ATIME ?x CHI 1000HR)) tìm flight đến Chicago lúc 10 giờ; trong database ví dụ, kết quả là F2. Câu Does every flight to Chicago serve breakfast? được xử lý bằng cách tìm các flights đến CHI rồi kiểm tra breakfast trên từng flight; chỉ trả yes nếu tất cả đều thỏa.
+
+## Procedural Interpretation of Connectives and Quantifiers
+
+Trong Procedural Semantics, conjunction được diễn giải bằng CHECK-ALL-TRUE, disjunction bằng FIND-ONE-TRUE và negation bằng UNLESS trên procedure tương ứng. THE được ánh xạ sang FIND-THE, EACH sang ITERATE và WH sang PRINT-ALL để tìm hoặc xuất những objects thỏa restriction và predicate. Câu Which flight to Chicago leaves at 4 PM? có thể tạo query tìm flight, arrival location CHI và departure time 1600HR. DEST được ánh xạ sang thông tin ATIME, LEAVE sang DTIME; departure location chưa được nêu giữ dưới dạng variable. Logical Form định hướng các operations thay vì được so khớp như một chuỗi nguyên văn.
+

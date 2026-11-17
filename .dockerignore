@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.git
+.venv
+.env
+build
+dist
+output/*
+web/frontend/node_modules
+web/frontend/dist
+.env.*
+!.env.example
+**/node_modules

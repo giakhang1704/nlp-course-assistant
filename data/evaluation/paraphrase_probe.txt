@@ -1,0 +1,84 @@
+# Bộ câu diễn đạt tự nhiên dùng khi thiết kế lại grammar (2026-11-16).
+# Viết với trợ giúp AI; đã xem khi thiết kế nên KHÔNG phải tập held-out.
+Môn NLP có mấy tín chỉ?
+NLP có mấy tín chỉ vậy?
+Môn này bao nhiêu tín chỉ?
+Cho em hỏi môn NLP có bao nhiêu tín chỉ ạ?
+Môn NLP được bao nhiêu tín chỉ?
+Số tín chỉ của môn NLP là bao nhiêu?
+Tuần 5 học gì?
+Tuần 5 học gì vậy?
+Tuần thứ 5 học gì?
+Tuần 5 có nội dung gì?
+Nội dung tuần 5 là gì?
+Chương 3 nói về gì?
+Chương 3 học gì?
+Chương 3 có những nội dung gì?
+CFG học ở tuần nào?
+CFG được học vào tuần nào?
+Khi nào học CFG?
+Deadline bài tập lớn là khi nào?
+Khi nào nộp bài tập lớn?
+Hạn nộp bài tập lớn là ngày nào?
+Bài tập lớn nộp khi nào?
+Bài tập lớn hạn chót là khi nào?
+Bài tập lớn yêu cầu gì?
+Yêu cầu bài tập lớn là gì?
+Bài tập lớn làm nhóm mấy người?
+Tài liệu tham khảo của môn học là gì?
+Môn học dùng giáo trình nào?
+Có tài liệu nào về CFG không?
+Tài liệu về CFG ở đâu?
+Được dùng ChatGPT không?
+Bài tập lớn có được dùng ChatGPT không?
+Có được dùng AI không?
+Nộp trễ có bị trừ điểm không?
+Quy định nộp bài là gì?
+Thi cuối kỳ chiếm bao nhiêu phần trăm?
+Điểm thi cuối kỳ chiếm bao nhiêu phần trăm?
+Ai dạy môn này?
+Giảng viên môn NLP là ai?
+CFG là gì?
+Earley parser là gì?
+Thuật toán Viterbi là gì?
+Viterbi hoạt động như thế nào?
+So sánh CFG và PCFG.
+CFG khác PCFG thế nào?
+Sự khác nhau giữa CFG và PCFG là gì?
+TF-IDF là gì?
+Giải thích Earley parser.
+Học phần NLP có bao nhiêu tín chỉ vậy?
+Số chương của môn học là bao nhiêu?
+Môn NLP gồm mấy chương nhỉ?
+Tuần 7 có những nội dung gì?
+Tuần thứ 10 học gì vậy?
+Nội dung tuần 12 gồm những gì?
+Khi nào học Viterbi?
+Phần parsing được học ở tuần nào?
+Tuần nào học PCFG?
+Khi nào phải nộp bài tập lớn?
+Phần II của bài tập lớn nộp khi nào?
+BTL hạn cuối là ngày nào?
+Đồ án môn học yêu cầu những gì?
+Yêu cầu của BTL là gì?
+BTL làm theo nhóm mấy người?
+Giáo trình của môn học là gì?
+Có sách nào về CFG không?
+Tài liệu về PCFG ở đâu?
+Tài liệu nào liên quan đến Viterbi?
+Có được sử dụng Gemini không?
+BTL có được dùng ChatGPT không?
+Nộp bài trễ có bị trừ điểm không?
+Quy định về đạo văn là gì?
+Bài thi giữa kỳ chiếm bao nhiêu phần trăm?
+Ai là giảng viên của môn học?
+Người dạy môn NLP là ai?
+Viterbi khác Earley parser ở điểm nào?
+Điểm khác biệt giữa CFG và PCFG là gì?
+CFG và PCFG khác gì nhau?
+TF-IDF là gì vậy?
+Hãy giải thích TF-IDF.
+Thời tiết hôm nay thế nào?
+Giá vàng hôm nay là bao nhiêu?
+Tuần 3 học bánh mì?
+Ai là tổng thống của Pháp?

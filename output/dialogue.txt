@@ -1,0 +1,198 @@
+SESSION: OD01 | TURN: 1
+USER: Tuần 3 học gì?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Tuần 3 học gì?
+GENERATION_QUESTION: Tuần 3 học gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_SCHEDULE (SCHEDULE_WH_QUESTION (NP_WEEK (E_WEEK "tuần" "3")) (CONTENT_VERB "học") (WHAT "gì")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Tuần 3 học về xử lý cú pháp (Syntactic Processing) với các chủ đề: ngữ pháp ngữ cảnh toàn phần (context-free grammar), cấu trúc câu và ngữ pháp (grammar and sentence structure), phân tích từ trên xuống (top-down parsing), phân tích biểu đồ (bottom-up chart parsing), phân tích biểu đồ từ trên xuống (top-down chart parsing), ngữ pháp ngữ cảnh xác suất (probabilistic context-free grammar), ngữ pháp phụ thuộc (dependency grammar) và phụ thuộc Stanford (Stanford dependencies). [C1]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_03:000", "document_id": "schedule.week_03", "source_file": "schedule.txt", "is_sample": true, "week": 3, "chapters": [3]}]
+
+SESSION: OD01 | TURN: 2
+USER: Tài liệu của chương này là gì?
+CONTEXT_USED: [{"type": "chapter", "id": "CH03", "label": "Chương 3", "source_document_ids": ["schedule.week_03", "topics.chapter_03", "slide_ch03_cfg", "slide_ch03_grammar_quality", "slide_ch03_top_down", "slide_ch03_chart", "slide_ch03_pcfg", "slide_ch03_dependency", "slide_ch03_projectivity", "slide_ch03_head_rules", "slide_ch03_transition_parsing", "slide_ch03_arc_eager", "slide_ch03_dependency_evaluation"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "13:23", "surface": "chương này", "start": 13, "end": 23, "kind": "chapter", "relative": 0, "template": null}], "bindings": {"13:23": [{"type": "chapter", "id": "CH03", "label": "Chương 3", "source_document_ids": ["schedule.week_03", "topics.chapter_03", "slide_ch03_cfg", "slide_ch03_grammar_quality", "slide_ch03_top_down", "slide_ch03_chart", "slide_ch03_pcfg", "slide_ch03_dependency", "slide_ch03_projectivity", "slide_ch03_head_rules", "slide_ch03_transition_parsing", "slide_ch03_arc_eager", "slide_ch03_dependency_evaluation"], "from_turn": 1}]}, "reason": null}
+EFFECTIVE_QUESTION: Tài liệu của Chương 3 là gì?
+GENERATION_QUESTION: Tài liệu của Chương 3 là gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_RESOURCE (RESOURCE_WH_QUESTION (INFO_RESOURCE (RESOURCE_NOUN "tài" "liệu") "của" (RESOURCE_TARGET (NP_REFERENCE (E_REFERENCE "chương" "này")))) (RESOURCE_END "là" "gì")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Tài liệu của Chương 3 là Arc-eager Dependency Parsing Actions, Context-Free Grammar (CFG), Chart Parsing và Dependency Structure and Dependency Tree [C1][C2][C3][C4].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_arc_eager:000", "document_id": "slide_ch03_arc_eager", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["arc-eager", "shift", "left-arc", "right-arc", "reduce", "MaltParser"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [51, 53, 54, 55], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C3", "chunk_id": "slide_ch03_chart:000", "document_id": "slide_ch03_chart", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["chart parsing", "bottom-up", "top-down", "agenda", "active arc"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [16, 17, 22, 23, 24], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C4", "chunk_id": "slide_ch03_dependency:000", "document_id": "slide_ch03_dependency", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["dependency parsing", "head", "dependent", "nsubj", "dobj"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [37, 38, 39, 41], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}]
+
+SESSION: OD02 | TURN: 1
+USER: Chương 4 nói về gì?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Chương 4 nói về gì?
+GENERATION_QUESTION: Chương 4 nói về gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_TOPIC (TOPIC_WH_QUESTION (NP_CHAPTER (E_CHAPTER "chương" "4")) (CONTENT_VERB "nói" "về") (WHAT "gì")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Chương 4 nói về hệ thống đặc trưng (feature systems) và ngữ pháp mở rộng (augmented grammar), bao gồm các chủ đề như quy tắc số đồng thuận (number agreement), phân loại động từ (verb subcategorization), và tích hợp hệ thống đặc trưng vào phương pháp phân tích ngữ pháp (chart parsing) để đảm bảo các ràng buộc ngữ pháp như đồng thuận chủ ngữ - động từ [C2].
+SOURCES: [{"label": "C2", "chunk_id": "topics.chapter_04:000", "document_id": "topics.chapter_04", "source_file": "topics.txt", "is_sample": false, "chapter": 4}]
+
+SESSION: OD02 | TURN: 2
+USER: Nó có liên quan đến parsing không?
+CONTEXT_USED: [{"type": "chapter", "id": "CH04", "label": "Chương 4", "source_document_ids": ["topics.chapter_04"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "0:2", "surface": "Nó", "start": 0, "end": 2, "kind": "generic", "relative": 0, "template": null}], "bindings": {"0:2": [{"type": "chapter", "id": "CH04", "label": "Chương 4", "source_document_ids": ["topics.chapter_04"], "from_turn": 1}]}, "reason": null}
+EFFECTIVE_QUESTION: Chương 4 có liên quan đến parsing không?
+GENERATION_QUESTION: Chương 4 có liên quan đến parsing không?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_TOPIC (TOPIC_YES_NO_QUESTION (RELATE_SUBJECT (NP_REFERENCE (E_REFERENCE "nó"))) "có" "liên" "quan" "đến" (TOPIC_AREA (TOPIC_PREFIX) (NP_CONCEPT (E_CONCEPT "parsing"))) (YESNO_END "không")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Có, Chương 4 liên quan đến parsing vì trong EVIDENCE có đề cập đến các nội dung như "parsing with features" [C2], "extended chart parsing with feature unification" [C3], và "feature-based parsing exercises" [C4].
+SOURCES: [{"label": "C2", "chunk_id": "slide_ch04_feature_parsing:000", "document_id": "slide_ch04_feature_parsing", "source_file": "Slide bài giảng-20260904/CHAPTER 4.ppt", "is_sample": false, "chapter": 4, "keywords": ["chart", "feature matching", "variable binding"], "dataset_file": "data/slide_content/chapter_04.jsonl", "source_slides": [], "legacy_text_blocks": [81, 82, 83], "source_checksum": "3b166e07c786d4c737c085b424751446bfe9a5f3ebede2f8324e7bf1a0b90704"}, {"label": "C3", "chunk_id": "topics.chapter_04:000", "document_id": "topics.chapter_04", "source_file": "topics.txt", "is_sample": false, "chapter": 4}, {"label": "C4", "chunk_id": "schedule.week_05:000", "document_id": "schedule.week_05", "source_file": "schedule.txt", "is_sample": true, "week": 5, "chapters": [4]}]
+
+SESSION: OD03 | TURN: 1
+USER: Bài tập lớn có phần parser không?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Bài tập lớn có phần parser không?
+GENERATION_QUESTION: Bài tập lớn có phần parser không?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_ASSIGNMENT (ASSIGNMENT_YES_NO_QUESTION (NP_PROJECT (E_ASSIGNMENT "bài" "tập" "lớn")) "có" (NP_PART (E_PART "phần" "parser")) (YESNO_END "không")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Có, vì phần Bài tập lớn có yêu cầu xây dựng parser [C1].
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+SESSION: OD03 | TURN: 2
+USER: Phần này cần xuất file gì?
+CONTEXT_USED: [{"type": "assignment_part", "id": "PART_I", "label": "Phần 1 của bài tập lớn Course Assistant", "source_document_ids": ["assignments.part_1"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "0:8", "surface": "Phần này", "start": 0, "end": 8, "kind": "generic", "relative": 0, "template": null}], "bindings": {"0:8": [{"type": "assignment_part", "id": "PART_I", "label": "Phần 1 của bài tập lớn Course Assistant", "source_document_ids": ["assignments.part_1"], "from_turn": 1}]}, "reason": null}
+EFFECTIVE_QUESTION: Phần 1 của bài tập lớn Course Assistant cần xuất file gì?
+GENERATION_QUESTION: Phần 1 của bài tập lớn Course Assistant cần xuất file gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_ASSIGNMENT (ASSIGNMENT_WH_QUESTION (ASSIGN_TARGET (NP_REFERENCE (E_REFERENCE "phần" "này"))) (NEED_OPT "cần") (ATTR_OUTPUT_FILES "xuất" "file" "gì")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Phần 1 của bài tập lớn Course Assistant cần xuất file output/grammar.txt, output/samples.txt và output/parse-results.txt [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+SESSION: OD04 | TURN: 1
+USER: Chương 11 có hỏi đáp không?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Chương 11 có hỏi đáp không?
+GENERATION_QUESTION: Chương 11 có hỏi đáp không?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_TOPIC (TOPIC_YES_NO_QUESTION (NP_CHAPTER (E_CHAPTER "chương" "11")) "có" (TOPIC_AREA (TOPIC_PREFIX) (NP_CONCEPT (E_CONCEPT "hỏi" "đáp"))) (YESNO_END "không")))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Có, Chương 11 có hỏi đáp (question answering) như được đề cập trong phần 'question answering' của Tuần 13 / Week 13 [C1] và trong nội dung chương 11 về 'Procedural Semantics và Question Answering' [C3].
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_13:000", "document_id": "schedule.week_13", "source_file": "schedule.txt", "is_sample": true, "week": 13, "chapters": [11]}, {"label": "C3", "chunk_id": "slide_ch11_procedural_semantics:000", "document_id": "slide_ch11_procedural_semantics", "source_file": "Slide bài giảng-20260904/Chapter 11.pptx", "is_sample": false, "chapter": 11, "keywords": ["procedural semantics", "Test", "Retrieve", "database query", "F2"], "dataset_file": "data/slide_content/chapter_11.jsonl", "source_slides": [31, 32, 33, 34], "legacy_text_blocks": [], "source_checksum": "3d2e4593401891f0985faf1e1d15bcd2015c0bcade5101af4881fbc186350c49"}]
+
+SESSION: OD04 | TURN: 2
+USER: Còn chương sau?
+CONTEXT_USED: [{"type": "chapter", "id": "CH11", "label": "Chương 11", "source_document_ids": ["schedule.week_13", "slide_ch11_procedural_semantics"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "4:14", "surface": "chương sau", "start": 4, "end": 14, "kind": "chapter", "relative": 1, "template": null, "antecedents": [{"type": "chapter", "id": "CH11", "label": "Chương 11", "source_document_ids": ["schedule.week_13", "slide_ch11_procedural_semantics"], "from_turn": 1}]}], "bindings": {"4:14": [{"type": "chapter", "id": "CH12", "label": "Chương 12", "source_document_ids": ["schedule.week_14", "topics.chapter_12"], "from_turn": 0}]}, "reason": null}
+EFFECTIVE_QUESTION: Còn Chương 12?
+GENERATION_QUESTION: Còn Chương 12?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_CONTEXT (CONTEXT_FOLLOW_UP "còn" (FOCUS "chương" "sau") (FOLLOW_TAIL)))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Có, Chương 12 được đề cập trong tài liệu với tiêu đề "DISCOURSE CONTEXT AND REFERENCE" và được liệt kê trong Tuần 14 (Week 14). [C1] [C2]
+SOURCES: [{"label": "C1", "chunk_id": "topics.chapter_12:000", "document_id": "topics.chapter_12", "source_file": "topics.txt", "is_sample": false, "chapter": 12}, {"label": "C2", "chunk_id": "schedule.week_14:000", "document_id": "schedule.week_14", "source_file": "schedule.txt", "is_sample": true, "week": 14, "chapters": [12]}]
+
+SESSION: OD05 | TURN: 1
+USER: L.O.2.5 học về gì?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: L.O.2.5 học về gì?
+GENERATION_QUESTION: L.O.2.5 học về gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_LO (LO_WH_QUESTION (NP_LO (E_LO "l.o.2.5")) "học" "về" "gì"))) (CLOSER "?"))
+STATUS: answered
+ANSWER: L.O.2.5 học về kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu [C2]
+SOURCES: [{"label": "C2", "chunk_id": "course_info.detailed_learning_outcomes:000", "document_id": "course_info.detailed_learning_outcomes", "source_file": "course_info.txt", "is_sample": false, "field": "detailed_learning_outcomes"}]
+
+SESSION: OD05 | TURN: 2
+USER: Nội dung này nằm ở chương nào?
+CONTEXT_USED: [{"type": "learning_outcome", "id": "LO2.5", "label": "LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu)", "source_document_ids": ["course_info.detailed_learning_outcomes"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "0:12", "surface": "Nội dung này", "start": 0, "end": 12, "kind": "generic", "relative": 0, "template": null}], "bindings": {"0:12": [{"type": "learning_outcome", "id": "LO2.5", "label": "LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu)", "source_document_ids": ["course_info.detailed_learning_outcomes"], "from_turn": 1}]}, "reason": null}
+EFFECTIVE_QUESTION: LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu) nằm ở chương nào?
+GENERATION_QUESTION: LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu) nằm ở chương nào?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_GET_TOPIC (TOPIC_WH_QUESTION (NP_REFERENCE (E_REFERENCE "nội" "dung" "này")) "nằm" "ở" "chương" "nào"))) (CLOSER "?"))
+STATUS: answered
+ANSWER: LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu) nằm ở Chương 6 (Ambiguity Resolutions: Statistical Methods) [C3]
+SOURCES: [{"label": "C3", "chunk_id": "faq.q07:000", "document_id": "faq.q07", "source_file": "fag.txt", "is_sample": false}]
+
+SESSION: GD01 | TURN: 1
+USER: Viterbi là gì?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Viterbi là gì?
+GENERATION_QUESTION: Viterbi là gì?
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_DEFINITION (DEFINITION_WH_QUESTION (TOPIC_NP (TOPIC_CORE (TOPIC_HEAD (QUANT_OPT) (CONCEPT_LIST (NP_CONCEPT (E_CONCEPT "viterbi")))))) (CONTEXT_OPT) (DEFINITION_PRED (DEFINITION_END "là" "gì"))))) (CLOSER "?"))
+STATUS: answered
+ANSWER: Viterbi là thuật toán tìm chuỗi category có score lớn nhất cho input, với cơ chế giữ path tốt nhất tới từng state và backpointer để khôi phục chuỗi tags sau khi xử lý xong. [C1]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch06_viterbi_forward:000", "document_id": "slide_ch06_viterbi_forward", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["Viterbi", "Forward", "SEQSCORE", "BACKPTR", "best path"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [26, 28, 29, 36, 38], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}]
+
+SESSION: GD01 | TURN: 2
+USER: Thuật toán này dùng ở chương nào?
+CONTEXT_USED: [{"type": "concept", "id": "VITERBI", "label": "Viterbi", "source_document_ids": ["slide_ch06_viterbi_forward"], "from_turn": 1}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "0:14", "surface": "Thuật toán này", "start": 0, "end": 14, "kind": "topic", "relative": 0, "template": null}], "bindings": {"0:14": [{"type": "concept", "id": "VITERBI", "label": "Viterbi", "source_document_ids": ["slide_ch06_viterbi_forward"], "from_turn": 1}]}, "reason": null}
+EFFECTIVE_QUESTION: Viterbi dùng ở chương nào?
+GENERATION_QUESTION: Viterbi dùng ở chương nào?
+ORIGINAL_PARSE: ()
+STATUS: answered
+ANSWER: Viterbi được sử dụng trong Chương 6 [C1] [C2]
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch06_viterbi_forward:000", "document_id": "slide_ch06_viterbi_forward", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["Viterbi", "Forward", "SEQSCORE", "BACKPTR", "best path"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [26, 28, 29, 36, 38], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}, {"label": "C2", "chunk_id": "faq.q07:000", "document_id": "faq.q07", "source_file": "fag.txt", "is_sample": false}]
+
+SESSION: GD01 | TURN: 3
+USER: Chương đó học vào tuần nào?
+CONTEXT_USED: [{"type": "chapter", "id": "CH06", "label": "Chương 6", "source_document_ids": ["schedule.week_07", "schedule.week_08", "topics.chapter_06", "slide_ch06_probability", "slide_ch06_bayes", "slide_ch06_mle", "slide_ch06_sparsity", "slide_ch06_evaluation", "slide_ch06_pos_tagging", "slide_ch06_hmm_tagging", "slide_ch06_viterbi_forward", "slide_ch06_backward", "slide_ch06_forward", "slide_ch06_language_model", "slide_ch06_spelling_correction", "slide_ch06_pcfg_estimation", "slide_ch06_inside_probability", "slide_ch06_statistical_mt", "slide_ch06_semantic_similarity", "slide_ch06_path_similarity", "slide_ch06_vector_weights", "slide_ch06_ppmi_example", "slide_ch06_similarity_evaluation"], "from_turn": 3}]
+RESOLUTION: {"status": "resolved", "references": [{"key": "0:9", "surface": "Chương đó", "start": 0, "end": 9, "kind": "chapter", "relative": 0, "template": null}], "bindings": {"0:9": [{"type": "chapter", "id": "CH06", "label": "Chương 6", "source_document_ids": ["schedule.week_07", "schedule.week_08", "topics.chapter_06", "slide_ch06_probability", "slide_ch06_bayes", "slide_ch06_mle", "slide_ch06_sparsity", "slide_ch06_evaluation", "slide_ch06_pos_tagging", "slide_ch06_hmm_tagging", "slide_ch06_viterbi_forward", "slide_ch06_backward", "slide_ch06_forward", "slide_ch06_language_model", "slide_ch06_spelling_correction", "slide_ch06_pcfg_estimation", "slide_ch06_inside_probability", "slide_ch06_statistical_mt", "slide_ch06_semantic_similarity", "slide_ch06_path_similarity", "slide_ch06_vector_weights", "slide_ch06_ppmi_example", "slide_ch06_similarity_evaluation"], "from_turn": 3}]}, "reason": null}
+EFFECTIVE_QUESTION: Chương 6 học vào tuần nào?
+GENERATION_QUESTION: Chương 6 học vào tuần nào?
+ORIGINAL_PARSE: ()
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Chương 6 học vào tuần 7 và tuần 8 [C1][C2]
+SOURCES: [{"label": "C1", "chunk_id": "schedule.week_07:000", "document_id": "schedule.week_07", "source_file": "schedule.txt", "is_sample": true, "week": 7, "chapters": [6]}, {"label": "C2", "chunk_id": "schedule.week_08:000", "document_id": "schedule.week_08", "source_file": "schedule.txt", "is_sample": true, "week": 8, "chapters": [6]}]
+
+SESSION: GD02 | TURN: 1
+USER: Bài tập lớn gồm những phần nào?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Bài tập lớn gồm những phần nào?
+GENERATION_QUESTION: Bài tập lớn gồm những phần nào?
+ORIGINAL_PARSE: ()
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Bài tập lớn gồm 3 phần chính: PART I - Grammar and Parser [C2], PART II - Semantic Interpretation and QA [C3], và PART III - Local Discourse Context [C5]. Phần mở rộng LLM/RAG là tùy chọn [C4].
+SOURCES: [{"label": "C2", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}, {"label": "C3", "chunk_id": "assignments.part_2:000", "document_id": "assignments.part_2", "source_file": "assignments.txt", "is_sample": true, "part": 2, "assignment_id": "BTL01"}, {"label": "C5", "chunk_id": "assignments.part_3:000", "document_id": "assignments.part_3", "source_file": "assignments.txt", "is_sample": true, "part": 3, "assignment_id": "BTL01"}, {"label": "C4", "chunk_id": "assignments.part_5:000", "document_id": "assignments.part_5", "source_file": "assignments.txt", "is_sample": true, "part": null, "assignment_id": "BTL01"}]
+
+SESSION: GD02 | TURN: 2
+USER: Phần I cần làm gì?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Phần I cần làm gì?
+GENERATION_QUESTION: Phần I cần làm gì?
+ORIGINAL_PARSE: ()
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Phần I yêu cầu xây dựng grammar cho miền Course Assistant, sinh câu hợp lệ từ grammar, xây dựng parser, xuất parse tree và xử lý câu không hợp lệ [C1]
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_1:000", "document_id": "assignments.part_1", "source_file": "assignments.txt", "is_sample": true, "part": 1, "assignment_id": "BTL01"}]
+
+SESSION: GD02 | TURN: 3
+USER: Còn Phần II?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Còn Phần II?
+GENERATION_QUESTION: Còn Phần II?
+ORIGINAL_PARSE: ()
+STATUS: answered
+ANSWER: Theo dữ liệu mẫu của project: Có, Phần II được mô tả là "Semantic Interpretation and QA" với các yêu cầu tối thiểu bao gồm semantic representation, intent identification, entity extraction, query to knowledge base, answer generation, xử lý câu hỏi ngoài miền và xử lý trường hợp không tìm thấy thông tin. Các intent được đề xuất là GET_COURSE_INFO, GET_SCHEDULE, GET_TOPIC, GET_ASSIGNMENT, GET_DEADLINE, GET_RESOURCE, GET_RULE, GET_INSTRUCTOR, UNKNOWN [C1].
+SOURCES: [{"label": "C1", "chunk_id": "assignments.part_2:000", "document_id": "assignments.part_2", "source_file": "assignments.txt", "is_sample": true, "part": 2, "assignment_id": "BTL01"}]
+
+SESSION: GD03 | TURN: 1
+USER: So sánh CFG và PCFG.
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: So sánh CFG và PCFG.
+GENERATION_QUESTION: So sánh CFG và PCFG.
+ORIGINAL_PARSE: (S (OPENER) (UTTERANCE (QUERY_COMPARISON (COMPARISON_REQUEST (REQUEST_COMPARE (MODAL_OPT) "so" "sánh") (CONCEPT_PAIR (NP_CONCEPT (E_CONCEPT "cfg")) (CONJ "và") (NP_CONCEPT (E_CONCEPT "pcfg")))))) (CLOSER "."))
+STATUS: answered
+ANSWER: CFG (Context-Free Grammar) là một hệ thống ngữ pháp có dạng A → α, trong đó A là nonterminal và α là chuỗi các nonterminal hoặc terminal. Nó sử dụng các production để tạo ra các strings từ start symbol, và parsing tìm cách áp dụng các productions để tạo cấu trúc của một câu đầu vào. [C1]. PCFG (Probabilistic Context-Free Grammar) là phiên bản mở rộng của CFG, bổ sung probabilities cho các productions. Probability của một parse tree bằng tích probabilities của các productions dùng để tạo tree đó, và probability của một string bằng tổng probabilities của các parse trees hợp lệ tương ứng. [C2]. PCFG sử dụng corpus có cấu trúc phân tích để ước lượng probabilities của các productions, với cách tính P(Rj|C) bằng số lần Rj được dùng chia cho tổng số lần tất cả rules có left-hand side C được dùng. [C3].
+SOURCES: [{"label": "C1", "chunk_id": "slide_ch03_cfg:000", "document_id": "slide_ch03_cfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["CFG", "production", "terminal", "nonterminal"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [4], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C2", "chunk_id": "slide_ch03_pcfg:000", "document_id": "slide_ch03_pcfg", "source_file": "Slide bài giảng-20260904/CHAPTER 3.pptx", "is_sample": false, "chapter": 3, "keywords": ["PCFG", "rule probability", "parse tree"], "dataset_file": "data/slide_content/chapter_03.jsonl", "source_slides": [29, 31], "legacy_text_blocks": [], "source_checksum": "5ebee64e32a482014c905f0f64412f3769ce7ec897281eb7396ce41ba2d9f0c7"}, {"label": "C3", "chunk_id": "slide_ch06_pcfg_estimation:000", "document_id": "slide_ch06_pcfg_estimation", "source_file": "Slide bài giảng-20260904/Chapter 6.pptx", "is_sample": false, "chapter": 6, "keywords": ["PCFG", "production probability", "rule counts", "parsed corpus"], "dataset_file": "data/slide_content/chapter_06.jsonl", "source_slides": [52], "legacy_text_blocks": [], "source_checksum": "ce0e32b88f5eb4aa5f5851f983635810027b90abbafb52ec067f49d359f31047"}]
+
+SESSION: GD03 | TURN: 2
+USER: Thời tiết hôm nay thế nào?
+CONTEXT_USED: []
+RESOLUTION: {"status": "resolved", "references": [], "bindings": {}, "reason": null}
+EFFECTIVE_QUESTION: Thời tiết hôm nay thế nào?
+GENERATION_QUESTION: Thời tiết hôm nay thế nào?
+ORIGINAL_PARSE: ()
+STATUS: insufficient_information
+ANSWER: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+SOURCES: {}
+

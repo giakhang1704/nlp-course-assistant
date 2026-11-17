@@ -1,0 +1,202 @@
+==============================================================================
+COURSE ASSISTANT (CO3085) - ĐÁNH GIÁ HỆ THỐNG (PHẦN IV)
+==============================================================================
+Pipeline: Grammar/Earley parser -> semantic frame -> intent/entity -> query -> TF-IDF retrieval
+          -> evidence policy -> LLM local (qwen3:4b, Ollama, temperature 0) -> kiểm tra citation.
+Sinh bằng: python -B run.py evaluate   (bộ kiểm thử: data/evaluation/final).
+Chấm tự động. Câu có đáp án được tính ĐÚNG khi: trạng thái answered + chứa mọi ý chính
+(must_contain) + ít nhất một citation trỏ tới tài liệu nguồn chuẩn. Câu thiếu thông tin/
+ngoài miền đúng khi hệ thống từ chối; câu thiếu ngữ cảnh đúng khi hệ thống hỏi lại.
+Bộ kiểm thử đã được xem khi phát triển hệ thống; không phải bộ kiểm tra độc lập.
+
+1. TẬP KIỂM THỬ
+------------------------------------------------------------------------------
+Câu đơn: 81 câu = 34 câu mẫu của giảng viên (sample_queries.txt) + 47 câu của nhóm.
+  Chấm parser: 81 câu; chấm hỏi đáp: 78 câu (câu sai cấu trúc chỉ chấm parser).
+  - answerable           58
+  - out_of_domain        7
+  - context_dependent    7
+  - missing_information  6
+  - malformed            3
+  - nhóm diễn đạt lại: 5 nhóm x 3 cách hỏi = 12 câu (nằm trong answerable)
+Hội thoại: 8 phiên / 18 lượt (5 phiên mẫu của giảng viên + 3 phiên của nhóm).
+
+2. PHẦN I - GRAMMAR, SINH CÂU, PARSER
+------------------------------------------------------------------------------
+Grammar: 1138 production; thuật toán Earley.
+Sinh câu: 10000 câu, 10000 câu khác nhau; parse lại 10000 câu, lỗi 0.
+input/sentences.txt: 106/127 câu parse được.
+Bộ kiểm thử: đúng cây/() 81/81 (100.0%); trên câu thuộc grammar có nhãn: intent đúng 54/54 (100.0%), entity đúng 54/54 (100.0%).
+Riêng 34 câu mẫu của giảng viên: đúng cây/() 34/34 (100.0%).
+Câu ra () vẫn được thử bằng truy xuất thô (raw_question): grammar không quyết định câu có trả lời được hay không.
+
+3. TRUY XUẤT
+------------------------------------------------------------------------------
+Tài liệu nguồn chuẩn có trong top-5: 57/58 (98.3%) câu có đáp án.
+  TRƯỢT N23: Tuần thứ năm của môn có những chủ đề nào? | cần [['schedule.week_05']] | lấy được ['slide_ch01_applications', 'slide_ch08_realization', 'faq.q12']
+
+4. HỎI ĐÁP (RAG + LLM)
+------------------------------------------------------------------------------
+Số câu kiểm thử: 78; chưa chạy: 0.
+SỐ CÂU TRẢ LỜI ĐÚNG: 76/78 (97.4%)
+Trạng thái đúng: 76/78 (97.4%)
+Theo nguồn:
+  giảng viên             34/34 (100.0%)
+  nhóm                   42/44 (95.5%)
+Theo loại câu:
+  answerable             56/58 (96.6%)
+  context_dependent      7/7 (100.0%)
+  missing_information    6/6 (100.0%)
+  out_of_domain          7/7 (100.0%)
+Câu có đáp án, theo intent:
+  GET_ASSIGNMENT         7/7 (100.0%)
+  GET_COURSE_INFO        9/9 (100.0%)
+  GET_LO                 3/3 (100.0%)
+  GET_RESOURCE           4/4 (100.0%)
+  GET_RULE               5/5 (100.0%)
+  GET_SCHEDULE           5/6 (83.3%)
+  GET_TOPIC              19/19 (100.0%)
+Câu được trả lời có citation: 56/56 (100.0%); citation trúng nguồn chuẩn: 56/56 (100.0%).
+Thời gian sinh (CPU): trung vị 27.2s, tối đa 88.1s, 63 lần gọi LLM.
+
+5. CÁCH DIỄN ĐẠT KHÁC NHAU CỦA CÙNG YÊU CẦU
+------------------------------------------------------------------------------
+P1_weight: đúng 2/2
+  N15 ()  ĐÚNG Bài tập lớn chiếm bao nhiêu phần trăm?
+  N16 ()  ĐÚNG Trọng số của bài tập lớn là bao nhiêu?
+P2_cfg: đúng 3/3
+  N18 cây ĐÚNG CFG là gì?
+  N19 cây ĐÚNG Giải thích CFG.
+  N20 cây ĐÚNG Context-Free Grammar được định nghĩa như thế nào?
+P3_week5: đúng 2/3
+  N21 cây ĐÚNG Tuần 5 học những gì?
+  N22 cây ĐÚNG Nội dung của tuần 5.
+  N23 ()  SAI  Tuần thứ năm của môn có những chủ đề nào?  [truy xuất trượt tài liệu đúng]
+P4_ai: đúng 2/2
+  N25 ()  ĐÚNG Nêu quy định về việc dùng AI.
+  N26 ()  ĐÚNG Sinh viên dùng AI thì phải làm gì?
+P5_part2: đúng 2/2
+  N27 cây ĐÚNG Phần II của bài tập lớn yêu cầu gì?
+  N28 cây ĐÚNG Liệt kê yêu cầu của phần hỏi đáp.
+Nhóm đúng cả 3 cách hỏi: 4/5
+
+6. NGỮ CẢNH HỘI THOẠI (PHẦN III)
+------------------------------------------------------------------------------
+OD01 (giảng viên)
+  lượt 1 [answered] ĐÚNG Tuần 3 học gì?
+      trả lời: Theo dữ liệu mẫu của project: Tuần 3 học về xử lý cú pháp (Syntactic Processing) với các chủ đề: ngữ pháp ngữ cảnh toàn phần (context-free grammar), cấu trúc c…
+  lượt 2 [answered] ĐÚNG Tài liệu của chương này là gì? | tham chiếu -> ['CH03']
+      câu sau khi giải tham chiếu: Tài liệu của Chương 3 là gì?
+      trả lời: Tài liệu của Chương 3 là Arc-eager Dependency Parsing Actions, Context-Free Grammar (CFG), Chart Parsing và Dependency Structure and Dependency Tree [C1][C2][C…
+OD02 (giảng viên)
+  lượt 1 [answered] ĐÚNG Chương 4 nói về gì?
+      trả lời: Chương 4 nói về hệ thống đặc trưng (feature systems) và ngữ pháp mở rộng (augmented grammar), bao gồm các chủ đề như quy tắc số đồng thuận (number agreement), …
+  lượt 2 [answered] ĐÚNG Nó có liên quan đến parsing không? | tham chiếu -> ['CH04']
+      câu sau khi giải tham chiếu: Chương 4 có liên quan đến parsing không?
+      trả lời: Theo dữ liệu mẫu của project: Có, Chương 4 liên quan đến parsing vì trong EVIDENCE có đề cập đến các nội dung như "parsing with features" [C2], "extended chart…
+OD03 (giảng viên)
+  lượt 1 [answered] ĐÚNG Bài tập lớn có phần parser không?
+      trả lời: Theo dữ liệu mẫu của project: Có, vì phần Bài tập lớn có yêu cầu xây dựng parser [C1].
+  lượt 2 [answered] ĐÚNG Phần này cần xuất file gì? | tham chiếu -> ['PART_I']
+      câu sau khi giải tham chiếu: Phần 1 của bài tập lớn Course Assistant cần xuất file gì?
+      trả lời: Theo dữ liệu mẫu của project: Phần 1 của bài tập lớn Course Assistant cần xuất file output/grammar.txt, output/samples.txt và output/parse-results.txt [C1]
+OD04 (giảng viên)
+  lượt 1 [answered] ĐÚNG Chương 11 có hỏi đáp không?
+      trả lời: Theo dữ liệu mẫu của project: Có, Chương 11 có hỏi đáp (question answering) như được đề cập trong phần 'question answering' của Tuần 13 / Week 13 [C1] và trong…
+  lượt 2 [answered] ĐÚNG Còn chương sau? | tham chiếu -> ['CH11']
+      câu sau khi giải tham chiếu: Còn Chương 12?
+      trả lời: Theo dữ liệu mẫu của project: Có, Chương 12 được đề cập trong tài liệu với tiêu đề "DISCOURSE CONTEXT AND REFERENCE" và được liệt kê trong Tuần 14 (Week 14). […
+OD05 (giảng viên)
+  lượt 1 [answered] ĐÚNG L.O.2.5 học về gì?
+      trả lời: L.O.2.5 học về kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu [C2]
+  lượt 2 [answered] ĐÚNG Nội dung này nằm ở chương nào? | tham chiếu -> ['LO2.5']
+      câu sau khi giải tham chiếu: LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu) nằm ở chương nào?
+      trả lời: LO2.5 (Kiến thức xác suất để giải quyết nhập nhằng từ ở mức câu) nằm ở Chương 6 (Ambiguity Resolutions: Statistical Methods) [C3]
+GD01 (nhóm)
+  lượt 1 [answered] ĐÚNG Viterbi là gì?
+      trả lời: Viterbi là thuật toán tìm chuỗi category có score lớn nhất cho input, với cơ chế giữ path tốt nhất tới từng state và backpointer để khôi phục chuỗi tags sau kh…
+  lượt 2 [answered] ĐÚNG Thuật toán này dùng ở chương nào? | tham chiếu -> ['VITERBI']
+      câu sau khi giải tham chiếu: Viterbi dùng ở chương nào?
+      trả lời: Viterbi được sử dụng trong Chương 6 [C1] [C2]
+  lượt 3 [answered] ĐÚNG Chương đó học vào tuần nào? | tham chiếu -> ['CH06']
+      câu sau khi giải tham chiếu: Chương 6 học vào tuần nào?
+      trả lời: Theo dữ liệu mẫu của project: Chương 6 học vào tuần 7 và tuần 8 [C1][C2]
+GD02 (nhóm)
+  lượt 1 [answered] ĐÚNG Bài tập lớn gồm những phần nào?
+      trả lời: Theo dữ liệu mẫu của project: Bài tập lớn gồm 3 phần chính: PART I - Grammar and Parser [C2], PART II - Semantic Interpretation and QA [C3], và PART III - Loca…
+  lượt 2 [answered] ĐÚNG Phần I cần làm gì?
+      trả lời: Theo dữ liệu mẫu của project: Phần I yêu cầu xây dựng grammar cho miền Course Assistant, sinh câu hợp lệ từ grammar, xây dựng parser, xuất parse tree và xử lý …
+  lượt 3 [answered] ĐÚNG Còn Phần II?
+      trả lời: Theo dữ liệu mẫu của project: Có, Phần II được mô tả là "Semantic Interpretation and QA" với các yêu cầu tối thiểu bao gồm semantic representation, intent iden…
+GD03 (nhóm)
+  lượt 1 [answered] ĐÚNG So sánh CFG và PCFG.
+      trả lời: CFG (Context-Free Grammar) là một hệ thống ngữ pháp có dạng A → α, trong đó A là nonterminal và α là chuỗi các nonterminal hoặc terminal. Nó sử dụng các produc…
+  lượt 2 [insufficient_information] ĐÚNG Thời tiết hôm nay thế nào?
+      trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Giải tham chiếu đúng: 7/7 (100.0%); lượt hội thoại đúng: 18/18 (100.0%)
+
+7. VÍ DỤ (LLM/RAG)
+------------------------------------------------------------------------------
+[Đúng và có căn cứ] O01: Môn NLP có bao nhiêu tín chỉ?
+  Trạng thái: answered; tài liệu truy xuất: course_info.credits, slide_ch01_applications, slide_ch01_language_study
+  Citation: course_info.credits
+  Trả lời: Môn NLP có 3 tín chỉ [C1]
+[Đúng và có căn cứ] N15: Bài tập lớn chiếm bao nhiêu phần trăm?
+  Trạng thái: answered; tài liệu truy xuất: course_info.major_assignment, course_info.major_assignment_hours, assignments.overview
+  Citation: course_info.major_assignment
+  Trả lời: Bài tập lớn chiếm 15 phần trăm [C1]
+[Đúng và có căn cứ] N13: Liệt kê tài liệu tham khảo.
+  Trạng thái: answered; tài liệu truy xuất: faq.q20, faq.q16, resources.textbook_3
+  Citation: faq.q20
+  Trả lời: Tài liệu tham khảo chính được giới thiệu trong slide gồm cuốn sách kinh điển "Speech and Language Processing" của Daniel Jurafsky & James H. Martin, cùng các slide bài giảng và tài liệu trực tuyến về Dependency Grammar [C1]
+[KB không có thông tin] N14: Hạn nộp của BTL01 là khi nào?
+  Trạng thái: insufficient_information; tài liệu truy xuất: course_info.major_assignment_hours, assignments.overview, course_info.major_assignment
+  Citation: -
+  Trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+[KB không có thông tin] N35: Trong thí nghiệm lọc PP attachment làm chart nhỏ đi, thời gian chạy thực tế giảm bao nhiêu mili giây?
+  Trạng thái: insufficient_information; tài liệu truy xuất: slide_ch09_semantic_filtering, slide_ch03_dependency_evaluation, slide_ch04_feature_parsing
+  Citation: -
+  Trả lời: Không có thông tin về thời gian chạy thực tế giảm bao nhiêu mili giây trong thí nghiệm lọc PP attachment làm chart nhỏ đi.
+Nguy cơ hallucination: 6/13 câu thiếu thông tin/ngoài miền lọt qua evidence policy và được gửi tới LLM; LLM từ chối đúng 6/6.
+[Nguy cơ hallucination] O27: Ai là tổng thống của Pháp?
+  Trạng thái: insufficient_information; tài liệu truy xuất: regulations.ai_usage, course_info.learning_outcomes, faq.q13
+  Citation: -
+  Trả lời: Không có thông tin về tổng thống Pháp trong dữ liệu cung cấp
+[Nguy cơ hallucination] O28: Hãy giải bài tập xác suất này giúp tôi.
+  Trạng thái: insufficient_information; tài liệu truy xuất: faq.q19, faq.q17, slide_ch06_bayes
+  Citation: -
+  Trả lời: Không có thông tin về bài tập xác suất trong dữ liệu cung cấp
+[Nguy cơ hallucination] N35: Trong thí nghiệm lọc PP attachment làm chart nhỏ đi, thời gian chạy thực tế giảm bao nhiêu mili giây?
+  Trạng thái: insufficient_information; tài liệu truy xuất: slide_ch09_semantic_filtering, slide_ch03_dependency_evaluation, slide_ch04_feature_parsing
+  Citation: -
+  Trả lời: Không có thông tin về thời gian chạy thực tế giảm bao nhiêu mili giây trong thí nghiệm lọc PP attachment làm chart nhỏ đi.
+Câu được trả lời nhưng sai/thiếu ý (có citation nên trông như có căn cứ): 0.
+
+8. CÁC TRƯỜNG HỢP SAI VÀ NGUYÊN NHÂN
+------------------------------------------------------------------------------
+  truy xuất trượt tài liệu đúng                  1
+  LLM từ chối dù context có thông tin            1
+
+- N23 [answerable, insufficient_information] Tuần thứ năm của môn có những chủ đề nào?
+    Nguyên nhân: truy xuất trượt tài liệu đúng
+    Cần [['schedule.week_05']], lấy được ['slide_ch01_applications', 'slide_ch08_realization', 'faq.q12']
+    Trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+- N33 [answerable, insufficient_information] Nếu chưa chốt được một cách đọc duy nhất, Quasi-Logical Form có thể giữ lại hai loại phương án nào?
+    Nguyên nhân: LLM từ chối dù context có thông tin
+    Trả lời: Không có thông tin trong dữ liệu về hai loại phương án mà Quasi-Logical Form có thể giữ lại nếu chưa chốt được một cách đọc duy nhất
+
+9. ƯU ĐIỂM VÀ HẠN CHẾ
+------------------------------------------------------------------------------
+Ưu điểm:
+- Grammar ngữ nghĩa cho cây cú pháp kèm intent, entity, loại câu và logical form; câu thuộc grammar được truy vấn đúng trường dữ liệu.
+- Evidence policy chặn trước LLM các câu không có bằng chứng; LLM chỉ trả lời từ context đánh số [C1..], citation được kiểm tra lại.
+- Câu ngoài grammar vẫn được thử bằng truy xuất thô nên không mất câu hỏi tự nhiên.
+- Chạy hoàn toàn local (Ollama), tái lập được, không phụ thuộc API.
+Hạn chế:
+- Grammar chỉ phủ các mẫu câu đã viết; nhiều cách diễn đạt tự nhiên ra () và phụ thuộc vào TF-IDF.
+- TF-IDF dựa trên từ: số viết bằng chữ ('tuần thứ năm') hoặc tên riêng không có trong KB ('ChatGPT' thay cho AI) làm trượt tài liệu.
+- Slide bài giảng chỉ có 11 chương; Chương 12 chỉ có tóm tắt và subtopics từ dữ liệu mẫu nên câu hỏi chi tiết về chương này dễ thiếu bằng chứng.
+- Câu ngoài miền/thiếu thông tin có từ trùng với KB có thể lọt tới LLM; khi đó an toàn phụ thuộc vào việc model tự từ chối.
+- Ngữ cảnh hội thoại chỉ xử lý các dạng tham chiếu định sẵn (này/đó/nó/chương sau/hai cái đó) trong 3 lượt gần nhất.
+- Chấm tự động bằng ý chính + citation không phát hiện được câu trả lời đúng ý nhưng diễn đạt khác từ khóa, hoặc thêm chi tiết sai bên cạnh ý đúng.
+- Model 4B chạy CPU chậm (vài chục giây/câu).

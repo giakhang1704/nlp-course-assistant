@@ -1,0 +1,34 @@
+# Chapter 8
+
+## Compositional Semantics and Its Limits
+
+Compositional Semantics xây meaning của structure lớn từ meanings của các components và cách chúng kết hợp. Quantifier scope không phải lúc nào cũng khớp trực tiếp với surface syntactic structure. Idiom như kicked the bucket cũng không thể được hiểu chỉ bằng cách ghép nghĩa thông thường của từng word. Những trường hợp này cần được xét khi thiết kế semantic rules.
+
+## Lambda Expressions and Lambda Reduction
+
+Lambda expression biểu diễn meaning của một phrase như function chờ argument. VP kissed Sue có thể mang meaning λx.(KISS1 k1 x (NAME s1 "Sue")), trong đó vị trí subject là x. Áp dụng function đó cho (NAME j1 "Jack") và thực hiện Lambda Reduction cho kết quả (KISS1 k1 (NAME j1 "Jack") (NAME s1 "Sue")). Lambda Reduction thay argument vào vị trí của variable được function ràng buộc. Các unary predicates của hai VPs như laughs và opens the door cũng có thể được kết hợp rồi áp dụng cho cùng subject.
+
+## SEM Feature and Semantic Rules
+
+SEM feature gắn meaning vào lexical entries và grammar rules. Rule (S SEM (?semvp ?semnp)) → (NP SEM ?semnp) (VP SEM ?semvp) kết hợp meaning của VP với meaning của subject NP. Ví dụ NP có SEM (NAME m1 "Mary") và VP có SEM λa.(SEES1 e8 a (NAME j1 "Jack")); sau function application và Lambda Reduction thu được (SEES1 e8 (NAME m1 "Mary") (NAME j1 "Jack")). Word senses và SUBCAT frames khác nhau có thể cần lexical semantic entries riêng vì số hoặc kiểu arguments thay đổi.
+
+## Auxiliary Verbs in Semantic Composition
+
+Khi kết hợp AUX và VP, semantic rule có thể chèn modal operator của auxiliary bao quanh meaning của VP. Với can laugh, meaning của laugh được kết hợp với CAN1 để tạo một unary predicate còn chờ subject. Sau khi áp dụng subject, modal operator vẫn bao proposition biểu đạt hành động laugh. Như vậy auxiliary không chỉ ràng buộc verb form ở syntax mà còn tham gia cấu tạo Logical Form.
+
+## Prepositional Phrases: Modifiers and Arguments
+
+PP có thể làm predicate modifier hoặc là complement được head yêu cầu. Jill decided on a couch có hai readings: Jill đưa ra quyết định trong lúc ngồi trên couch, hoặc Jill quyết định chọn một couch. Với reading modifier, on a couch mô tả location và mang +PRED; với reading argument, preposition đánh dấu complement của decide và mang −PRED, SEM của PP tương ứng meaning của object. Hai readings đòi semantic composition khác nhau dù có cùng word sequence.
+
+## Semantic Interpretation of Wh-questions
+
+Semantic Interpretation của wh-question cần phối hợp wh-term, inverted sentence và GAP propagation. SEM của filler được chia sẻ với SEM tại vị trí gap, nhờ đó unknown object nằm đúng argument position trong predicate. Với Who did Jill see?, who tạo NP chứa wh-variable và restriction WHO1; gap ở object của see dùng cùng semantic information. Meaning của câu được đặt trong WHQUERY thay vì ASSERT. Cơ chế không chỉ nhận diện một wh-word: nó liên kết đối tượng cần tìm với vị trí ngữ nghĩa bị khuyết trong phần câu còn lại.
+
+## SUBJ Feature and Feature Unification
+
+SUBJ feature truyền SEM của subject NP vào VP để chèn subject vào đúng argument position. Rule (S SEM ?semvp) → (NP SEM ?semnp) (VP SUBJ ?semnp SEM ?semvp) chia sẻ meaning của NP với feature SUBJ của VP. Feature Unification thực hiện bước kết hợp đó mà không cần Lambda Reduction tường minh cho trường hợp tương ứng. Grammar viết theo cách này có thể reversible để dùng cho parsing lẫn generation. Tuy nhiên không phải mọi lambda expressions đều bị loại bỏ; trường hợp coordinated subject như Sue and Sam saw Jack vẫn có thể cần lambda representation.
+
+## Realization from Logical Form
+
+Realization đi từ Logical Form để tìm cấu trúc và word sequence diễn đạt meaning đó. Thuật toán duy trì một danh sách constituents và tiếp tục rewrite đến khi chỉ còn lexical constituents, rồi sinh words. Nếu mở rộng một NP có SEM chưa được ràng buộc, quá trình có thể đi vào vòng lặp; thay đổi thứ tự expansion giúp tránh vấn đề này. Trong ví dụ Logical Form của Jill saw the dog, mở rộng VP giúp ràng buộc subject, verb và object trước khi hoàn thành các lexical constituents. Việc khớp Logical Form và semantic constraints định hướng lựa chọn rules.
+

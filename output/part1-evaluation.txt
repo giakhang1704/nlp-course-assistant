@@ -1,0 +1,18 @@
+PART I EVALUATION — not end-to-end QA accuracy
+Algorithm: Earley; productions: 1138
+Generated: 10000; unique: 10000
+Generated parsing checked: 10000; failures: []
+Input: 127; parsed: 106
+current_queries: total 35; correct validity+intent(+entity if labeled): 34
+  In-domain parsed 31/31; OOD test rejection 4/4
+  ERROR Q35: Ví dụ về câu hỏi Wh-question nằm ở slide mấy vậy ạ? | expected CONTEXT_DEPENDENT | observed GET_TOPIC (parsed)
+legacy_queries: total 34; correct validity+intent(+entity if labeled): 34
+  In-domain parsed 31/31; OOD test rejection 3/3
+Independent semantic/negative cases: 27/27
+
+LIMITATIONS
+Finite domain grammar, not general Vietnamese understanding.
+Provided queries are development coverage checks, not a held-out QA benchmark.
+A failed parse is unsupported syntax, not proof of an out-of-domain question.
+Context references are recognized, not yet resolved from a conversation.
+No retrieval, LLM answer, groundedness or end-to-end QA measurement is implemented.
