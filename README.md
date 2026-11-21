@@ -13,6 +13,9 @@
 | 3 | Vũ Huy Gia Khang | 2311486 | Knowledge base, truy xuất, sinh câu trả lời bằng LLM (4.2) |
 | 4 | Nguyễn Đăng Khoa | 2311614 | Ngữ cảnh hội thoại, đánh giá, tích hợp (Phần III, IV) |
 
+- **Mã nguồn:** https://github.com/giakhang1704/nlp-course-assistant
+- **Video demo:** https://drive.google.com/file/d/1AAM5hZEWVKRpPROYo9OgukErkdnkkGZY/view?usp=sharing
+
 #### 1.1. Phần I: Viết văn phạm và Parser
 | Mục | Nhiệm vụ | File mã nguồn / Cấu hình | Output |
 | :---: | :--- | :--- | :--- |
