@@ -177,7 +177,7 @@ QUESTION 26: Hôm nay ở TP.HCM có mưa không?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 27: Ai là tổng thống của Pháp?
@@ -331,7 +331,7 @@ QUESTION 48: Hạn nộp của BTL01 là khi nào?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 49: Bài tập lớn chiếm bao nhiêu phần trăm?
@@ -387,7 +387,7 @@ QUESTION 56: Tuần thứ năm của môn có những chủ đề nào?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 57: Nêu quy định về việc dùng AI.
@@ -478,35 +478,35 @@ QUESTION 69: Triển khai Viterbi trong bài giảng dùng bộ nhớ đỉnh ba
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 70: Email của giảng viên là gì?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 71: Giúp mình chọn cỡ khung xe đạp cho người cao 1m65 được không?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 72: Trong cờ vua, muốn nhập thành cánh hậu thì cần những điều kiện gì?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 73: Thời tiết Đà Lạt ngày mai ra sao?
 STATUS: insufficient_information
 MODEL: -
 ANSWER:
-Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: []
 
 QUESTION 74: Viết giúp tôi một bài thơ về mùa thu.

@@ -132,7 +132,7 @@ GD03 (nhóm)
   lượt 1 [answered] ĐÚNG So sánh CFG và PCFG.
       trả lời: CFG (Context-Free Grammar) là một hệ thống ngữ pháp có dạng A → α, trong đó A là nonterminal và α là chuỗi các nonterminal hoặc terminal. Nó sử dụng các produc…
   lượt 2 [insufficient_information] ĐÚNG Thời tiết hôm nay thế nào?
-      trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+      trả lời: Không tìm thấy thông tin này trong dữ liệu môn học.
 Giải tham chiếu đúng: 7/7 (100.0%); lượt hội thoại đúng: 18/18 (100.0%)
 
 7. VÍ DỤ (LLM/RAG)
@@ -152,7 +152,7 @@ Giải tham chiếu đúng: 7/7 (100.0%); lượt hội thoại đúng: 18/18 (1
 [KB không có thông tin] N14: Hạn nộp của BTL01 là khi nào?
   Trạng thái: insufficient_information; tài liệu truy xuất: course_info.major_assignment_hours, assignments.overview, course_info.major_assignment
   Citation: -
-  Trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+  Trả lời: Không tìm thấy thông tin này trong dữ liệu môn học.
 [KB không có thông tin] N35: Trong thí nghiệm lọc PP attachment làm chart nhỏ đi, thời gian chạy thực tế giảm bao nhiêu mili giây?
   Trạng thái: insufficient_information; tài liệu truy xuất: slide_ch09_semantic_filtering, slide_ch03_dependency_evaluation, slide_ch04_feature_parsing
   Citation: -
@@ -180,7 +180,7 @@ Câu được trả lời nhưng sai/thiếu ý (có citation nên trông như c
 - N23 [answerable, insufficient_information] Tuần thứ năm của môn có những chủ đề nào?
     Nguyên nhân: truy xuất trượt tài liệu đúng
     Cần [['schedule.week_05']], lấy được ['slide_ch01_applications', 'slide_ch08_realization', 'faq.q12']
-    Trả lời: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+    Trả lời: Không tìm thấy thông tin này trong dữ liệu môn học.
 - N33 [answerable, insufficient_information] Nếu chưa chốt được một cách đọc duy nhất, Quasi-Logical Form có thể giữ lại hai loại phương án nào?
     Nguyên nhân: LLM từ chối dù context có thông tin
     Trả lời: Không có thông tin trong dữ liệu về hai loại phương án mà Quasi-Logical Form có thể giữ lại nếu chưa chốt được một cách đọc duy nhất

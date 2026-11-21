@@ -33,7 +33,7 @@ def run_part1(parser, input_path, output_dir, limit=10000, evaluation_path=None,
     export_parse_results(results, destination)
     verification = verify_samples(parser, samples) if verify else {"count": None, "failures": None}
     report = {
-        "scope": "Part I grammar/generation/parser + semantic handoff; no retrieval or answer accuracy",
+        "scope": "Part I grammar/generation/parser + semantic handoff; QA accuracy is reported in output/evaluation.txt",
         "algorithm": "Earley", "productions": len(parser.grammar.productions),
         "nonterminals": len(parser.grammar.by_lhs), "derivations": generator.count("S"),
         "generated_count": len(samples), "unique_generated_count": len(set(samples)),
@@ -44,10 +44,12 @@ def run_part1(parser, input_path, output_dir, limit=10000, evaluation_path=None,
         "grammar_sha256": hashlib.sha256(parser.grammar.export().encode("utf-8")).hexdigest(),
         "limits": [
             "Finite domain grammar, not general Vietnamese understanding.",
-            "Provided queries are development coverage checks, not a held-out QA benchmark.",
-            "A failed parse is unsupported syntax, not proof of an out-of-domain question.",
-            "Context references are recognized, not yet resolved from a conversation.",
-            "No retrieval, LLM answer, groundedness or end-to-end QA measurement is implemented.",
+            "Sample queries measure grammar coverage only; end-to-end QA accuracy is in output/evaluation.txt.",
+            "A failed parse is unsupported syntax, not proof of an out-of-domain question; "
+            "such questions are still answered through raw-question retrieval.",
+            "Context references are marked here and resolved by the dialogue layer (output/dialogue.txt).",
+            "Q35 is labelled CONTEXT_DEPENDENT in the sample data but names its concept (Wh-question) "
+            "explicitly, so the parser returns GET_TOPIC.",
         ],
     }
     for name, path, check_entities in (("current_queries", evaluation_path, False),

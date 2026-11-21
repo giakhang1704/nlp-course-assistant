@@ -1496,7 +1496,7 @@ publisher: Nhà xuất bản Đại học Quốc gia TP Hồ Chí Minh
 year: 2012
 usage: Vietnamese NLP reference
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -2581,7 +2581,7 @@ GET_RULE
 GET_INSTRUCTOR
 UNKNOWN
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3060,7 +3060,7 @@ SOURCE: course_info.txt
 SAMPLE: False
 format: 2 lecture periods per week, 15 weeks
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3738,7 +3738,7 @@ Q19:
 question: Các hình thức kiểm tra và bài tập lớn môn học bao gồm những nội dung gì?
 answer: Môn học gồm các bài tập lập trình/thực hành theo từng chương (như Dependency parsing, Viterbi POS tagging, Lambda reduction) và bài tập lớn tổng hợp kết nối các mức độ phân tích ngôn ngữ từ cú pháp tới biểu diễn tri thức.
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3795,7 +3795,7 @@ SAMPLE: True
 academic_integrity:
 Sinh viên phải tuân thủ nguyên tắc liêm chính học thuật và code of ethics.
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3843,7 +3843,7 @@ Labeled Attachment Score (LAS) yêu cầu đồng thời đúng head và depende
 Trong ví dụ She saw the video lecture, parser có đúng head cho 4 trong 5 words nên UAS = 4/5 = 80%; chỉ 2 trong 5 words đúng cả head và label nên LAS = 2/5 = 40%.
 Một parse có thể có UAS cao hơn LAS vì gán head đúng nhưng relation label sai.
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3892,7 +3892,7 @@ P(w/s) đóng vai trò prior của sense; các factors còn lại mô tả conte
 Bridge thường chỉ một structure, nhưng trong The dentist put a bridge on my teeth, dentist và teeth làm dental-device sense được ưu tiên.
 Vì vậy most-frequent-sense baseline không đủ cho mọi context.
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 
@@ -3929,7 +3929,7 @@ question: Khái niệm Đánh giá Black box và Glass box đối với hệ th�
 answer: Khái niệm này thuộc Chương 1.
 Đánh giá Black box đo lường hiệu năng tổng thể của hệ thống dựa trên yêu cầu thiết kế mà không can thiệp vào bên trong; trong khi Glass box đánh giá chi tiết từng thành phần con cấu thành nên hệ thống.
 
-EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected_chunk_ids": []}
+EVIDENCE: {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected_chunk_ids": []}
 CONTEXT:
 
 

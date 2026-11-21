@@ -193,6 +193,6 @@ EFFECTIVE_QUESTION: Thời tiết hôm nay thế nào?
 GENERATION_QUESTION: Thời tiết hôm nay thế nào?
 ORIGINAL_PARSE: ()
 STATUS: insufficient_information
-ANSWER: Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.
+ANSWER: Không tìm thấy thông tin này trong dữ liệu môn học.
 SOURCES: {}
 

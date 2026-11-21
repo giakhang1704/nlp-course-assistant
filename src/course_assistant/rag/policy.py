@@ -87,5 +87,5 @@ def evidence_decision(result, hits, config, manifest, query=None):
             if number:
                 admitted = [h for h in admitted if h["metadata"].get("part") == int(number[0])]
     if not meaningful_terms(question) or not admitted:
-        return {"status": "insufficient_information", "reason": "Không tìm thấy bằng chứng đủ phù hợp trong dữ liệu môn học.", "selected": []}
+        return {"status": "insufficient_information", "reason": "Không tìm thấy thông tin này trong dữ liệu môn học.", "selected": []}
     return {"status": "evidence_available", "reason": "Candidate evidence passed lexical/slot checks; semantic support still requires validation.", "selected": admitted}

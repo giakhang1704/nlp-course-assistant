@@ -12,7 +12,7 @@ Independent semantic/negative cases: 27/27
 
 LIMITATIONS
 Finite domain grammar, not general Vietnamese understanding.
-Provided queries are development coverage checks, not a held-out QA benchmark.
-A failed parse is unsupported syntax, not proof of an out-of-domain question.
-Context references are recognized, not yet resolved from a conversation.
-No retrieval, LLM answer, groundedness or end-to-end QA measurement is implemented.
+Sample queries measure grammar coverage only; end-to-end QA accuracy is in output/evaluation.txt.
+A failed parse is unsupported syntax, not proof of an out-of-domain question; such questions are still answered through raw-question retrieval.
+Context references are marked here and resolved by the dialogue layer (output/dialogue.txt).
+Q35 is labelled CONTEXT_DEPENDENT in the sample data but names its concept (Wh-question) explicitly, so the parser returns GET_TOPIC.
